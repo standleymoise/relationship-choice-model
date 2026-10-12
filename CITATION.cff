@@ -10,7 +10,9 @@ type: software
 version: 0.3.0
 date-released: "2026-10-12"
 authors:
-  - name: "standleymoise"
+  - family-names: "Moise"
+    given-names: "Standley"
+    alias: "standleymoise"
 doi: 10.5281/zenodo.23310487
 identifiers:
   - type: doi

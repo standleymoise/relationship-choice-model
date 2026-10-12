@@ -135,4 +135,4 @@ Ver [`CITATION.cff`](CITATION.cff) (GitHub muestra «Cite this repository»). **
 
 - Código: **MIT** ([`LICENSE`](LICENSE)).
 - Documentación y resultados: **CC BY 4.0** ([`LICENSE-DOCS.md`](LICENSE-DOCS.md)).
-- Autoría y nombre: **Modelo standleymoise** (standleymoise). El desarrollo, la búsqueda bibliográfica y la redacción se hicieron con asistencia de Claude (Anthropic); las decisiones y la responsabilidad del contenido son de la persona autora.
+- Autoría: **Standley Moise** (usuario de GitHub: standleymoise). Nombre del modelo: **Modelo standleymoise**. El desarrollo, la búsqueda bibliográfica y la redacción se hicieron con asistencia de Claude (Anthropic); las decisiones y la responsabilidad del contenido son de la persona autora.

@@ -4,6 +4,7 @@
   "description": "Modelo standleymoise: modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta (exploratorio, no validado empíricamente).",
   "type": "commonjs",
   "private": false,
+  "author": "Standley Moise",
   "license": "MIT",
   "engines": { "node": ">=20" },
   "scripts": {
