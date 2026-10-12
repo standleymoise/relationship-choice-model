@@ -1,0 +1,11 @@
+{
+  "name": "h1-numero-de-opciones",
+  "hypothesis": "H1",
+  "description": "Variable independiente: candidatos conocidos por período. Todo lo demás constante. Se compara un agente ingenuo (toma lo observado como verdadero) con uno bayesiano (corrige por la incertidumbre).",
+  "base": { "seed": 101, "runs": 500, "periods": 40 },
+  "sweep": { "path": "candidatesPerPeriod", "values": [1, 2, 3, 5, 8, 12] },
+  "series": [
+    { "label": "bayes", "override": { "agent": "bayes" } },
+    { "label": "naive", "override": { "agent": "naive" } }
+  ]
+}

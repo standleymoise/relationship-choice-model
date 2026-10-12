@@ -1,0 +1,28 @@
+# Registro de cambios
+
+Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico (el modelo es 0.x: puede cambiar).
+
+## [0.2.0] — 2026-10-11
+
+Primera versión pública. Reescritura del simulador previo (`legacy/simulador_v0.1_original.html`, conservado sin modificar).
+
+### Añadido
+- Modelo matemático explícito (`docs/modelo-matematico.md`): utilidad ponderada, información normal–normal, requisitos esenciales no compensatorios, decisión de cambio con foco, aversión a la pérdida y novedad, valor de reserva.
+- Núcleo en JavaScript puro (`src/`) sin dependencias y con generador aleatorio de semilla explícita.
+- Simulador interactivo (`simulator/`) con calculadora de dos personas y simulación de agentes ficticios; versión autónoma de un solo archivo.
+- 8 experimentos reproducibles (`experiments/`) más un escenario 80–20 determinista, con configuración, semilla y resultados en JSON y CSV.
+- Pruebas automatizadas, incluida la comparación con la fórmula analítica de la maldición del ganador y la reproducibilidad de los experimentos guardados.
+- 48 referencias verificadas contra Crossref; 5 pendientes declaradas.
+- Documentación: antecedentes, hipótesis, metodología, limitaciones, resultados exploratorios, plan de validación, guía de publicación.
+- Integración continua en GitHub Actions (Linux y Windows; Node 20, 22 y 24).
+
+### Corregido respecto del simulador previo (ver `docs/auditoria-simulador-previo.md`)
+- Los límites personales ahora funcionan como filtro no compensatorio (antes eran decorativos).
+- «Desconocido» ya no se confunde con «50»; la información y la incertidumbre intervienen en el cálculo.
+- Se eliminó la curva ilustrativa que daba por supuesta la conclusión.
+- Validación de campos (sin discrepancias entre lo que se ve y lo que se calcula); sin `innerHTML` con texto del usuario.
+- Pesos todos en 0 devuelven «indefinido» y no 0.
+
+### Correcciones durante el desarrollo (registradas por transparencia)
+- Filtro de requisitos esenciales aplicado a la pareja actual → eliminado (artefacto de diseño).
+- Métricas «por cambio» calculadas por evento en lugar de por corrida (sesgo de −0,9 en la sobreestimación bayesiana).

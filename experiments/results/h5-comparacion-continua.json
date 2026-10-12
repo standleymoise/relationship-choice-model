@@ -1,0 +1,2224 @@
+{
+  "modelVersion": "0.2.0",
+  "name": "h5-comparacion-continua",
+  "hypothesis": "H5",
+  "description": "Variable independiente: peso de la comparación con la mejor alternativa conocida (η) sobre la satisfacción percibida con la pareja actual. Series: 1, 3 y 8 alternativas por período con la comparación hecha sobre la impresión inicial SIN corregir (supuesto: la impresión vívida afecta al ánimo aunque la decisión use la media corregida), y 3 alternativas con la comparación hecha sobre la media corregida. OJO: bajo estos supuestos el descenso de satisfacción percibida es consecuencia del propio mecanismo programado; el experimento mide su magnitud y su sensibilidad a la definición, no lo contrasta con la realidad. La definición con media corregida se probó primero y produjo un efecto casi nulo; la variante sin corregir se añadió después de ver ese resultado (decisión posterior al dato, ver docs/limitaciones.md).",
+  "notice": "Agentes ficticios con reglas programadas: no son observaciones de personas reales.",
+  "configHash": "aa7ff8f44477675f",
+  "definition": {
+    "name": "h5-comparacion-continua",
+    "hypothesis": "H5",
+    "description": "Variable independiente: peso de la comparación con la mejor alternativa conocida (η) sobre la satisfacción percibida con la pareja actual. Series: 1, 3 y 8 alternativas por período con la comparación hecha sobre la impresión inicial SIN corregir (supuesto: la impresión vívida afecta al ánimo aunque la decisión use la media corregida), y 3 alternativas con la comparación hecha sobre la media corregida. OJO: bajo estos supuestos el descenso de satisfacción percibida es consecuencia del propio mecanismo programado; el experimento mide su magnitud y su sensibilidad a la definición, no lo contrasta con la realidad. La definición con media corregida se probó primero y produjo un efecto casi nulo; la variante sin corregir se añadió después de ver ese resultado (decisión posterior al dato, ver docs/limitaciones.md).",
+    "base": {
+      "seed": 106,
+      "runs": 500,
+      "periods": 40,
+      "agent": "bayes"
+    },
+    "sweep": {
+      "path": "mechanisms.comparison",
+      "values": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ]
+    },
+    "series": [
+      {
+        "label": "1_alt_sin_corregir",
+        "override": {
+          "candidatesPerPeriod": 1,
+          "mechanisms": {
+            "comparisonBasis": "raw"
+          }
+        }
+      },
+      {
+        "label": "3_alt_sin_corregir",
+        "override": {
+          "candidatesPerPeriod": 3,
+          "mechanisms": {
+            "comparisonBasis": "raw"
+          }
+        }
+      },
+      {
+        "label": "8_alt_sin_corregir",
+        "override": {
+          "candidatesPerPeriod": 8,
+          "mechanisms": {
+            "comparisonBasis": "raw"
+          }
+        }
+      },
+      {
+        "label": "3_alt_media_corregida",
+        "override": {
+          "candidatesPerPeriod": 3,
+          "mechanisms": {
+            "comparisonBasis": "posterior"
+          }
+        }
+      }
+    ]
+  },
+  "effectiveDefaults": {
+    "seed": 1,
+    "runs": 300,
+    "periods": 40,
+    "essentialFactors": 2,
+    "desirableFactors": 6,
+    "weightConcentration": 0.5,
+    "prior": {
+      "mean": 50,
+      "sd": 15
+    },
+    "obsSd": 15,
+    "essentialThreshold": 35,
+    "essentialMinProb": 0.5,
+    "initialInfo": 8,
+    "initialQualityShift": 0,
+    "firstImpression": 1,
+    "candidatesPerPeriod": 3,
+    "searchTrigger": "always",
+    "aspiration": 60,
+    "agent": "bayes",
+    "mechanisms": {
+      "focal": 0,
+      "novelty": 0,
+      "noveltyDecay": 5,
+      "lossAversion": 1,
+      "comparison": 0,
+      "comparisonBasis": "raw"
+    },
+    "costs": {
+      "dateCost": 1,
+      "switchCost": 0,
+      "moneyToUtility": 0
+    }
+  },
+  "results": [
+    {
+      "series": "1_alt_sin_corregir",
+      "value": 0,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.134,
+          "sd": 2.146919,
+          "se": 0.096013,
+          "ci95": [
+            2.945814,
+            3.322186
+          ]
+        },
+        "regretShare": {
+          "n": 1567,
+          "mean": 0.278239,
+          "sd": null,
+          "se": 0.009384,
+          "ci95": [
+            0.259847,
+            0.296631
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1567,
+          "mean": 3.291293,
+          "sd": null,
+          "se": 0.119338,
+          "ci95": [
+            3.05739,
+            3.525195
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1567,
+          "mean": -0.096233,
+          "sd": null,
+          "se": 0.101286,
+          "ci95": [
+            -0.294754,
+            0.102287
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 40,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            40,
+            40
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 58.545986,
+          "sd": 2.865116,
+          "se": 0.128132,
+          "ci95": [
+            58.294847,
+            58.797124
+          ]
+        }
+      }
+    },
+    {
+      "series": "1_alt_sin_corregir",
+      "value": 0.25,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.134,
+          "sd": 2.146919,
+          "se": 0.096013,
+          "ci95": [
+            2.945814,
+            3.322186
+          ]
+        },
+        "regretShare": {
+          "n": 1567,
+          "mean": 0.278239,
+          "sd": null,
+          "se": 0.009384,
+          "ci95": [
+            0.259847,
+            0.296631
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1567,
+          "mean": 3.291293,
+          "sd": null,
+          "se": 0.119338,
+          "ci95": [
+            3.05739,
+            3.525195
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1567,
+          "mean": -0.096233,
+          "sd": null,
+          "se": 0.101286,
+          "ci95": [
+            -0.294754,
+            0.102287
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 40,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            40,
+            40
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 58.359327,
+          "sd": 2.902279,
+          "se": 0.129794,
+          "ci95": [
+            58.104931,
+            58.613723
+          ]
+        }
+      }
+    },
+    {
+      "series": "1_alt_sin_corregir",
+      "value": 0.5,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.134,
+          "sd": 2.146919,
+          "se": 0.096013,
+          "ci95": [
+            2.945814,
+            3.322186
+          ]
+        },
+        "regretShare": {
+          "n": 1567,
+          "mean": 0.278239,
+          "sd": null,
+          "se": 0.009384,
+          "ci95": [
+            0.259847,
+            0.296631
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1567,
+          "mean": 3.291293,
+          "sd": null,
+          "se": 0.119338,
+          "ci95": [
+            3.05739,
+            3.525195
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1567,
+          "mean": -0.096233,
+          "sd": null,
+          "se": 0.101286,
+          "ci95": [
+            -0.294754,
+            0.102287
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 40,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            40,
+            40
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 58.172669,
+          "sd": 2.941115,
+          "se": 0.131531,
+          "ci95": [
+            57.914869,
+            58.430469
+          ]
+        }
+      }
+    },
+    {
+      "series": "1_alt_sin_corregir",
+      "value": 0.75,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.134,
+          "sd": 2.146919,
+          "se": 0.096013,
+          "ci95": [
+            2.945814,
+            3.322186
+          ]
+        },
+        "regretShare": {
+          "n": 1567,
+          "mean": 0.278239,
+          "sd": null,
+          "se": 0.009384,
+          "ci95": [
+            0.259847,
+            0.296631
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1567,
+          "mean": 3.291293,
+          "sd": null,
+          "se": 0.119338,
+          "ci95": [
+            3.05739,
+            3.525195
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1567,
+          "mean": -0.096233,
+          "sd": null,
+          "se": 0.101286,
+          "ci95": [
+            -0.294754,
+            0.102287
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 40,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            40,
+            40
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 57.98601,
+          "sd": 2.98156,
+          "se": 0.133339,
+          "ci95": [
+            57.724665,
+            58.247356
+          ]
+        }
+      }
+    },
+    {
+      "series": "1_alt_sin_corregir",
+      "value": 1,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.134,
+          "sd": 2.146919,
+          "se": 0.096013,
+          "ci95": [
+            2.945814,
+            3.322186
+          ]
+        },
+        "regretShare": {
+          "n": 1567,
+          "mean": 0.278239,
+          "sd": null,
+          "se": 0.009384,
+          "ci95": [
+            0.259847,
+            0.296631
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1567,
+          "mean": 3.291293,
+          "sd": null,
+          "se": 0.119338,
+          "ci95": [
+            3.05739,
+            3.525195
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1567,
+          "mean": -0.096233,
+          "sd": null,
+          "se": 0.101286,
+          "ci95": [
+            -0.294754,
+            0.102287
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 40,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            40,
+            40
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 58.545043,
+          "sd": 3.349964,
+          "se": 0.149815,
+          "ci95": [
+            58.251405,
+            58.83868
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 8.35174,
+          "sd": 6.01214,
+          "se": 0.268871,
+          "ci95": [
+            7.824753,
+            8.878727
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 57.799352,
+          "sd": 3.023549,
+          "se": 0.135217,
+          "ci95": [
+            57.534326,
+            58.064378
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_sin_corregir",
+      "value": 0,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.549479,
+          "sd": 2.573075,
+          "se": 0.115071,
+          "ci95": [
+            60.323939,
+            60.775019
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_sin_corregir",
+      "value": 0.25,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.202709,
+          "sd": 2.664165,
+          "se": 0.119145,
+          "ci95": [
+            59.969185,
+            60.436234
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_sin_corregir",
+      "value": 0.5,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 59.855939,
+          "sd": 2.759341,
+          "se": 0.123401,
+          "ci95": [
+            59.614072,
+            60.097806
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_sin_corregir",
+      "value": 0.75,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 59.50917,
+          "sd": 2.858197,
+          "se": 0.127822,
+          "ci95": [
+            59.258638,
+            59.759702
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_sin_corregir",
+      "value": 1,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 59.1624,
+          "sd": 2.960363,
+          "se": 0.132391,
+          "ci95": [
+            58.902912,
+            59.421887
+          ]
+        }
+      }
+    },
+    {
+      "series": "8_alt_sin_corregir",
+      "value": 0,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 4.11,
+          "sd": 2.56653,
+          "se": 0.114779,
+          "ci95": [
+            3.885034,
+            4.334966
+          ]
+        },
+        "regretShare": {
+          "n": 2055,
+          "mean": 0.29635,
+          "sd": null,
+          "se": 0.009069,
+          "ci95": [
+            0.278575,
+            0.314125
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 2055,
+          "mean": 3.31985,
+          "sd": null,
+          "se": 0.112749,
+          "ci95": [
+            3.098862,
+            3.540837
+          ]
+        },
+        "meanOverestimation": {
+          "n": 2055,
+          "mean": -0.091496,
+          "sd": null,
+          "se": 0.091356,
+          "ci95": [
+            -0.270554,
+            0.087562
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 320,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            320,
+            320
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 62.100351,
+          "sd": 2.465223,
+          "se": 0.110248,
+          "ci95": [
+            61.884265,
+            62.316437
+          ]
+        }
+      }
+    },
+    {
+      "series": "8_alt_sin_corregir",
+      "value": 0.25,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 4.11,
+          "sd": 2.56653,
+          "se": 0.114779,
+          "ci95": [
+            3.885034,
+            4.334966
+          ]
+        },
+        "regretShare": {
+          "n": 2055,
+          "mean": 0.29635,
+          "sd": null,
+          "se": 0.009069,
+          "ci95": [
+            0.278575,
+            0.314125
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 2055,
+          "mean": 3.31985,
+          "sd": null,
+          "se": 0.112749,
+          "ci95": [
+            3.098862,
+            3.540837
+          ]
+        },
+        "meanOverestimation": {
+          "n": 2055,
+          "mean": -0.091496,
+          "sd": null,
+          "se": 0.091356,
+          "ci95": [
+            -0.270554,
+            0.087562
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 320,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            320,
+            320
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 61.532841,
+          "sd": 2.624135,
+          "se": 0.117355,
+          "ci95": [
+            61.302825,
+            61.762857
+          ]
+        }
+      }
+    },
+    {
+      "series": "8_alt_sin_corregir",
+      "value": 0.5,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 4.11,
+          "sd": 2.56653,
+          "se": 0.114779,
+          "ci95": [
+            3.885034,
+            4.334966
+          ]
+        },
+        "regretShare": {
+          "n": 2055,
+          "mean": 0.29635,
+          "sd": null,
+          "se": 0.009069,
+          "ci95": [
+            0.278575,
+            0.314125
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 2055,
+          "mean": 3.31985,
+          "sd": null,
+          "se": 0.112749,
+          "ci95": [
+            3.098862,
+            3.540837
+          ]
+        },
+        "meanOverestimation": {
+          "n": 2055,
+          "mean": -0.091496,
+          "sd": null,
+          "se": 0.091356,
+          "ci95": [
+            -0.270554,
+            0.087562
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 320,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            320,
+            320
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.965331,
+          "sd": 2.790128,
+          "se": 0.124778,
+          "ci95": [
+            60.720766,
+            61.209897
+          ]
+        }
+      }
+    },
+    {
+      "series": "8_alt_sin_corregir",
+      "value": 0.75,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 4.11,
+          "sd": 2.56653,
+          "se": 0.114779,
+          "ci95": [
+            3.885034,
+            4.334966
+          ]
+        },
+        "regretShare": {
+          "n": 2055,
+          "mean": 0.29635,
+          "sd": null,
+          "se": 0.009069,
+          "ci95": [
+            0.278575,
+            0.314125
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 2055,
+          "mean": 3.31985,
+          "sd": null,
+          "se": 0.112749,
+          "ci95": [
+            3.098862,
+            3.540837
+          ]
+        },
+        "meanOverestimation": {
+          "n": 2055,
+          "mean": -0.091496,
+          "sd": null,
+          "se": 0.091356,
+          "ci95": [
+            -0.270554,
+            0.087562
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 320,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            320,
+            320
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.397821,
+          "sd": 2.962011,
+          "se": 0.132465,
+          "ci95": [
+            60.138189,
+            60.657453
+          ]
+        }
+      }
+    },
+    {
+      "series": "8_alt_sin_corregir",
+      "value": 1,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 4.11,
+          "sd": 2.56653,
+          "se": 0.114779,
+          "ci95": [
+            3.885034,
+            4.334966
+          ]
+        },
+        "regretShare": {
+          "n": 2055,
+          "mean": 0.29635,
+          "sd": null,
+          "se": 0.009069,
+          "ci95": [
+            0.278575,
+            0.314125
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 2055,
+          "mean": 3.31985,
+          "sd": null,
+          "se": 0.112749,
+          "ci95": [
+            3.098862,
+            3.540837
+          ]
+        },
+        "meanOverestimation": {
+          "n": 2055,
+          "mean": -0.091496,
+          "sd": null,
+          "se": 0.091356,
+          "ci95": [
+            -0.270554,
+            0.087562
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 320,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            320,
+            320
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 62.05371,
+          "sd": 3.053118,
+          "se": 0.13654,
+          "ci95": [
+            61.786092,
+            62.321327
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 11.860407,
+          "sd": 6.313669,
+          "se": 0.282356,
+          "ci95": [
+            11.306989,
+            12.413824
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 59.830311,
+          "sd": 3.138816,
+          "se": 0.140372,
+          "ci95": [
+            59.555182,
+            60.10544
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_media_corregida",
+      "value": 0,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.549479,
+          "sd": 2.573075,
+          "se": 0.115071,
+          "ci95": [
+            60.323939,
+            60.775019
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_media_corregida",
+      "value": 0.25,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.546124,
+          "sd": 2.573596,
+          "se": 0.115095,
+          "ci95": [
+            60.320539,
+            60.77171
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_media_corregida",
+      "value": 0.5,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.542769,
+          "sd": 2.574153,
+          "se": 0.11512,
+          "ci95": [
+            60.317135,
+            60.768404
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_media_corregida",
+      "value": 0.75,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.539415,
+          "sd": 2.574748,
+          "se": 0.115146,
+          "ci95": [
+            60.313728,
+            60.765101
+          ]
+        }
+      }
+    },
+    {
+      "series": "3_alt_media_corregida",
+      "value": 1,
+      "summary": {
+        "switches": {
+          "n": 500,
+          "mean": 3.662,
+          "sd": 2.325203,
+          "se": 0.103986,
+          "ci95": [
+            3.458187,
+            3.865813
+          ]
+        },
+        "regretShare": {
+          "n": 1831,
+          "mean": 0.283452,
+          "sd": null,
+          "se": 0.00933,
+          "ci95": [
+            0.265165,
+            0.301739
+          ]
+        },
+        "meanGainPerSwitch": {
+          "n": 1831,
+          "mean": 3.281229,
+          "sd": null,
+          "se": 0.112739,
+          "ci95": [
+            3.060261,
+            3.502197
+          ]
+        },
+        "meanOverestimation": {
+          "n": 1831,
+          "mean": -0.17328,
+          "sd": null,
+          "se": 0.091396,
+          "ci95": [
+            -0.352416,
+            0.005856
+          ]
+        },
+        "meanTrueWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "welfareVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "moneyCost": {
+          "n": 500,
+          "mean": 120,
+          "sd": 0,
+          "se": 0,
+          "ci95": [
+            120,
+            120
+          ]
+        },
+        "netWelfare": {
+          "n": 500,
+          "mean": 60.553875,
+          "sd": 3.077919,
+          "se": 0.137649,
+          "ci95": [
+            60.284083,
+            60.823666
+          ]
+        },
+        "netVsStaying": {
+          "n": 500,
+          "mean": 10.360572,
+          "sd": 6.044483,
+          "se": 0.270317,
+          "ci95": [
+            9.83075,
+            10.890394
+          ]
+        },
+        "meanPerceivedSatisfaction": {
+          "n": 500,
+          "mean": 60.53606,
+          "sd": 2.575381,
+          "se": 0.115175,
+          "ci95": [
+            60.310318,
+            60.761802
+          ]
+        }
+      }
+    }
+  ]
+}

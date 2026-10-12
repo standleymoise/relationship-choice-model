@@ -1,0 +1,1463 @@
+{
+  "name": "escenario-80-20",
+  "description": "Cálculo determinista del caso A fuerte en G1 / B fuerte en G2. Ilustra bajo qué supuestos la decisión de cambiar se invierte. No hay datos reales.",
+  "fixed": {
+    "prior": {
+      "mean": 50,
+      "sd": 15
+    },
+    "obsSd": 15,
+    "infoA": 8,
+    "observedA": {
+      "G1": 85,
+      "G2": 45
+    },
+    "observedB": {
+      "G1": 75,
+      "G2": 85
+    },
+    "aspiration": 70
+  },
+  "rows": [
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -16.5833,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -15.2206,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -38.684,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -36.5396,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -7.5,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -5.7831,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -19.375,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -17.2289,
+      "switches": false,
+      "expectedTrueGain": -16.5833
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -10.2083,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -8.7616,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -24.8872,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -22.9212,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -7.5,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -5.7831,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -19.375,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -17.2289,
+      "switches": false,
+      "expectedTrueGain": -10.2083
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -6.6667,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -5.1733,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -17.2222,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -15.3555,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -7.5,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -5.7831,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -19.375,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.05,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -17.2289,
+      "switches": false,
+      "expectedTrueGain": -6.6667
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -14.5556,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -12.0618,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -35.4931,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -31.5688,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -5,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -1.8605,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -16.25,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -12.3256,
+      "switches": false,
+      "expectedTrueGain": -14.5556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -8.0556,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -5.408,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -21.9618,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -18.3642,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -5,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -1.8605,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -16.25,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -12.3256,
+      "switches": false,
+      "expectedTrueGain": -8.0556
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -4.4444,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -1.7115,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -14.4444,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -11.0283,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -5,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -1.8605,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -16.25,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.1,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -12.3256,
+      "switches": false,
+      "expectedTrueGain": -4.4444
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -10.5,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -6.3501,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -29.1111,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -22.5807,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 0,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 5.2174,
+      "switches": true,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -10,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -3.4783,
+      "switches": false,
+      "expectedTrueGain": -10.5
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -3.75,
+      "switches": false,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 0.6557,
+      "switches": true,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -16.1111,
+      "switches": false,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -10.1244,
+      "switches": false,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 0,
+      "switches": false,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 5.2174,
+      "switches": true,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -10,
+      "switches": false,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -3.4783,
+      "switches": false,
+      "expectedTrueGain": -3.75
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 0,
+      "switches": false,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 4.5478,
+      "switches": true,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -8.8889,
+      "switches": false,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -3.2041,
+      "switches": false,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 0,
+      "switches": false,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 5.2174,
+      "switches": true,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -10,
+      "switches": false,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.2,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -3.4783,
+      "switches": false,
+      "expectedTrueGain": 0
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -6.4444,
+      "switches": false,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": -1.3251,
+      "switches": false,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -22.7292,
+      "switches": false,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -14.6733,
+      "switches": false,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 5,
+      "switches": true,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 11.4286,
+      "switches": true,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -3.75,
+      "switches": false,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 4.2857,
+      "switches": true,
+      "expectedTrueGain": -6.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 0.5556,
+      "switches": true,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 5.9904,
+      "switches": true,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -10.2604,
+      "switches": false,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -2.8751,
+      "switches": false,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 5,
+      "switches": true,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 11.4286,
+      "switches": true,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -3.75,
+      "switches": false,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 4.2857,
+      "switches": true,
+      "expectedTrueGain": 0.5556
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 4.4444,
+      "switches": true,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 10.0546,
+      "switches": true,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -3.3333,
+      "switches": false,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 3.6794,
+      "switches": true,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 5,
+      "switches": true,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 11.4286,
+      "switches": true,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -3.75,
+      "switches": false,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.3,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 4.2857,
+      "switches": true,
+      "expectedTrueGain": 4.4444
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": -2.3889,
+      "switches": false,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 3.13,
+      "switches": true,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -16.3472,
+      "switches": false,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -7.6625,
+      "switches": false,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 10,
+      "switches": true,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 16.9231,
+      "switches": true,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 2.5,
+      "switches": true,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 11.1538,
+      "switches": true,
+      "expectedTrueGain": -2.3889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 4.8611,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 10.7202,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -4.4097,
+      "switches": false,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 3.552,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 10,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 16.9231,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 2.5,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 11.1538,
+      "switches": true,
+      "expectedTrueGain": 4.8611
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 8.8889,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 14.937,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 2.2222,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 9.7824,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 10,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 16.9231,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 2.5,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.4,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 11.1538,
+      "switches": true,
+      "expectedTrueGain": 8.8889
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 1.6667,
+      "switches": true,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 7.107,
+      "switches": true,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": -9.9653,
+      "switches": false,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": -1.4041,
+      "switches": false,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 15,
+      "switches": true,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 21.8182,
+      "switches": true,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 8.75,
+      "switches": true,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 1,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 17.2727,
+      "switches": true,
+      "expectedTrueGain": 1.6667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 9.1667,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 14.9424,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 1.441,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 9.2895,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 15,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 21.8182,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 8.75,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 3,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 17.2727,
+      "switches": true,
+      "expectedTrueGain": 9.1667
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 13.3333,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 19.2954,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 7.7778,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "bayes",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 15.2304,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 0,
+      "decisionUtility": 15,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 1,
+      "focal": 3,
+      "decisionUtility": 21.8182,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 0,
+      "decisionUtility": 8.75,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    },
+    {
+      "shareG2": 0.5,
+      "infoB": 8,
+      "agent": "naive",
+      "lossAversion": 2.25,
+      "focal": 3,
+      "decisionUtility": 17.2727,
+      "switches": true,
+      "expectedTrueGain": 13.3333
+    }
+  ]
+}

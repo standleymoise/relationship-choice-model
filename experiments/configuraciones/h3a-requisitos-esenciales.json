@@ -1,0 +1,11 @@
+{
+  "name": "h3a-requisitos-esenciales",
+  "hypothesis": "H3",
+  "description": "Variable independiente: umbral mínimo de los 2 factores esenciales (no compensatorio). Un candidato por debajo del umbral con probabilidad >= 0,5 queda excluido aunque el resto sea excelente.",
+  "base": { "seed": 103, "runs": 500, "periods": 40 },
+  "sweep": { "path": "essentialThreshold", "values": [20, 35, 45, 55, 65, 75] },
+  "series": [
+    { "label": "bayes", "override": { "agent": "bayes" } },
+    { "label": "naive", "override": { "agent": "naive" } }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "relationship-choice-model",
+  "version": "0.2.0",
+  "description": "Modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta (exploratorio, no validado empíricamente).",
+  "type": "commonjs",
+  "private": false,
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node scripts/run-tests.js",
+    "check": "node scripts/check.js",
+    "experiments": "node experiments/scripts/run-experiments.js",
+    "build": "node scripts/build-standalone.js",
+    "verify": "npm run check && npm test"
+  }
+}

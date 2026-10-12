@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modelo de elección de pareja — simulador exploratorio</title>
+<meta name="description" content="Simulador abierto y exploratorio de decisiones de cambio de pareja bajo información incompleta. Agentes ficticios; no evalúa personas ni predice relaciones.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="eyebrow">Modelo abierto · versión 0.2 · exploratorio</div>
+  <h1>Elegir pareja con información incompleta</h1>
+  <p>Una herramienta para explorar, con ecuaciones explícitas y agentes ficticios, cuándo comparar una relación conocida con una alternativa poco conocida puede llevar a decisiones que luego se lamentan, y cuándo no.</p>
+</header>
+<div class="wrap">
+  <div class="banner" role="note"><strong>Léase primero:</strong> el simulador no evalúa el valor de una persona, no determina una «pareja ideal» y no predice el éxito ni el fracaso de ninguna relación. Los agentes de la simulación son construcciones programadas, no observaciones de personas reales. Todo se calcula en tu navegador; no se envía ni se guarda nada.</div>
+
+  <nav role="tablist" aria-label="Secciones">
+    <button role="tab" id="tab-calc" aria-selected="true" aria-controls="calc" data-tab="calc">1. Calculadora de dos personas</button>
+    <button role="tab" id="tab-sim" aria-selected="false" aria-controls="sim" data-tab="sim">2. Simulación con agentes ficticios</button>
+    <button role="tab" id="tab-model" aria-selected="false" aria-controls="model" data-tab="model">3. Modelo</button>
+    <button role="tab" id="tab-limits" aria-selected="false" aria-controls="limits" data-tab="limits">4. Lo que NO demuestra</button>
+  </nav>
+
+  <section id="calc" class="tabpane active" role="tabpanel" aria-labelledby="tab-calc"></section>
+  <section id="sim" class="tabpane" role="tabpanel" aria-labelledby="tab-sim"></section>
+  <section id="model" class="tabpane" role="tabpanel" aria-labelledby="tab-model"></section>
+  <section id="limits" class="tabpane" role="tabpanel" aria-labelledby="tab-limits"></section>
+
+  <div class="footer" id="footer"></div>
+</div>
+<script src="../src/rng.js"></script>
+<script src="../src/model.js"></script>
+<script src="../src/simulation.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

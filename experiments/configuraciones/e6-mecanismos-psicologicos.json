@@ -1,0 +1,17 @@
+{
+  "name": "e6-mecanismos-psicologicos",
+  "hypothesis": "exploratorio",
+  "description": "Desglose por mecanismo. Pregunta: ¿qué supuesto genera cambios que empeoran el ajuste verdadero? Cada serie activa un conjunto de mecanismos sobre el mismo mundo aleatorio (misma semilla). Valores de los mecanismos: focal γ = 3, novedad ν = 10 puntos con decaimiento de 5 períodos, aversión a la pérdida λ = 2,25 (referencia de Tversky y Kahneman, 1992, usada aquí como punto de partida de diseño, no como estimación para parejas).",
+  "base": { "seed": 107, "runs": 1000, "periods": 40 },
+  "series": [
+    { "label": "bayes_puro", "override": { "agent": "bayes" } },
+    { "label": "naive_puro", "override": { "agent": "naive" } },
+    { "label": "bayes_focal", "override": { "agent": "bayes", "mechanisms": { "focal": 3 } } },
+    { "label": "naive_focal", "override": { "agent": "naive", "mechanisms": { "focal": 3 } } },
+    { "label": "bayes_novedad", "override": { "agent": "bayes", "mechanisms": { "novelty": 10 } } },
+    { "label": "naive_novedad", "override": { "agent": "naive", "mechanisms": { "novelty": 10 } } },
+    { "label": "bayes_focal_novedad", "override": { "agent": "bayes", "mechanisms": { "focal": 3, "novelty": 10 } } },
+    { "label": "naive_perdida", "override": { "agent": "naive", "mechanisms": { "lossAversion": 2.25 } } },
+    { "label": "naive_todo", "override": { "agent": "naive", "mechanisms": { "focal": 3, "novelty": 10, "lossAversion": 2.25 } } }
+  ]
+}

@@ -1,0 +1,32 @@
+name: Error
+description: Algo no funciona o un cálculo da un resultado incorrecto
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "No incluyas datos personales reales (tuyos ni de otras personas)."
+  - type: input
+    id: version
+    attributes:
+      label: Versión del modelo
+      description: Está en el pie del simulador y en package.json
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducirlo
+      description: Si es un cálculo, el caso mínimo con números y la semilla
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Qué esperabas y qué ocurrió
+    validations:
+      required: true
+  - type: input
+    id: entorno
+    attributes:
+      label: Entorno
+      description: Navegador o versión de Node.js, sistema operativo

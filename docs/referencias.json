@@ -1,0 +1,542 @@
+{
+  "generadoPor": "scripts/verificar-referencias.js lee este archivo; no inventar entradas. El estado 'por-verificar' pasa a 'verificada-crossref' solo si Crossref confirma título y año.",
+  "referencias": [
+    {
+      "id": "iyengar2000",
+      "authors": "Iyengar, S. S., & Lepper, M. R.",
+      "year": 2000,
+      "title": "When choice is demotivating: Can one desire too much of a good thing?",
+      "venue": "Journal of Personality and Social Psychology, 79(6), 995–1006",
+      "doi": "10.1037/0022-3514.79.6.995",
+      "topic": "sobrecarga",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "scheibehenne2010",
+      "authors": "Scheibehenne, B., Greifeneder, R., & Todd, P. M.",
+      "year": 2010,
+      "title": "Can there ever be too many options? A meta-analytic review of choice overload",
+      "venue": "Journal of Consumer Research, 37(3), 409–425",
+      "doi": "10.1086/651235",
+      "topic": "sobrecarga",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "chernev2015",
+      "authors": "Chernev, A., Böckenholt, U., & Goodman, J.",
+      "year": 2015,
+      "title": "Choice overload: A conceptual review and meta-analysis",
+      "venue": "Journal of Consumer Psychology, 25(2), 333–358 (en línea 2014)",
+      "doi": "10.1016/j.jcps.2014.08.002",
+      "topic": "sobrecarga",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "jacob2024",
+      "authors": "Jacob, B., Thomas, S., & Joseph, J.",
+      "year": 2024,
+      "title": "Over two decades of research on choice overload: An overview and research agenda",
+      "venue": "International Journal of Consumer Studies",
+      "doi": "10.1111/ijcs.13029",
+      "topic": "sobrecarga",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "dangelo2017",
+      "authors": "D'Angelo, J. D., & Toma, C. L.",
+      "year": 2017,
+      "title": "There are plenty of fish in the sea: The effects of choice overload and reversibility on online daters' satisfaction with selected partners",
+      "venue": "Media Psychology, 20(1) (en línea 2016)",
+      "doi": "10.1080/15213269.2015.1121827",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "pronk2020",
+      "authors": "Pronk, T. M., & Denissen, J. J. A.",
+      "year": 2020,
+      "title": "A rejection mind-set: Choice overload in online dating",
+      "venue": "Social Psychological and Personality Science, 11(3) (en línea 2019)",
+      "doi": "10.1177/1948550619866189",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "thomas2022",
+      "authors": "Thomas, M. F., Binder, A., & Matthes, J.",
+      "year": 2022,
+      "title": "The agony of partner choice: The effect of excessive partner availability on fear of being single, self-esteem, and partner choice overload",
+      "venue": "Computers in Human Behavior, 126 (en línea 2021)",
+      "doi": "10.1016/j.chb.2021.106977",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "lenton2010",
+      "authors": "Lenton, A. P., & Francesconi, M.",
+      "year": 2010,
+      "title": "How humans cognitively manage an abundance of mate options",
+      "venue": "Psychological Science, 21(4)",
+      "doi": "10.1177/0956797610364958",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "lenton2008",
+      "authors": "Lenton, A. P., Fasolo, B., & Todd, P. M.",
+      "year": 2008,
+      "title": "\"Shopping\" for a mate: Expected versus experienced preferences in online mate choice",
+      "venue": "IEEE Transactions on Professional Communication, 51(2)",
+      "doi": "10.1109/tpc.2008.2000342",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "finkel2012",
+      "authors": "Finkel, E. J., Eastwick, P. W., Karney, B. R., Reis, H. T., & Sprecher, S.",
+      "year": 2012,
+      "title": "Online dating: A critical analysis from the perspective of psychological science",
+      "venue": "Psychological Science in the Public Interest, 13(1)",
+      "doi": "10.1177/1529100612436522",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "hitsch2010",
+      "authors": "Hitsch, G. J., Hortaçsu, A., & Ariely, D.",
+      "year": 2010,
+      "title": "What makes you click? Mate preferences in online dating",
+      "venue": "Quantitative Marketing and Economics, 8",
+      "doi": "10.1007/s11129-010-9088-6",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "fisman2006",
+      "authors": "Fisman, R., Iyengar, S. S., Kamenica, E., & Simonson, I.",
+      "year": 2006,
+      "title": "Gender differences in mate selection: Evidence from a speed dating experiment",
+      "venue": "The Quarterly Journal of Economics, 121(2)",
+      "doi": "10.1162/qjec.2006.121.2.673",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "bruch2018",
+      "authors": "Bruch, E. E., & Newman, M. E. J.",
+      "year": 2018,
+      "title": "Aspirational pursuit of mates in online dating markets",
+      "venue": "Science Advances, 4(8)",
+      "doi": "10.1126/sciadv.aap9815",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "schwartz2002",
+      "authors": "Schwartz, B., Ward, A., Monterosso, J., Lyubomirsky, S., White, K., & Lehman, D. R.",
+      "year": 2002,
+      "title": "Maximizing versus satisficing: Happiness is a matter of choice",
+      "venue": "Journal of Personality and Social Psychology, 83(5)",
+      "doi": "10.1037/0022-3514.83.5.1178",
+      "topic": "satisfaccion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "simon1955",
+      "authors": "Simon, H. A.",
+      "year": 1955,
+      "title": "A behavioral model of rational choice",
+      "venue": "The Quarterly Journal of Economics, 69(1)",
+      "doi": "10.2307/1884852",
+      "topic": "satisfaccion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "stigler1961",
+      "authors": "Stigler, G. J.",
+      "year": 1961,
+      "title": "The economics of information",
+      "venue": "Journal of Political Economy, 69(3)",
+      "doi": "10.1086/258464",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "mccall1970",
+      "authors": "McCall, J. J.",
+      "year": 1970,
+      "title": "Economics of information and job search",
+      "venue": "The Quarterly Journal of Economics, 84(1)",
+      "doi": "10.2307/1879403",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "gilbert1966",
+      "authors": "Gilbert, J. P., & Mosteller, F.",
+      "year": 1966,
+      "title": "Recognizing the maximum of a sequence",
+      "venue": "Journal of the American Statistical Association, 61(313)",
+      "doi": "10.1080/01621459.1966.10502008",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "ferguson1989",
+      "authors": "Ferguson, T. S.",
+      "year": 1989,
+      "title": "Who solved the secretary problem?",
+      "venue": "Statistical Science, 4(3)",
+      "doi": "10.1214/ss/1177012493",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "miller1998",
+      "authors": "Miller, G. F., & Todd, P. M.",
+      "year": 1998,
+      "title": "Mate choice turns cognitive",
+      "venue": "Trends in Cognitive Sciences, 2(5)",
+      "doi": "10.1016/s1364-6613(98)01169-3",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "todd2000",
+      "authors": "Todd, P. M., & Gigerenzer, G.",
+      "year": 2000,
+      "title": "Précis of Simple heuristics that make us smart",
+      "venue": "Behavioral and Brain Sciences, 23(5)",
+      "doi": "10.1017/S0140525X00003447",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "gigerenzer1996",
+      "authors": "Gigerenzer, G., & Goldstein, D. G.",
+      "year": 1996,
+      "title": "Reasoning the fast and frugal way: Models of bounded rationality",
+      "venue": "Psychological Review, 103(4)",
+      "doi": "10.1037/0033-295x.103.4.650",
+      "topic": "busqueda",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "rusbult1980",
+      "authors": "Rusbult, C. E.",
+      "year": 1980,
+      "title": "Commitment and satisfaction in romantic associations: A test of the investment model",
+      "venue": "Journal of Experimental Social Psychology, 16(2)",
+      "doi": "10.1016/0022-1031(80)90007-4",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "rusbult1998",
+      "authors": "Rusbult, C. E., Martz, J. M., & Agnew, C. R.",
+      "year": 1998,
+      "title": "The Investment Model Scale: Measuring commitment level, satisfaction level, quality of alternatives, and investment size",
+      "venue": "Personal Relationships, 5(4)",
+      "doi": "10.1111/j.1475-6811.1998.tb00177.x",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "le2003",
+      "authors": "Le, B., & Agnew, C. R.",
+      "year": 2003,
+      "title": "Commitment and its theorized determinants: A meta-analysis of the Investment Model",
+      "venue": "Personal Relationships, 10(1)",
+      "doi": "10.1111/1475-6811.00035",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "tran2019",
+      "authors": "Tran, J., Judge, M., & Kashima, E. S.",
+      "year": 2019,
+      "title": "Commitment in relationships: An updated meta-analysis of the Investment Model",
+      "venue": "Personal Relationships, 26(2)",
+      "doi": "10.1111/pere.12268",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "johnson1989",
+      "authors": "Johnson, D. J., & Rusbult, C. E.",
+      "year": 1989,
+      "title": "Resisting temptation: Devaluation of alternative partners as a means of maintaining commitment in close relationships",
+      "venue": "Journal of Personality and Social Psychology, 57(6)",
+      "doi": "10.1037/0022-3514.57.6.967",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "mcnulty2018",
+      "authors": "McNulty, J. K., Meltzer, A. L., Makhanova, A., & Maner, J. K.",
+      "year": 2018,
+      "title": "Attentional and evaluative biases help people maintain relationships by avoiding infidelity",
+      "venue": "Journal of Personality and Social Psychology, 115(4)",
+      "doi": "10.1037/pspi0000127",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "spielmann2013",
+      "authors": "Spielmann, S. S., MacDonald, G., Joel, S., & Impett, E. A.",
+      "year": 2013,
+      "title": "Settling for less out of fear of being single",
+      "venue": "Journal of Personality and Social Psychology, 105(6)",
+      "doi": "10.1037/a0034628",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "kahneman1979",
+      "authors": "Kahneman, D., & Tversky, A.",
+      "year": 1979,
+      "title": "Prospect theory: An analysis of decision under risk",
+      "venue": "Econometrica, 47(2)",
+      "doi": "10.2307/1914185",
+      "topic": "decision",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "tversky1992",
+      "authors": "Tversky, A., & Kahneman, D.",
+      "year": 1992,
+      "title": "Advances in prospect theory: Cumulative representation of uncertainty",
+      "venue": "Journal of Risk and Uncertainty, 5",
+      "doi": "10.1007/BF00122574",
+      "topic": "decision",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "tversky1972",
+      "authors": "Tversky, A.",
+      "year": 1972,
+      "title": "Elimination by aspects: A theory of choice",
+      "venue": "Psychological Review, 79(4)",
+      "doi": "10.1037/h0032955",
+      "topic": "decision",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "smith2006",
+      "authors": "Smith, J. E., & Winkler, R. L.",
+      "year": 2006,
+      "title": "The optimizer's curse: Skepticism and postdecision surprise in decision analysis",
+      "venue": "Management Science, 52(3)",
+      "doi": "10.1287/mnsc.1050.0451",
+      "topic": "decision",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "berger1975",
+      "authors": "Berger, C. R., & Calabrese, R. J.",
+      "year": 1975,
+      "title": "Some explorations in initial interaction and beyond: Toward a developmental theory of interpersonal communication",
+      "venue": "Human Communication Research, 1(2)",
+      "doi": "10.1111/j.1468-2958.1975.tb00258.x",
+      "topic": "incertidumbre",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "wilson2000",
+      "authors": "Wilson, T. D., Wheatley, T., Meyers, J. M., Gilbert, D. T., & Axsom, D.",
+      "year": 2000,
+      "title": "Focalism: A source of durability bias in affective forecasting",
+      "venue": "Journal of Personality and Social Psychology, 78(5)",
+      "doi": "10.1037/0022-3514.78.5.821",
+      "topic": "adaptacion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "wilson2005",
+      "authors": "Wilson, T. D., & Gilbert, D. T.",
+      "year": 2005,
+      "title": "Affective forecasting: Knowing what to want",
+      "venue": "Current Directions in Psychological Science, 14(3)",
+      "doi": "10.1111/j.0963-7214.2005.00355.x",
+      "topic": "adaptacion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "lucas2003",
+      "authors": "Lucas, R. E., Clark, A. E., Georgellis, Y., & Diener, E.",
+      "year": 2003,
+      "title": "Reexamining adaptation and the set point model of happiness: Reactions to changes in marital status",
+      "venue": "Journal of Personality and Social Psychology, 84(3)",
+      "doi": "10.1037/0022-3514.84.3.527",
+      "topic": "adaptacion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "lyubomirsky1997",
+      "authors": "Lyubomirsky, S., & Ross, L.",
+      "year": 1997,
+      "title": "Hedonic consequences of social comparison: A contrast of happy and unhappy people",
+      "venue": "Journal of Personality and Social Psychology, 73(6)",
+      "doi": "10.1037/0022-3514.73.6.1141",
+      "topic": "adaptacion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "festinger1954",
+      "authors": "Festinger, L.",
+      "year": 1954,
+      "title": "A theory of social comparison processes",
+      "venue": "Human Relations, 7(2)",
+      "doi": "10.1177/001872675400700202",
+      "topic": "adaptacion",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "eastwick2008",
+      "authors": "Eastwick, P. W., & Finkel, E. J.",
+      "year": 2008,
+      "title": "Sex differences in mate preferences revisited: Do people know what they initially desire in a romantic partner?",
+      "venue": "Journal of Personality and Social Psychology, 94(2)",
+      "doi": "10.1037/0022-3514.94.2.245",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "todd2007",
+      "authors": "Todd, P. M., Penke, L., Fasolo, B., & Lenton, A. P.",
+      "year": 2007,
+      "title": "Different cognitive processes underlie human mate choices and mate preferences",
+      "venue": "Proceedings of the National Academy of Sciences, 104(38)",
+      "doi": "10.1073/pnas.0705290104",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "joel2014",
+      "authors": "Joel, S., Teper, R., & MacDonald, G.",
+      "year": 2014,
+      "title": "People overestimate their willingness to reject potential romantic partners by overlooking their concern for other people",
+      "venue": "Psychological Science, 25(12)",
+      "doi": "10.1177/0956797614552828",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "joel2017",
+      "authors": "Joel, S., Eastwick, P. W., & Finkel, E. J.",
+      "year": 2017,
+      "title": "Is romantic desire predictable? Machine learning applied to initial romantic attraction",
+      "venue": "Psychological Science, 28(10)",
+      "doi": "10.1177/0956797617714580",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "joel2020",
+      "authors": "Joel, S., Eastwick, P. W., Allison, C. J., et al.",
+      "year": 2020,
+      "title": "Machine learning uncovers the most robust self-report predictors of relationship quality across 43 longitudinal couples studies",
+      "venue": "Proceedings of the National Academy of Sciences, 117(32)",
+      "doi": "10.1073/pnas.1917036117",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "grimm2010",
+      "authors": "Grimm, V., Berger, U., DeAngelis, D. L., Polhill, J. G., Giske, J., & Railsback, S. F.",
+      "year": 2010,
+      "title": "The ODD protocol: A review and first update",
+      "venue": "Ecological Modelling, 221(23)",
+      "doi": "10.1016/j.ecolmodel.2010.08.019",
+      "topic": "metodologia",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "conroybeam2024",
+      "authors": "Conroy-Beam, D.",
+      "year": 2024,
+      "title": "Mating with multi-armed bandits: Reinforcement learning models of human mate search",
+      "venue": "Open Mind",
+      "doi": "10.1162/opmi_a_00156",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "simao2002",
+      "authors": "Simão, J., & Todd, P. M.",
+      "year": 2002,
+      "title": "Modeling mate choice in monogamous mating systems with courtship",
+      "venue": "Adaptive Behavior, 10(2), 113–136",
+      "doi": "10.1177/1059712302010002003",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "jacobsbao2013",
+      "authors": "Jacobs Bao, K., & Lyubomirsky, S.",
+      "year": 2013,
+      "title": "Making it last: Combating hedonic adaptation in romantic relationships",
+      "venue": "The Journal of Positive Psychology, 8(3), 196–206",
+      "doi": "10.1080/17439760.2013.777765",
+      "topic": "adaptacion",
+      "status": "verificada-crossref"
+    }
+  ],
+  "pendientes": [
+    {
+      "id": "frederick1999",
+      "authors": "Frederick, S., & Loewenstein, G.",
+      "year": 1999,
+      "title": "Hedonic adaptation",
+      "venue": "En D. Kahneman, E. Diener & N. Schwarz (Eds.), Well-being: The foundations of hedonic psychology. Russell Sage Foundation",
+      "doi": null,
+      "topic": "adaptacion",
+      "status": "pendiente-de-verificacion",
+      "note": "Capítulo de libro; no se localizó un DOI en Crossref. Citar solo tras revisar el libro."
+    },
+    {
+      "id": "brickman1971",
+      "authors": "Brickman, P., & Campbell, D. T.",
+      "year": 1971,
+      "title": "Hedonic relativism and planning the good society",
+      "venue": "En M. H. Appley (Ed.), Adaptation-level theory. Academic Press",
+      "doi": null,
+      "topic": "adaptacion",
+      "status": "pendiente-de-verificacion",
+      "note": "Capítulo de libro; sin DOI localizado."
+    },
+    {
+      "id": "todd1999",
+      "authors": "Todd, P. M., & Miller, G. F.",
+      "year": 1999,
+      "title": "From pride and prejudice to persuasion: Satisficing in mate search",
+      "venue": "En G. Gigerenzer, P. M. Todd & ABC Research Group, Simple heuristics that make us smart. Oxford University Press",
+      "doi": null,
+      "topic": "busqueda",
+      "status": "pendiente-de-verificacion",
+      "note": "Capítulo de libro; la búsqueda en Crossref no lo devolvió. Verificar en el libro antes de citarlo."
+    },
+    {
+      "id": "seale1997",
+      "authors": "Seale, D. A., & Rapoport, A.",
+      "year": 1997,
+      "title": "Sequential decision making with relative ranks: An experimental investigation of the \"secretary problem\"",
+      "venue": "Organizational Behavior and Human Decision Processes",
+      "doi": null,
+      "topic": "busqueda",
+      "status": "pendiente-de-verificacion",
+      "note": "El DOI que se probó no existe en Crossref; no se usa hasta comprobarlo."
+    },
+    {
+      "id": "roets2012",
+      "authors": "Roets, A., Schwartz, B., & Guan, Y.",
+      "year": 2012,
+      "title": "The tyranny of choice: A cross-cultural investigation of maximizing-satisficing effects on well-being",
+      "venue": "Judgment and Decision Making, 7(6)",
+      "doi": null,
+      "topic": "satisfaccion",
+      "status": "pendiente-de-verificacion",
+      "note": "Apareció en un buscador académico; la revista no asigna DOI. Verificar en la página de la revista."
+    }
+  ]
+}

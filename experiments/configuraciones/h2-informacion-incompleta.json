@@ -1,0 +1,11 @@
+{
+  "name": "h2-informacion-incompleta",
+  "hypothesis": "H2",
+  "description": "Variable independiente: unidades de información obtenidas al conocer a cada candidato (firstImpression). La pareja actual parte con 8 unidades de información.",
+  "base": { "seed": 102, "runs": 500, "periods": 40 },
+  "sweep": { "path": "firstImpression", "values": [1, 2, 3, 5, 8, 12] },
+  "series": [
+    { "label": "bayes", "override": { "agent": "bayes" } },
+    { "label": "naive", "override": { "agent": "naive" } }
+  ]
+}

@@ -1,6 +1,6 @@
 # Auditoría del simulador previo
 
-**Archivo auditado:** `simulador_compatibilidad_pareja.html` (327 líneas, 32 849 bytes, versión autodenominada «experimental 0.1»).
+**Archivo auditado:** `simulador_compatibilidad_pareja.html` (327 líneas, 32 849 bytes, versión autodenominada «experimental 0.1»). Se conserva sin modificar en `legacy/simulador_v0.1_original.html`.
 **Método:** lectura completa del código más comprobaciones numéricas ejecutadas con Node 24 sobre las funciones y datos reales del archivo (extraídos sin modificarlos). Las cifras citadas abajo salen de esas ejecuciones.
 **Alcance:** esta auditoría describe lo que el código hace, no si el modelo es correcto científicamente.
 
@@ -62,3 +62,29 @@ Son discrepancias entre lo que el programa afirma y lo que hace.
 3. La «paradoja» debe aparecer como un **resultado medible** (frecuencia de cambios que empeoran el bienestar real) que puede salir cero o negativo, no como una curva dibujada.
 4. Los datos de ejemplo se rotulan como inventados.
 5. Se conservan: la interfaz por pestañas, la cautela de los textos y la ejecución local sin servidor.
+
+## 6. Estado de las correcciones en la versión 0.2.0
+
+| Hallazgo | Estado | Dónde |
+|---|---|---|
+| C1 límites personales decorativos | Corregido: los esenciales son un filtro no compensatorio (`P(x ≥ θ | datos) ≥ p_min`) | `src/model.js`, `evaluatePair`; prueba «requisito esencial no compensatorio bloquea el cambio» |
+| C2 esenciales ≠ deseables | Corregido: se separan en el cálculo; ya no hay una métrica «Valores esenciales» que mezcle categorías | `docs/modelo-matematico.md` §3 y §5 |
+| C3 confianza que no hace nada | Corregido: la información (`n`) determina la incertidumbre y el peso de los datos | `posterior`, calculadora |
+| C4 desconocido = 50 | Corregido: factor desconocido conserva la previa y su incertidumbre | prueba «un factor desconocido conserva la previa» |
+| C5 slider de incertidumbre contradictorio | Eliminado: reemplazado por información explícita y aspiración | — |
+| C6 la pestaña 80–20 no modelaba la paradoja | Reemplazado: simulación de agentes y escenario 80–20 determinista donde la proporción es un parámetro | `src/simulation.js`, `experiments/` |
+| C7 curva que presupone el resultado | Eliminada; los gráficos muestran resultados de simulación con intervalos | `simulator/app.js` |
+| C8 datos de ejemplo sin declarar | Declarados como ilustrativos en pantalla y en la documentación | calculadora, `docs/` |
+| N1 `innerHTML` con texto del usuario | Corregido: la interfaz construye el DOM con `textContent`; no hay campos de nombre | `simulator/app.js` |
+| N2 estado ≠ pantalla | Corregido: los campos inválidos se marcan y no se calcula hasta corregirlos | `render()` |
+| N3 pesos 0 → 0/100 | Corregido: `null` y mensaje explícito | prueba «pesos todos 0 → null» |
+| N4 CSV no reproducible | Corregido: JSON/CSV con versión, semilla, parámetros y métrica | `experiments/results/`, `simulator/app.js` |
+| N5 «lo que más pesa» | Corregido: ahora muestra `peso × (B − A)` por factor | calculadora |
+| N6 advertencias con umbrales arbitrarios | Eliminadas | — |
+| N7 clase CSS por texto | Eliminado | — |
+| N8 información desigual ignorada | Corregido: es el centro del modelo | `docs/modelo-matematico.md` §4 |
+| N9 44 factores solapados | Reducido a 8 factores de ejemplo (editables solo en valores y pesos) | calculadora |
+| N10 sin pruebas ni semillas | Corregido: 50 pruebas y semilla explícita | `tests/`, `src/rng.js` |
+| N11 accesibilidad | Mejorada: roles `tab`/`tabpanel`, navegación con flechas, etiquetas, tabla junto a cada gráfico | `simulator/` |
+
+Opcionales no abordados: separar la moneda configurable (el coste monetario es adimensional ahora), modo oscuro configurable por el usuario (se adapta a la preferencia del sistema).

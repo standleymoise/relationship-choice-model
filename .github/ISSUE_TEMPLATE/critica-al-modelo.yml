@@ -1,0 +1,23 @@
+name: Crítica al modelo
+description: Un supuesto, una ecuación o una conclusión que debería revisarse
+labels: ["modelo"]
+body:
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué parte del modelo cuestionás
+      description: Archivo y sección (por ejemplo docs/modelo-matematico.md §6)
+    validations:
+      required: true
+  - type: textarea
+    id: porque
+    attributes:
+      label: Por qué
+      description: Argumento, antecedentes o un contraejemplo
+    validations:
+      required: true
+  - type: textarea
+    id: efecto
+    attributes:
+      label: Qué cambiaría en los resultados
+      description: Idealmente, una configuración (JSON) que lo muestre

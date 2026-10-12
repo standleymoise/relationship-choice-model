@@ -1,0 +1,1374 @@
+<!-- Archivo generado por scripts/build-standalone.js: no editar a mano. -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modelo de elección de pareja — simulador exploratorio</title>
+<meta name="description" content="Simulador abierto y exploratorio de decisiones de cambio de pareja bajo información incompleta. Agentes ficticios; no evalúa personas ni predice relaciones.">
+<style>
+:root{
+  --bg:#f5f7fb;--card:#fff;--ink:#17243a;--muted:#5d6b82;--line:#dfe5ee;--accent:#087f8c;--accent-soft:#dff5f3;
+  --warn:#8a5206;--warn-bg:#fff3dc;--bad:#a32e3d;--bad-bg:#fff0f1;--info:#274681;--info-bg:#eaf0ff;
+  --a:#3659a8;--b:#c27a16;--shadow:0 6px 20px rgba(30,50,85,.07)
+}
+:root[data-theme="dark"]{
+  --bg:#0f1624;--card:#17202f;--ink:#e6ecf5;--muted:#9aa8bd;--line:#2a364a;--accent:#38b2bf;--accent-soft:#12383d;
+  --warn:#f0c27a;--warn-bg:#3a2c12;--bad:#ff9aa6;--bad-bg:#3b1a20;--info:#a9c1ff;--info-bg:#1b2742;--a:#7da2ff;--b:#f2b35c;--shadow:none
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1624;--card:#17202f;--ink:#e6ecf5;--muted:#9aa8bd;--line:#2a364a;--accent:#38b2bf;--accent-soft:#12383d;
+    --warn:#f0c27a;--warn-bg:#3a2c12;--bad:#ff9aa6;--bad-bg:#3b1a20;--info:#a9c1ff;--info-bg:#1b2742;--a:#7da2ff;--b:#f2b35c;--shadow:none
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:linear-gradient(120deg,#132744,#1b5268);color:#fff;padding:26px max(16px,calc((100% - 1180px)/2)) 22px}
+header .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#bce5e8;font-weight:800}
+header h1{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:6px 0 8px}
+header p{margin:0;max-width:860px;color:#dce9f1}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+.banner{background:var(--warn-bg);color:var(--warn);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px;margin-bottom:14px}
+nav[role=tablist]{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+nav button,.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 14px;font:inherit;font-weight:700;cursor:pointer}
+nav button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:focus-visible,nav button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tabpane{display:none}.tabpane.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);min-width:0}
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s7{grid-column:span 7}.s6{grid-column:span 6}.s5{grid-column:span 5}.s4{grid-column:span 4}
+h2{font-size:19px;margin:0 0 6px}h3{font-size:15px;margin:14px 0 6px}
+.sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+label.l{display:block;font-size:12px;color:var(--muted);margin:10px 0 3px}
+input[type=number],select,input[type=text]{width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+input.invalid{border-color:var(--bad);background:var(--bad-bg)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:6px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{font-size:12px;color:var(--muted);font-weight:700}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.ftable input[type=number]{width:74px;padding:5px 6px}
+.ftable .kind{font-size:11px;color:var(--muted)}
+.scroll{overflow-x:auto}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.metric{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px}
+.metric b{display:block;font-size:22px;letter-spacing:-.02em}.metric span{font-size:12px;color:var(--muted)}
+.notice{padding:10px 12px;border-radius:10px;background:var(--info-bg);color:var(--info);font-size:13px;margin:8px 0}
+.notice.warn{background:var(--warn-bg);color:var(--warn)}.notice.bad{background:var(--bad-bg);color:var(--bad)}
+.bar{height:9px;background:var(--line);border-radius:99px;overflow:hidden}
+.contrib{display:grid;grid-template-columns:minmax(0,1fr) 120px 56px;gap:8px;align-items:center;font-size:13px;margin:5px 0}
+.contrib .track{height:10px;position:relative;background:var(--line);border-radius:99px}
+.contrib .fill{position:absolute;top:0;height:100%;border-radius:99px}
+.contrib .mid{position:absolute;left:50%;top:-2px;width:1px;height:14px;background:var(--muted)}
+canvas{width:100%;height:320px;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+code,pre{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;overflow-x:auto}
+.footer{font-size:12px;color:var(--muted);margin-top:22px}
+ul.tight li{margin:3px 0}
+@media (max-width:860px){.s8,.s7,.s6,.s5,.s4{grid-column:span 12}.contrib{grid-template-columns:minmax(0,1fr) 80px 50px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Modelo abierto · versión 0.2 · exploratorio</div>
+  <h1>Elegir pareja con información incompleta</h1>
+  <p>Una herramienta para explorar, con ecuaciones explícitas y agentes ficticios, cuándo comparar una relación conocida con una alternativa poco conocida puede llevar a decisiones que luego se lamentan, y cuándo no.</p>
+</header>
+<div class="wrap">
+  <div class="banner" role="note"><strong>Léase primero:</strong> el simulador no evalúa el valor de una persona, no determina una «pareja ideal» y no predice el éxito ni el fracaso de ninguna relación. Los agentes de la simulación son construcciones programadas, no observaciones de personas reales. Todo se calcula en tu navegador; no se envía ni se guarda nada.</div>
+
+  <nav role="tablist" aria-label="Secciones">
+    <button role="tab" id="tab-calc" aria-selected="true" aria-controls="calc" data-tab="calc">1. Calculadora de dos personas</button>
+    <button role="tab" id="tab-sim" aria-selected="false" aria-controls="sim" data-tab="sim">2. Simulación con agentes ficticios</button>
+    <button role="tab" id="tab-model" aria-selected="false" aria-controls="model" data-tab="model">3. Modelo</button>
+    <button role="tab" id="tab-limits" aria-selected="false" aria-controls="limits" data-tab="limits">4. Lo que NO demuestra</button>
+  </nav>
+
+  <section id="calc" class="tabpane active" role="tabpanel" aria-labelledby="tab-calc"></section>
+  <section id="sim" class="tabpane" role="tabpanel" aria-labelledby="tab-sim"></section>
+  <section id="model" class="tabpane" role="tabpanel" aria-labelledby="tab-model"></section>
+  <section id="limits" class="tabpane" role="tabpanel" aria-labelledby="tab-limits"></section>
+
+  <div class="footer" id="footer"></div>
+</div>
+<script>
+/*
+ * rng.js — generador pseudoaleatorio con semilla explícita.
+ *
+ * Cada flujo se deriva de una lista de "partes" (semilla base, índice de corrida,
+ * identificador de candidato...). Dos flujos con las mismas partes producen
+ * exactamente la misma secuencia, sin importar en qué orden se ejecuten.
+ * No es criptográfico; sirve solo para simulación reproducible.
+ */
+(function (root) {
+  'use strict';
+
+  /** Hash de 32 bits (FNV-1a + mezcla final de MurmurHash3) de una lista de partes. */
+  function hashSeed(parts) {
+    var s = parts.map(String).join('|');
+    var h = 0x811c9dc5;
+    for (var i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 0x01000193);
+    }
+    h ^= h >>> 16;
+    h = Math.imul(h, 0x85ebca6b);
+    h ^= h >>> 13;
+    h = Math.imul(h, 0xc2b2ae35);
+    h ^= h >>> 16;
+    return h >>> 0;
+  }
+
+  /** mulberry32: generador uniforme en [0, 1) de 32 bits de estado. */
+  function mulberry32(a) {
+    return function () {
+      a = (a + 0x6d2b79f5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  /**
+   * Crea un flujo aleatorio independiente a partir de una lista de partes.
+   * @param {Array} parts p. ej. [semilla, 'corrida', 7, 'candidato', 3]
+   * @returns {{uniform: function(): number, normal: function(): number}}
+   */
+  function createRng(parts) {
+    var uniform = mulberry32(hashSeed(parts));
+    var spare = null;
+    function normal() {
+      // Box–Muller, aprovechando las dos salidas.
+      if (spare !== null) {
+        var s = spare;
+        spare = null;
+        return s;
+      }
+      var a = uniform();
+      var b = uniform();
+      if (a < 1e-300) a = 1e-300;
+      var r = Math.sqrt(-2 * Math.log(a));
+      var theta = 2 * Math.PI * b;
+      spare = r * Math.sin(theta);
+      return r * Math.cos(theta);
+    }
+    return { uniform: uniform, normal: normal };
+  }
+
+  var api = { hashSeed: hashSeed, createRng: createRng };
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = api;
+  } else {
+    root.RCM = root.RCM || {};
+    root.RCM.rng = api;
+  }
+})(typeof self !== 'undefined' ? self : this);
+</script>
+<script>
+/*
+ * model.js — funciones matemáticas puras del modelo (versión 0.2).
+ *
+ * Todas las funciones son deterministas y no tocan el DOM. Las ecuaciones
+ * correspondientes están en docs/modelo-matematico.md. Los parámetros y las
+ * reglas de decisión son SUPUESTOS DE DISEÑO, no leyes psicológicas.
+ */
+(function (root) {
+  'use strict';
+
+  var SQRT2 = Math.sqrt(2);
+  var SQRT_2PI = Math.sqrt(2 * Math.PI);
+
+  // ---------- Distribución normal ----------
+
+  function normalPdf(x) {
+    return Math.exp(-0.5 * x * x) / SQRT_2PI;
+  }
+
+  /** erfc(x) para x >= 0: serie de Taylor de erf si x < 3, fracción continua si no. */
+  function erfcPositive(x) {
+    if (x < 3) {
+      var sum = x;
+      var term = x;
+      for (var n = 1; n < 80; n++) {
+        term *= (-x * x) / n;
+        var add = term / (2 * n + 1);
+        sum += add;
+        if (Math.abs(add) < 1e-17 * Math.abs(sum)) break;
+      }
+      return 1 - (2 / Math.sqrt(Math.PI)) * sum;
+    }
+    var f = 0;
+    for (var k = 60; k >= 1; k--) f = (k / 2) / (x + f);
+    return Math.exp(-x * x) / Math.sqrt(Math.PI) / (x + f);
+  }
+
+  /** Función de distribución acumulada de la normal estándar. */
+  function normalCdf(x) {
+    if (x === Infinity) return 1;
+    if (x === -Infinity) return 0;
+    var z = x / SQRT2;
+    return z >= 0 ? 1 - 0.5 * erfcPositive(z) : 0.5 * erfcPositive(-z);
+  }
+
+  /**
+   * Valor esperado del máximo de N variables N(0,1) independientes:
+   *   E[max] = ∫ x · N · φ(x) · Φ(x)^(N-1) dx   (integración de Simpson).
+   */
+  function expectedMaxStdNormal(N) {
+    if (!Number.isInteger(N) || N < 1) throw new RangeError('N debe ser un entero >= 1');
+    if (N === 1) return 0;
+    var a = -10;
+    var b = 10;
+    var steps = 20000; // par
+    var h = (b - a) / steps;
+    function f(x) {
+      return x * N * normalPdf(x) * Math.pow(normalCdf(x), N - 1);
+    }
+    var s = f(a) + f(b);
+    for (var i = 1; i < steps; i++) s += f(a + i * h) * (i % 2 === 0 ? 2 : 4);
+    return (s * h) / 3;
+  }
+
+  // ---------- Pesos y utilidad ----------
+
+  /**
+   * Normaliza pesos no negativos para que sumen 1.
+   * Devuelve null si la suma es 0 (utilidad indefinida), no un vector de ceros.
+   */
+  function normalizeWeights(weights) {
+    var clean = weights.map(function (w) {
+      return Number.isFinite(w) && w > 0 ? w : 0;
+    });
+    var s = clean.reduce(function (a, b) { return a + b; }, 0);
+    if (!(s > 0)) return null;
+    return clean.map(function (w) { return w / s; });
+  }
+
+  /** U = Σ wᵢ·xᵢ con pesos normalizados. Devuelve null si los pesos son indefinidos. */
+  function weightedUtility(values, weights) {
+    var w = normalizeWeights(weights);
+    if (!w) return null;
+    if (w.length !== values.length) throw new RangeError('values y weights deben tener igual longitud');
+    var u = 0;
+    for (var i = 0; i < w.length; i++) u += w[i] * values[i];
+    return u;
+  }
+
+  // ---------- Información e incertidumbre (normal–normal) ----------
+
+  /**
+   * Posterior de un valor verdadero x ~ N(priorMean, priorSd²) tras n observaciones
+   * y_k = x + ε_k, ε_k ~ N(0, obsSd²), cuya media muestral es obsMean.
+   * Con n = 0 devuelve la previa (desconocido ≠ neutro: se conserva la incertidumbre).
+   *   precisión posterior = 1/priorSd² + n/obsSd²
+   *   media posterior     = (priorMean/priorSd² + n·obsMean/obsSd²) / precisión posterior
+   */
+  function posterior(priorMean, priorSd, obsSd, n, obsMean) {
+    if (!(priorSd > 0) || !(obsSd > 0)) throw new RangeError('priorSd y obsSd deben ser > 0');
+    if (!(n >= 0)) throw new RangeError('n debe ser >= 0');
+    var tauPrior = 1 / (priorSd * priorSd);
+    var tauObs = n / (obsSd * obsSd);
+    var tau = tauPrior + tauObs;
+    var mean = n === 0 ? priorMean : (priorMean * tauPrior + obsMean * tauObs) / tau;
+    return { mean: mean, sd: Math.sqrt(1 / tau), reliability: tauObs / tau };
+  }
+
+  /** P(x ≥ umbral) bajo N(mean, sd²). Con sd = 0 es 0 o 1. */
+  function probAtLeast(mean, sd, threshold) {
+    if (sd === 0) return mean >= threshold ? 1 : 0;
+    return 1 - normalCdf((threshold - mean) / sd);
+  }
+
+  // ---------- Expectativas y coste de búsqueda (valor de reserva) ----------
+
+  /**
+   * Valor de reserva w* de un buscador secuencial con coste c por candidato y
+   * valores W ~ N(mean, sd²): E[(W − w*)⁺] = c. (Stigler 1961; McCall 1970.)
+   * Es un vínculo teórico entre "cuánto cuesta buscar" y "cuánto exijo".
+   */
+  function reservationValue(cost, mean, sd) {
+    if (!(cost > 0)) throw new RangeError('cost debe ser > 0');
+    if (!(sd > 0)) throw new RangeError('sd debe ser > 0');
+    function excess(z) { // E[(Z − z)⁺] para Z ~ N(0,1)
+      return normalPdf(z) - z * (1 - normalCdf(z));
+    }
+    var target = cost / sd;
+    var lo = -12;
+    var hi = 12;
+    for (var i = 0; i < 200; i++) {
+      var mid = (lo + hi) / 2;
+      if (excess(mid) > target) lo = mid; else hi = mid; // excess decrece con z
+    }
+    return mean + sd * ((lo + hi) / 2);
+  }
+
+  // ---------- Atención focal y decisión de cambio ----------
+
+  /**
+   * Pesos de atención: los factores en los que la opción actual queda por debajo
+   * de la aspiración reciben más peso (γ = 0 → sin efecto). El MISMO vector se
+   * aplica después a ambas personas, para no puntuar con criterios distintos.
+   *   wᵢ' ∝ wᵢ · (1 + γ · max(0, aspiración − mᵢ,actual) / 100)
+   */
+  function focalWeights(weights, currentPerceived, aspiration, gamma) {
+    var w = normalizeWeights(weights);
+    if (!w) return null;
+    if (!(gamma > 0)) return w;
+    var raw = w.map(function (wi, i) {
+      return wi * (1 + (gamma * Math.max(0, aspiration - currentPerceived[i])) / 100);
+    });
+    return normalizeWeights(raw);
+  }
+
+  /**
+   * Utilidad de cambio con aversión a la pérdida (λ ≥ 1 pondera más las pérdidas):
+   *   G = Σ wᵢ·max(mᵢ,B − mᵢ,A, 0)     L = Σ wᵢ·max(mᵢ,A − mᵢ,B, 0)
+   *   neto = G − λ·L + novedad
+   * Con λ = 1 y novedad = 0 equivale a U_B − U_A.
+   */
+  function switchUtility(weights, perceivedA, perceivedB, lambda, noveltyDiff) {
+    var gain = 0;
+    var loss = 0;
+    for (var i = 0; i < weights.length; i++) {
+      var d = perceivedB[i] - perceivedA[i];
+      if (d > 0) gain += weights[i] * d; else loss += weights[i] * -d;
+    }
+    var nov = noveltyDiff || 0;
+    return { gain: gain, loss: loss, net: gain - lambda * loss + nov };
+  }
+
+
+  // ---------- Comparación de dos personas (calculadora) ----------
+
+  /**
+   * Evalúa a una persona A (actual) y a una B (nueva) con el MISMO criterio.
+   * Cada lado aporta valores observados por factor, si se conocen, y unidades de información n.
+   * Un factor desconocido conserva la previa (media y desvío de la población): no se trata como "50 observado".
+   *
+   * @param {object} p
+   * @param {number[]} p.weights importancias (cualquier escala, >= 0)
+   * @param {number[]} p.essential índices de los factores esenciales
+   * @param {number} p.threshold umbral mínimo para esenciales; p.minProb probabilidad mínima exigida
+   * @param {{obs:number[], known:boolean[], n:number}} p.A  p.B
+   * @param {'bayes'|'naive'} p.agent
+   * @param {{mean:number, sd:number}} p.prior  p.obsSd
+   * @param {number} p.gamma foco, p.lambda aversión a la pérdida, p.aspiration, p.switchCost, p.noveltyDiff
+   */
+  function evaluatePair(p) {
+    var w = normalizeWeights(p.weights);
+    if (!w) return { error: 'Todos los pesos son 0: la utilidad es indefinida.' };
+    var K = w.length;
+    function side(s) {
+      var m = [];
+      var sd = [];
+      for (var i = 0; i < K; i++) {
+        var known = s.known[i] && s.n > 0;
+        if (p.agent === 'naive') {
+          m.push(known ? s.obs[i] : p.prior.mean);
+          sd.push(0);
+        } else {
+          var post = posterior(p.prior.mean, p.prior.sd, p.obsSd, known ? s.n : 0, known ? s.obs[i] : 0);
+          m.push(post.mean);
+          sd.push(post.sd);
+        }
+      }
+      var varU = 0;
+      for (var j = 0; j < K; j++) varU += w[j] * w[j] * sd[j] * sd[j];
+      var probs = p.essential.map(function (idx) { return probAtLeast(m[idx], sd[idx], p.threshold); });
+      return { m: m, sd: sd, U: weightedUtility(m, w), sdU: Math.sqrt(varU), probsEssential: probs };
+    }
+    var A = side(p.A);
+    var B = side(p.B);
+    var admissibleB = B.probsEssential.every(function (q) { return q >= p.minProb; });
+    var wDec = focalWeights(w, A.m, p.aspiration, p.gamma);
+    var sw = switchUtility(wDec, A.m, B.m, p.lambda, p.noveltyDiff || 0);
+    var contributions = [];
+    for (var i = 0; i < K; i++) contributions.push(w[i] * (B.m[i] - A.m[i]));
+    return {
+      weights: w, decisionWeights: wDec, A: A, B: B,
+      admissibleB: admissibleB,
+      gain: sw.gain, loss: sw.loss, net: sw.net,
+      wouldSwitch: admissibleB && sw.net > p.switchCost,
+      contributions: contributions
+    };
+  }
+
+  var api = {
+    evaluatePair: evaluatePair,
+    normalPdf: normalPdf,
+    normalCdf: normalCdf,
+    expectedMaxStdNormal: expectedMaxStdNormal,
+    normalizeWeights: normalizeWeights,
+    weightedUtility: weightedUtility,
+    posterior: posterior,
+    probAtLeast: probAtLeast,
+    reservationValue: reservationValue,
+    focalWeights: focalWeights,
+    switchUtility: switchUtility
+  };
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = api;
+  } else {
+    root.RCM = root.RCM || {};
+    root.RCM.model = api;
+  }
+})(typeof self !== 'undefined' ? self : this);
+</script>
+<script>
+/*
+ * simulation.js — simulación de un agente ficticio que decide si cambiar de pareja.
+ *
+ * IMPORTANTE: los agentes son construcciones programadas. Sus reglas son supuestos
+ * de diseño (ver docs/modelo-matematico.md), NO observaciones de personas reales.
+ * Ningún resultado de este archivo es una estimación de conductas reales.
+ */
+(function (root) {
+  'use strict';
+
+  var rngLib = typeof require === 'function' && typeof module !== 'undefined' ? require('./rng.js') : root.RCM.rng;
+  var M = typeof require === 'function' && typeof module !== 'undefined' ? require('./model.js') : root.RCM.model;
+
+  var VERSION = '0.2.0';
+
+  /** Configuración por defecto. Todo mecanismo "psicológico" arranca apagado. */
+  var DEFAULTS = {
+    seed: 1,
+    runs: 300,
+    periods: 40,
+    essentialFactors: 2,
+    desirableFactors: 6,
+    weightConcentration: 0.5, // 0 = pesos iguales; mayor = pesos más desiguales
+    prior: { mean: 50, sd: 15 },
+    obsSd: 15,
+    essentialThreshold: 35,
+    essentialMinProb: 0.5,
+    initialInfo: 8,       // unidades de información sobre la pareja actual al inicio
+    initialQualityShift: 0, // puntos que se suman a TODOS los factores verdaderos de la pareja inicial (0 = una persona típica)
+    firstImpression: 1,   // unidades de información al conocer a un candidato
+    candidatesPerPeriod: 3,
+    searchTrigger: 'always', // 'always' | 'below_aspiration'
+    aspiration: 60,
+    agent: 'bayes',       // 'bayes' | 'naive'
+    mechanisms: {
+      focal: 0,           // γ: atención a lo que falta en la opción actual
+      novelty: 0,         // ν: bonificación de novedad (puntos)
+      noveltyDecay: 5,    // τ: períodos de decaimiento de la novedad
+      lossAversion: 1,    // λ: 1 = sin aversión a la pérdida
+      comparison: 0,      // η: arrastre por comparación con la mejor alternativa
+      comparisonBasis: 'raw' // 'raw' = impresión inicial sin corregir; 'posterior' = media corregida
+    },
+    costs: {
+      dateCost: 1,        // unidades monetarias por unidad de información obtenida
+      switchCost: 0,      // coste psicológico/de transición del cambio (puntos de utilidad)
+      moneyToUtility: 0   // conversión opcional dinero → puntos para el bienestar neto
+    }
+  };
+
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  function merge(base, over) {
+    var out = clone(base);
+    (function walk(t, s) {
+      Object.keys(s || {}).forEach(function (k) {
+        if (s[k] !== null && typeof s[k] === 'object' && !Array.isArray(s[k])) {
+          t[k] = t[k] && typeof t[k] === 'object' ? t[k] : {};
+          walk(t[k], s[k]);
+        } else {
+          t[k] = s[k];
+        }
+      });
+    })(out, over);
+    return out;
+  }
+
+  function resolveConfig(over) {
+    var cfg = merge(DEFAULTS, over || {});
+    validateConfig(cfg);
+    return cfg;
+  }
+
+  function validateConfig(c) {
+    function need(cond, msg) { if (!cond) throw new RangeError('Configuración inválida: ' + msg); }
+    need(Number.isInteger(c.runs) && c.runs >= 1, 'runs debe ser un entero >= 1');
+    need(Number.isInteger(c.periods) && c.periods >= 1, 'periods debe ser un entero >= 1');
+    need(Number.isInteger(c.essentialFactors) && c.essentialFactors >= 0, 'essentialFactors debe ser un entero >= 0');
+    need(Number.isInteger(c.desirableFactors) && c.desirableFactors >= 0, 'desirableFactors debe ser un entero >= 0');
+    need(c.essentialFactors + c.desirableFactors >= 1, 'debe haber al menos un factor');
+    need(c.prior.sd > 0 && c.obsSd > 0, 'prior.sd y obsSd deben ser > 0');
+    need(c.initialInfo >= 0 && c.firstImpression >= 0, 'las unidades de información no pueden ser negativas');
+    need(Number.isInteger(c.initialInfo) && Number.isInteger(c.firstImpression), 'las unidades de información deben ser enteras');
+    need(Number.isInteger(c.candidatesPerPeriod) && c.candidatesPerPeriod >= 0, 'candidatesPerPeriod debe ser un entero >= 0');
+    need(c.agent === 'bayes' || c.agent === 'naive', "agent debe ser 'bayes' o 'naive'");
+    need(c.searchTrigger === 'always' || c.searchTrigger === 'below_aspiration', "searchTrigger inválido");
+    need(c.essentialMinProb >= 0 && c.essentialMinProb <= 1, 'essentialMinProb debe estar en [0,1]');
+    need(c.weightConcentration >= 0, 'weightConcentration debe ser >= 0');
+    need(c.mechanisms.focal >= 0 && c.mechanisms.novelty >= 0 && c.mechanisms.comparison >= 0, 'los mecanismos no pueden ser negativos');
+    need(c.mechanisms.lossAversion >= 1, 'lossAversion debe ser >= 1');
+    need(c.mechanisms.noveltyDecay > 0, 'noveltyDecay debe ser > 0');
+    need(c.mechanisms.comparisonBasis === 'raw' || c.mechanisms.comparisonBasis === 'posterior', "comparisonBasis debe ser 'raw' o 'posterior'");
+    need(Number.isFinite(c.initialQualityShift), 'initialQualityShift debe ser un número');
+    need(c.costs.dateCost >= 0 && c.costs.switchCost >= 0 && c.costs.moneyToUtility >= 0, 'los costes no pueden ser negativos');
+  }
+
+  // ---------- Personas (candidatos) ----------
+
+  /**
+   * Candidato con flujo propio de números aleatorios (semilla, 'persona', id).
+   * Sus valores verdaderos y su ruido de observación dependen SOLO de su id,
+   * no de las decisiones del agente: agentes distintos ven el mismo mundo.
+   */
+  function makePerson(cfg, runSeed, id, K, initialUnits, shift) {
+    var rng = rngLib.createRng([runSeed, 'persona', id]);
+    var x = [];
+    for (var i = 0; i < K; i++) x.push(cfg.prior.mean + (shift || 0) + cfg.prior.sd * rng.normal());
+    var p = { id: id, x: x, rng: rng, sum: new Array(K).fill(0), n: 0, age: 0 };
+    for (var u = 0; u < initialUnits; u++) observe(cfg, p);
+    return p;
+  }
+
+  /** Una unidad más de información: cada factor se observa con ruido N(0, obsSd²). */
+  function observe(cfg, p) {
+    for (var i = 0; i < p.x.length; i++) p.sum[i] += p.x[i] + cfg.obsSd * p.rng.normal();
+    p.n += 1;
+  }
+
+  /** Valores percibidos por factor según el tipo de agente. */
+  function perceive(cfg, p) {
+    var m = [];
+    var sd = [];
+    for (var i = 0; i < p.x.length; i++) {
+      if (cfg.agent === 'naive') {
+        // Toma lo observado como verdadero. Sin observaciones: usa la media previa.
+        m.push(p.n > 0 ? p.sum[i] / p.n : cfg.prior.mean);
+        sd.push(0);
+      } else {
+        var post = M.posterior(cfg.prior.mean, cfg.prior.sd, cfg.obsSd, p.n, p.n > 0 ? p.sum[i] / p.n : 0);
+        m.push(post.mean);
+        sd.push(post.sd);
+      }
+    }
+    return { m: m, sd: sd };
+  }
+
+  /** Media de lo observado sin corrección (o la media previa si no hay observaciones). */
+function rawMeans(cfg, p) {
+    var m = [];
+    for (var i = 0; i < p.x.length; i++) m.push(p.n > 0 ? p.sum[i] / p.n : cfg.prior.mean);
+    return m;
+  }
+
+  function isAdmissible(cfg, per) {
+    for (var i = 0; i < cfg.essentialFactors; i++) {
+      if (M.probAtLeast(per.m[i], per.sd[i], cfg.essentialThreshold) < cfg.essentialMinProb) return false;
+    }
+    return true;
+  }
+
+  function noveltyBonus(cfg, age) {
+    return cfg.mechanisms.novelty * Math.exp(-age / cfg.mechanisms.noveltyDecay);
+  }
+
+  function trueUtility(p, w) { return M.weightedUtility(p.x, w); }
+
+  function dot(a, b) { var s = 0; for (var i = 0; i < a.length; i++) s += a[i] * b[i]; return s; }
+
+  // ---------- Una corrida ----------
+
+  /**
+   * Simula un agente durante `periods` períodos. Devuelve métricas de esa corrida.
+   * @param {object} cfgOverride configuración parcial (se completa con DEFAULTS)
+   * @param {number|string} runSeed identifica el mundo aleatorio de esta corrida
+   */
+  function runOnce(cfgOverride, runSeed) {
+    var cfg = cfgOverride && cfgOverride.__resolved ? cfgOverride : resolveConfig(cfgOverride);
+    var K = cfg.essentialFactors + cfg.desirableFactors;
+
+    // Pesos de importancia del agente (verdaderos y estables): w ∝ exp(τ·z).
+    var wr = rngLib.createRng([runSeed, 'pesos']);
+    var raw = [];
+    for (var i = 0; i < K; i++) raw.push(Math.exp(cfg.weightConcentration * wr.normal()));
+    var w = M.normalizeWeights(raw);
+
+    var partner = makePerson(cfg, runSeed, 'inicial', K, cfg.initialInfo, cfg.initialQualityShift);
+    var baselineW = trueUtility(partner, w);
+
+    var switches = 0;
+    var regretted = 0;
+    var gainSum = 0;
+    var overSum = 0;
+    var wSum = 0;
+    var sSum = 0;
+    var money = 0;
+    var switchCostTotal = 0;
+    var firstSwitch = null;
+
+    for (var t = 1; t <= cfg.periods; t++) {
+      observe(cfg, partner);
+      partner.age += 1;
+
+      var perA = perceive(cfg, partner);
+      var uA = dot(w, perA.m) + noveltyBonus(cfg, partner.age);
+      var search = cfg.searchTrigger === 'always' || uA < cfg.aspiration;
+      var bestAlt = -Infinity;
+
+      if (search && cfg.candidatesPerPeriod > 0) {
+        var wDec = M.focalWeights(raw, perA.m, cfg.aspiration, cfg.mechanisms.focal);
+        var best = null;
+        for (var k = 0; k < cfg.candidatesPerPeriod; k++) {
+          var cand = makePerson(cfg, runSeed, 't' + t + 'c' + k, K, cfg.firstImpression);
+          money += cfg.costs.dateCost * cfg.firstImpression;
+          var perB = perceive(cfg, cand);
+          var uB = dot(w, perB.m) + noveltyBonus(cfg, 0);
+          var impression = cfg.mechanisms.comparisonBasis === 'raw' ? dot(w, rawMeans(cfg, cand)) + noveltyBonus(cfg, 0) : uB;
+          if (impression > bestAlt) bestAlt = impression;
+          // El filtro de requisitos esenciales rige para los candidatos; la pareja actual no se somete a él.
+          if (!isAdmissible(cfg, perB)) continue;
+          var net = M.switchUtility(wDec, perA.m, perB.m, cfg.mechanisms.lossAversion,
+            noveltyBonus(cfg, 0) - noveltyBonus(cfg, partner.age)).net;
+          if (net > cfg.costs.switchCost && (best === null || net > best.net)) {
+            best = { net: net, cand: cand, perceived: dot(w, perB.m) };
+          }
+        }
+        if (best) {
+          var before = trueUtility(partner, w);
+          var after = trueUtility(best.cand, w);
+          switches += 1;
+          if (after < before) regretted += 1;
+          gainSum += after - before;
+          overSum += best.perceived - after;
+          switchCostTotal += cfg.costs.switchCost;
+          if (firstSwitch === null) firstSwitch = t;
+          partner = best.cand;
+          partner.age = 0;
+        }
+      }
+
+      wSum += trueUtility(partner, w);
+      var perNow = perceive(cfg, partner);
+      var uNow = dot(w, perNow.m) + noveltyBonus(cfg, partner.age);
+      var drag = bestAlt > uNow ? cfg.mechanisms.comparison * (bestAlt - uNow) : 0;
+      sSum += uNow - drag;
+    }
+
+    var meanW = wSum / cfg.periods;
+    return {
+      switches: switches,
+      sumRegretted: regretted,
+      sumGain: gainSum,
+      sumOverestimation: overSum,
+      regrettedSwitches: regretted,
+      regretShare: switches > 0 ? regretted / switches : null,
+      meanGainPerSwitch: switches > 0 ? gainSum / switches : null,
+      meanOverestimation: switches > 0 ? overSum / switches : null,
+      meanTrueWelfare: meanW,
+      finalTrueWelfare: trueUtility(partner, w),
+      welfareVsStaying: meanW - baselineW,
+      moneyCost: money,
+      switchCostTotal: switchCostTotal,
+      netWelfare: meanW - cfg.costs.moneyToUtility * (money / cfg.periods) - switchCostTotal / cfg.periods,
+      netVsStaying: meanW - cfg.costs.moneyToUtility * (money / cfg.periods) - switchCostTotal / cfg.periods - baselineW,
+      meanPerceivedSatisfaction: sSum / cfg.periods,
+      firstSwitchPeriod: firstSwitch
+    };
+  }
+
+  // ---------- Muchas corridas y barridos ----------
+
+  var METRICS = ['switches', 'regretShare', 'meanGainPerSwitch', 'meanOverestimation',
+    'meanTrueWelfare', 'welfareVsStaying', 'moneyCost', 'netWelfare', 'netVsStaying', 'meanPerceivedSatisfaction'];
+
+  function summarize(values) {
+    var v = values.filter(function (x) { return x !== null && Number.isFinite(x); });
+    var n = v.length;
+    if (n === 0) return { n: 0, mean: null, sd: null, se: null, ci95: [null, null] };
+    var mean = v.reduce(function (a, b) { return a + b; }, 0) / n;
+    var sd = 0;
+    if (n > 1) sd = Math.sqrt(v.reduce(function (a, b) { return a + (b - mean) * (b - mean); }, 0) / (n - 1));
+    var se = sd / Math.sqrt(n);
+    return { n: n, mean: mean, sd: sd, se: se, ci95: [mean - 1.96 * se, mean + 1.96 * se] };
+  }
+
+  /**
+   * Razón ΣY/ΣX sobre corridas (p. ej. ganancia total / cambios totales): promedia por EVENTO,
+   * no por corrida. Promediar promedios por corrida pesa igual a corridas con 1 y con 20 cambios y
+   * sesga la estimación porque el número de cambios depende de los resultados anteriores.
+   * El error estándar tiene en cuenta que los eventos de una misma corrida no son independientes
+   * (estimador de razón con linealización, agrupado por corrida).
+   */
+  function summarizeRatio(num, den) {
+    var n = num.length;
+    var sx = 0;
+    var sy = 0;
+    for (var i = 0; i < n; i++) { sx += den[i]; sy += num[i]; }
+    if (sx === 0) return { n: 0, mean: null, sd: null, se: null, ci95: [null, null] };
+    var r = sy / sx;
+    var ss = 0;
+    for (var j = 0; j < n; j++) { var e = num[j] - r * den[j]; ss += e * e; }
+    var se = n > 1 ? Math.sqrt((n / (n - 1)) * ss) / sx : 0;
+    return { n: sx, mean: r, sd: null, se: se, ci95: [r - 1.96 * se, r + 1.96 * se] };
+  }
+
+  var PER_SWITCH = { regretShare: 'sumRegretted', meanGainPerSwitch: 'sumGain', meanOverestimation: 'sumOverestimation' };
+
+  /**
+   * Ejecuta `runs` corridas independientes y resume cada métrica (media, sd, IC95 %).
+   * Las tres métricas "por cambio" se agrupan por evento (ver summarizeRatio); en `n` va el
+   * número de cambios totales. El resto promedia entre corridas.
+   */
+  function runExperiment(cfgOverride) {
+    var cfg = resolveConfig(cfgOverride);
+    cfg.__resolved = true;
+    var rows = [];
+    for (var r = 0; r < cfg.runs; r++) rows.push(runOnce(cfg, cfg.seed + ':' + r));
+    var summary = {};
+    METRICS.forEach(function (m) {
+      summary[m] = PER_SWITCH[m]
+        ? summarizeRatio(rows.map(function (row) { return row[PER_SWITCH[m]]; }), rows.map(function (row) { return row.switches; }))
+        : summarize(rows.map(function (row) { return row[m]; }));
+    });
+    var cleanCfg = clone(cfg);
+    delete cleanCfg.__resolved;
+    return { version: VERSION, config: cleanCfg, summary: summary, rows: rows };
+  }
+
+  function setPath(obj, path, value) {
+    var parts = path.split('.');
+    var o = obj;
+    for (var i = 0; i < parts.length - 1; i++) {
+      o[parts[i]] = o[parts[i]] && typeof o[parts[i]] === 'object' ? o[parts[i]] : {};
+      o = o[parts[i]];
+    }
+    o[parts[parts.length - 1]] = value;
+    return obj;
+  }
+
+  /** Cambia UN parámetro (path con puntos) a lo largo de `values`, el resto constante. */
+  function runSweep(baseOverride, path, values) {
+    return values.map(function (value) {
+      var over = setPath(clone(baseOverride || {}), path, value);
+      var res = runExperiment(over);
+      return { value: value, summary: res.summary };
+    });
+  }
+
+  /**
+   * Sesgo de selección ("maldición del ganador"): elige el mejor de N candidatos por
+   * utilidad percibida (sin esenciales ni mecanismos) y mide percibido − verdadero.
+   * Existe para contrastar el simulador con la fórmula analítica de los tests.
+   */
+  function simulateSelection(opts) {
+    var cfg = resolveConfig(merge({ essentialFactors: 0, desirableFactors: opts.K || 1, weightConcentration: 0 }, opts.config || {}));
+    cfg.__resolved = true;
+    var K = cfg.essentialFactors + cfg.desirableFactors;
+    var w = new Array(K).fill(1 / K);
+    var bias = [];
+    var trueSel = [];
+    for (var r = 0; r < opts.runs; r++) {
+      var best = null;
+      for (var j = 0; j < opts.N; j++) {
+        var p = makePerson(cfg, cfg.seed + ':sel:' + r, 'c' + j, K, cfg.firstImpression);
+        var per = perceive(cfg, p);
+        var perceivedU = dot(w, per.m);
+        if (best === null || perceivedU > best.perceivedU) best = { perceivedU: perceivedU, trueU: trueUtility(p, w) };
+      }
+      bias.push(best.perceivedU - best.trueU);
+      trueSel.push(best.trueU);
+    }
+    return { bias: summarize(bias), trueValue: summarize(trueSel) };
+  }
+
+  var api = {
+    VERSION: VERSION,
+    DEFAULTS: DEFAULTS,
+    METRICS: METRICS,
+    resolveConfig: resolveConfig,
+    validateConfig: validateConfig,
+    runOnce: runOnce,
+    runExperiment: runExperiment,
+    runSweep: runSweep,
+    simulateSelection: simulateSelection,
+    summarize: summarize,
+    summarizeRatio: summarizeRatio,
+    setPath: setPath
+  };
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = api;
+  } else {
+    root.RCM = root.RCM || {};
+    root.RCM.sim = api;
+  }
+})(typeof self !== 'undefined' ? self : this);
+</script>
+<script>
+/* app.js — interfaz del simulador. Toda la lógica matemática vive en ../src (probada con Node). */
+(function () {
+  'use strict';
+  var M = RCM.model;
+  var S = RCM.sim;
+
+  // ---------- utilidades de DOM (sin innerHTML con datos del usuario) ----------
+
+  function el(tag, props) {
+    var node = document.createElement(tag);
+    props = props || {};
+    Object.keys(props).forEach(function (k) {
+      if (k === 'text') node.textContent = props[k];
+      else if (k === 'class') node.className = props[k];
+      else if (k === 'on') Object.keys(props.on).forEach(function (ev) { node.addEventListener(ev, props.on[ev]); });
+      else if (props[k] !== undefined && props[k] !== null) node.setAttribute(k, props[k]);
+    });
+    function add(c) {
+      if (c === null || c === undefined) return;
+      if (Array.isArray(c)) { c.forEach(add); return; }
+      node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+    }
+    for (var i = 2; i < arguments.length; i++) add(arguments[i]);
+    return node;
+  }
+  function $(id) { return document.getElementById(id); }
+  function fmt(v, d) { return v === null || v === undefined || !Number.isFinite(v) ? '—' : v.toFixed(d === undefined ? 2 : d); }
+  function pct(v) { return v === null || !Number.isFinite(v) ? '—' : (100 * v).toFixed(1) + ' %'; }
+
+  // ---------- pestañas ----------
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('nav [role=tab]'));
+  function selectTab(name) {
+    tabs.forEach(function (t) {
+      var on = t.dataset.tab === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      $(t.dataset.tab).classList.toggle('active', on);
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectTab(t.dataset.tab); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        n.focus();
+        selectTab(n.dataset.tab);
+      }
+    });
+  });
+
+  // =====================================================================
+  // 1. CALCULADORA
+  // =====================================================================
+
+  var FACTORS = [
+    { id: 'respeto', label: 'Respeto y seguridad (trato digno, ausencia de violencia)', kind: 'essential' },
+    { id: 'honestidad', label: 'Honestidad y confiabilidad', kind: 'essential' },
+    { id: 'comunicacion', label: 'Comunicación y resolución de conflictos', kind: 'desirable' },
+    { id: 'proyecto', label: 'Proyecto de vida (hijos, compromiso, metas)', kind: 'desirable' },
+    { id: 'estilo', label: 'Estilo de vida y valores cotidianos', kind: 'desirable' },
+    { id: 'quimica', label: 'Atracción y química', kind: 'desirable' },
+    { id: 'intereses', label: 'Intereses y actividades compartidas', kind: 'desirable' },
+    { id: 'practico', label: 'Aspectos prácticos (trabajo, economía, logística)', kind: 'desirable' }
+  ];
+  var PRESET_8020 = {
+    weights: [20, 20, 15, 15, 10, 10, 5, 5],
+    A: [85, 85, 85, 85, 85, 45, 45, 45],
+    B: [75, 75, 75, 75, 75, 85, 85, 85],
+    nA: 8, nB: 1
+  };
+  var calcInputs = { weight: [], A: [], B: [], Aknown: [], Bknown: [] };
+
+  function numInput(value, min, max, step, onChange, label) {
+    var i = el('input', { type: 'number', min: min, max: max, step: step, value: value, 'aria-label': label });
+    i.addEventListener('input', onChange);
+    return i;
+  }
+
+  function buildCalc() {
+    var root = $('calc');
+    root.appendChild(el('div', { class: 'grid' },
+      el('div', { class: 'card s12' },
+        el('h2', { text: 'Compará una relación conocida (A) con una persona poco conocida (B)' }),
+        el('p', { class: 'sub', text: 'Cargá lo que observaste de cada persona en una escala de 0 a 100 y cuánto te importa cada factor. Los valores iniciales son un ejemplo inventado que ilustra el caso «80–20»: no son datos de nadie.' }),
+        el('div', { class: 'cols' },
+          el('button', { class: 'btn', id: 'preset', type: 'button', text: 'Cargar ejemplo 80–20 (ilustrativo)' }),
+          el('button', { class: 'btn', id: 'clear', type: 'button', text: 'Poner todo en blanco (50, peso 10)' })
+        )
+      ),
+      el('div', { class: 'card s8' }, el('h2', { text: 'Factores' }),
+        el('p', { class: 'sub', text: '«Se conoce» desmarcado significa que no sabés nada de ese factor en esa persona: el modelo conserva la incertidumbre de la población en vez de tratarlo como un 50 medido. Los factores esenciales funcionan como filtro: si es poco probable que B cumpla el umbral, no se la considera aunque el resto sea excelente.' }),
+        el('div', { class: 'scroll' }, el('table', { class: 'ftable' }, el('thead', null, el('tr', null,
+          el('th', { text: 'Factor' }), el('th', { class: 'num', text: 'Peso' }),
+          el('th', { class: 'num', text: 'Valor A' }), el('th', { text: 'A se conoce' }),
+          el('th', { class: 'num', text: 'Valor B' }), el('th', { text: 'B se conoce' }))),
+          el('tbody', { id: 'frows' })))),
+      el('div', { class: 'card s4' }, el('h2', { text: 'Supuestos de la evaluación' }), el('div', { id: 'ctrl' })),
+      el('div', { class: 'card s12', id: 'calcOut', 'aria-live': 'polite' }),
+      el('div', { class: 'card s12' }, el('h2', { text: 'Expectativas y coste de búsqueda' }),
+        el('p', { class: 'sub', text: 'Pregunta de diseño, no de diagnóstico: si cada candidato nuevo «cuesta» c puntos de utilidad (tiempo, esfuerzo), una regla de búsqueda secuencial óptima (Stigler, 1961; McCall, 1970) acepta a quien supere un valor de reserva w*. Sirve para pensar cómo se relacionan costes y exigencia; no dice cuánto exigir.' }),
+        el('div', { class: 'cols' }, el('div', null, el('label', { class: 'l', for: 'cost', text: 'Coste por candidato (puntos)' }), el('input', { id: 'cost', type: 'number', min: '0.1', max: '30', step: '0.1', value: '2' }))),
+        el('div', { id: 'reserve', class: 'notice' }))
+    ));
+
+    var tb = $('frows');
+    FACTORS.forEach(function (f, i) {
+      var rec = function () { render(); };
+      var w = numInput(0, 0, 1000, 1, rec, 'Peso de ' + f.label);
+      var a = numInput(50, 0, 100, 1, rec, 'Valor de A en ' + f.label);
+      var b = numInput(50, 0, 100, 1, rec, 'Valor de B en ' + f.label);
+      var ak = el('input', { type: 'checkbox', checked: 'checked', 'aria-label': 'A se conoce en ' + f.label });
+      var bk = el('input', { type: 'checkbox', checked: 'checked', 'aria-label': 'B se conoce en ' + f.label });
+      ak.addEventListener('change', rec);
+      bk.addEventListener('change', rec);
+      calcInputs.weight.push(w); calcInputs.A.push(a); calcInputs.B.push(b); calcInputs.Aknown.push(ak); calcInputs.Bknown.push(bk);
+      tb.appendChild(el('tr', null,
+        el('td', null, f.label, el('div', { class: 'kind', text: f.kind === 'essential' ? 'Esencial (filtro)' : 'Deseable' })),
+        el('td', { class: 'num' }, w), el('td', { class: 'num' }, a), el('td', null, ak), el('td', { class: 'num' }, b), el('td', null, bk)));
+    });
+
+    var ctrl = $('ctrl');
+    function field(id, label, value, min, max, step) {
+      ctrl.appendChild(el('label', { class: 'l', for: id, text: label }));
+      var i = el('input', { id: id, type: 'number', min: min, max: max, step: step, value: value });
+      i.addEventListener('input', render);
+      ctrl.appendChild(i);
+    }
+    ctrl.appendChild(el('label', { class: 'l', for: 'agent', text: 'Cómo procesa la información quien decide' }));
+    var ag = el('select', { id: 'agent' }, el('option', { value: 'bayes', text: 'Corrige por la incertidumbre (bayesiano)' }), el('option', { value: 'naive', text: 'Toma lo observado como verdadero (ingenuo)' }));
+    ag.addEventListener('change', render);
+    ctrl.appendChild(ag);
+    field('nA', 'Información sobre A (unidades)', 8, 0, 1000, 1);
+    field('nB', 'Información sobre B (unidades)', 1, 0, 1000, 1);
+    field('thr', 'Umbral mínimo de factores esenciales', 40, 0, 100, 1);
+    field('asp', 'Nivel de aspiración', 70, 0, 100, 1);
+    field('gamma', 'Foco en lo que falta en A (γ ≥ 0)', 0, 0, 10, 0.5);
+    field('lambda', 'Aversión a la pérdida (λ ≥ 1)', 1, 1, 5, 0.25);
+    field('novel', 'Bonificación por novedad de B (puntos)', 0, 0, 50, 1);
+    field('scost', 'Coste de cambiar (puntos)', 0, 0, 50, 1);
+    ctrl.appendChild(el('p', { class: 'sub', text: 'Población previa: media 50, desvío 15; ruido de cada observación: desvío 15 (supuestos de diseño, no estimaciones).' }));
+
+    $('cost').addEventListener('input', render);
+    $('preset').addEventListener('click', function () { loadPreset(); render(); });
+    $('clear').addEventListener('click', function () {
+      FACTORS.forEach(function (f, i) {
+        calcInputs.weight[i].value = 10; calcInputs.A[i].value = 50; calcInputs.B[i].value = 50;
+        calcInputs.Aknown[i].checked = true; calcInputs.Bknown[i].checked = true;
+      });
+      render();
+    });
+    loadPreset();
+    render();
+  }
+
+  function loadPreset() {
+    FACTORS.forEach(function (f, i) {
+      calcInputs.weight[i].value = PRESET_8020.weights[i];
+      calcInputs.A[i].value = PRESET_8020.A[i];
+      calcInputs.B[i].value = PRESET_8020.B[i];
+      calcInputs.Aknown[i].checked = true;
+      calcInputs.Bknown[i].checked = true;
+    });
+    $('nA').value = PRESET_8020.nA;
+    $('nB').value = PRESET_8020.nB;
+  }
+
+  function readNum(input, min, max) {
+    var raw = input.value.trim();
+    var v = Number(raw);
+    var ok = raw !== '' && Number.isFinite(v) && v >= min && v <= max;
+    input.classList.toggle('invalid', !ok);
+    return ok ? v : null;
+  }
+
+  function render() {
+    var errors = 0;
+    var rd = function (input, min, max) { var v = readNum(input, min, max); if (v === null) errors++; return v; };
+    var weights = calcInputs.weight.map(function (i) { return rd(i, 0, 1000); });
+    var A = calcInputs.A.map(function (i) { return rd(i, 0, 100); });
+    var B = calcInputs.B.map(function (i) { return rd(i, 0, 100); });
+    var nA = rd($('nA'), 0, 1000), nB = rd($('nB'), 0, 1000), thr = rd($('thr'), 0, 100), asp = rd($('asp'), 0, 100);
+    var gamma = rd($('gamma'), 0, 10), lambda = rd($('lambda'), 1, 5), nov = rd($('novel'), 0, 50), sc = rd($('scost'), 0, 50);
+    var out = $('calcOut');
+    out.textContent = '';
+    if (errors > 0) {
+      out.appendChild(el('div', { class: 'notice bad', text: 'Hay ' + errors + ' campo(s) vacío(s) o fuera de rango (marcados en rojo). No se calcula nada hasta corregirlos, para que lo que ves coincida con lo que se usa.' }));
+      return;
+    }
+    var essential = [];
+    FACTORS.forEach(function (f, i) { if (f.kind === 'essential') essential.push(i); });
+    var r = M.evaluatePair({
+      weights: weights, essential: essential, threshold: thr, minProb: 0.5,
+      A: { obs: A, known: calcInputs.Aknown.map(function (c) { return c.checked; }), n: nA },
+      B: { obs: B, known: calcInputs.Bknown.map(function (c) { return c.checked; }), n: nB },
+      agent: $('agent').value, prior: { mean: 50, sd: 15 }, obsSd: 15,
+      gamma: gamma, lambda: lambda, aspiration: asp, switchCost: sc, noveltyDiff: nov
+    });
+    if (r.error) {
+      out.appendChild(el('div', { class: 'notice bad', text: r.error + ' Asigná un peso mayor que 0 al menos a un factor.' }));
+      $('reserve').textContent = '';
+      return;
+    }
+    out.appendChild(el('h2', { text: 'Resultado según las reglas de este modelo' }));
+    out.appendChild(el('div', { class: 'metrics' },
+      metric(fmt(r.A.U, 1) + ' ± ' + fmt(r.A.sdU, 1), 'Utilidad percibida de A (media ± desvío de la incertidumbre)'),
+      metric(fmt(r.B.U, 1) + ' ± ' + fmt(r.B.sdU, 1), 'Utilidad percibida de B'),
+      metric(fmt(r.gain, 1) + ' / ' + fmt(r.loss, 1), 'Ganancia / pérdida de cambiar (ponderadas)'),
+      metric(fmt(r.net, 1), 'Utilidad neta de cambiar, antes del coste')));
+    var probs = r.B.probsEssential.map(function (q, k) { return FACTORS[essential[k]].label.split(' (')[0] + ': ' + pct(q); }).join(' · ');
+    out.appendChild(el('div', { class: 'notice', text: 'Probabilidad de que B cumpla cada requisito esencial (mínimo exigido 50 %): ' + probs + '. ' + (r.admissibleB ? 'B pasa el filtro.' : 'B NO pasa el filtro: el modelo no la considera, sin importar el resto.') }));
+    var verdict = r.wouldSwitch
+      ? 'Con estos supuestos, el modelo «cambiaría» a B (neto ' + fmt(r.net, 1) + ' > coste ' + fmt(sc, 1) + ').'
+      : 'Con estos supuestos, el modelo «se quedaría» con A (' + (r.admissibleB ? 'neto ' + fmt(r.net, 1) + ' ≤ coste ' + fmt(sc, 1) : 'B no cumple los requisitos esenciales') + ').';
+    out.appendChild(el('div', { class: 'notice ' + (r.wouldSwitch ? 'warn' : ''), text: verdict + ' Esto describe cómo funciona la regla, no lo que le conviene a una persona real.' }));
+    var ev = M.evaluatePair({ weights: weights, essential: essential, threshold: thr, minProb: 0.5, A: { obs: A, known: calcInputs.Aknown.map(function (c) { return c.checked; }), n: nA }, B: { obs: B, known: calcInputs.Bknown.map(function (c) { return c.checked; }), n: nB }, agent: 'bayes', prior: { mean: 50, sd: 15 }, obsSd: 15, gamma: 0, lambda: 1, aspiration: asp, switchCost: 0, noveltyDiff: 0 });
+    out.appendChild(el('div', { class: 'notice', text: 'Referencia: si se corrige por la incertidumbre y se comparan ambas personas sin foco ni aversión a la pérdida, la ganancia esperada del valor verdadero de cambiar es ' + fmt(ev.B.U - ev.A.U, 1) + ' puntos (esperanza matemática bajo los supuestos del modelo; no una predicción).' }));
+    out.appendChild(el('h3', { text: 'Qué factores explican la diferencia (peso × (B − A), valores percibidos)' }));
+    var maxAbs = Math.max.apply(null, r.contributions.map(Math.abs).concat([1e-9]));
+    r.contributions.map(function (c, i) { return { c: c, i: i }; }).sort(function (x, y) { return Math.abs(y.c) - Math.abs(x.c); }).forEach(function (o) {
+      var width = (Math.abs(o.c) / maxAbs) * 50;
+      var fill = el('div', { class: 'fill', style: 'background:var(' + (o.c >= 0 ? '--b' : '--a') + ');width:' + width + '%;' + (o.c >= 0 ? 'left:50%' : 'right:50%') });
+      out.appendChild(el('div', { class: 'contrib' }, el('span', { text: FACTORS[o.i].label.split(' (')[0] }),
+        el('div', { class: 'track' }, el('div', { class: 'mid' }), fill), el('span', { class: 'num', text: fmt(o.c, 2) })));
+    });
+    out.appendChild(el('div', { class: 'legend' }, el('span', null, el('i', { style: 'background:var(--a)' }), 'a favor de A'), el('span', null, el('i', { style: 'background:var(--b)' }), 'a favor de B')));
+
+    var cost = Number($('cost').value);
+    var sumSq = r.weights.reduce(function (a, w) { return a + w * w; }, 0);
+    var sdPop = 15 * Math.sqrt(sumSq);
+    $('reserve').textContent = Number.isFinite(cost) && cost > 0
+      ? 'Con coste ' + fmt(cost, 1) + ' puntos por candidato y una población cuyo valor global tiene media 50 y desvío ' + fmt(sdPop, 1) + ', el valor de reserva es w* = ' + fmt(M.reservationValue(cost, 50, sdPop), 1) + '. A mayor coste de buscar, menor w*.'
+      : 'Ingresá un coste mayor que 0.';
+  }
+  function metric(value, label) { return el('div', { class: 'metric' }, el('b', { text: value }), el('span', { text: label })); }
+
+  // =====================================================================
+  // 2. SIMULACIÓN
+  // =====================================================================
+
+  var PARAMS = [
+    ['seed', 'Semilla (reproduce exactamente la simulación)', 1, 1, 999999, 1],
+    ['runs', 'Corridas independientes por punto', 300, 10, 2000, 10],
+    ['periods', 'Períodos por corrida', 40, 5, 200, 5],
+    ['agent', 'Tipo de agente', 'bayes', null, null, null, [['bayes', 'Corrige por la incertidumbre (bayesiano)'], ['naive', 'Toma lo observado como verdadero (ingenuo)']]],
+    ['candidatesPerPeriod', 'Candidatos conocidos por período', 3, 0, 20, 1],
+    ['firstImpression', 'Información al conocer a un candidato (unidades)', 1, 0, 20, 1],
+    ['initialInfo', 'Información previa sobre la pareja actual (unidades)', 8, 0, 40, 1],
+    ['initialQualityShift', 'Calidad de la pareja actual sobre el promedio (puntos)', 0, -20, 40, 1],
+    ['essentialThreshold', 'Umbral de requisitos esenciales', 35, -100, 100, 1],
+    ['weightConcentration', 'Desigualdad entre las importancias', 0.5, 0, 3, 0.1],
+    ['searchTrigger', 'Cuándo busca', 'always', null, null, null, [['always', 'En todos los períodos'], ['below_aspiration', 'Solo si su satisfacción percibida < aspiración']]],
+    ['aspiration', 'Nivel de aspiración', 60, 30, 95, 1],
+    ['mechanisms.focal', 'Foco en lo que falta (γ)', 0, 0, 6, 0.5],
+    ['mechanisms.novelty', 'Bonificación de novedad (ν, puntos)', 0, 0, 20, 1],
+    ['mechanisms.lossAversion', 'Aversión a la pérdida (λ ≥ 1)', 1, 1, 4, 0.25],
+    ['mechanisms.comparison', 'Arrastre por comparación (η)', 0, 0, 1, 0.25],
+    ['costs.dateCost', 'Coste monetario por unidad de información', 1, 0, 100, 1],
+    ['costs.switchCost', 'Coste de cambiar (puntos)', 0, 0, 20, 0.5],
+    ['costs.moneyToUtility', 'Conversión dinero → puntos (arbitraria)', 0, 0, 5, 0.05]
+  ];
+  var SWEEPABLE = ['candidatesPerPeriod', 'firstImpression', 'initialInfo', 'initialQualityShift', 'essentialThreshold', 'weightConcentration', 'aspiration', 'mechanisms.focal', 'mechanisms.novelty', 'mechanisms.lossAversion', 'mechanisms.comparison'];
+  var METRIC_LABEL = {
+    switches: 'Cambios de pareja por corrida', regretShare: 'Proporción de cambios que empeoran el ajuste verdadero',
+    meanGainPerSwitch: 'Ganancia verdadera por cambio (puntos)', meanOverestimation: 'Sobreestimación al elegir (percibido − verdadero)',
+    meanTrueWelfare: 'Ajuste verdadero medio (puntos)', welfareVsStaying: 'Ajuste verdadero vs. no cambiar (puntos)',
+    moneyCost: 'Coste monetario total', netWelfare: 'Ajuste neto de costes (puntos)', netVsStaying: 'Neto de costes vs. no cambiar (puntos)',
+    meanPerceivedSatisfaction: 'Satisfacción percibida con la pareja actual'
+  };
+  var paramInputs = {};
+  var lastResult = null;
+
+  function buildSim() {
+    var root = $('sim');
+    var form = el('div', { class: 'cols' });
+    PARAMS.forEach(function (p) {
+      var wrap = el('div', null, el('label', { class: 'l', for: 'p_' + p[0], text: p[1] }));
+      var input;
+      if (p[6]) {
+        input = el('select', { id: 'p_' + p[0] });
+        p[6].forEach(function (o) { var opt = el('option', { value: o[0], text: o[1] }); if (o[0] === p[2]) opt.selected = true; input.appendChild(opt); });
+      } else {
+        input = el('input', { id: 'p_' + p[0], type: 'number', min: p[3], max: p[4], step: p[5], value: p[2] });
+      }
+      paramInputs[p[0]] = input;
+      wrap.appendChild(input);
+      form.appendChild(wrap);
+    });
+
+    var sweepSel = el('select', { id: 'sweepParam' });
+    SWEEPABLE.forEach(function (k) {
+      var def = PARAMS.filter(function (p) { return p[0] === k; })[0];
+      sweepSel.appendChild(el('option', { value: k, text: def[1] }));
+    });
+    var metricSel = el('select', { id: 'metric' });
+    Object.keys(METRIC_LABEL).forEach(function (k) { metricSel.appendChild(el('option', { value: k, text: METRIC_LABEL[k] })); });
+    metricSel.value = 'regretShare';
+
+    root.appendChild(el('div', { class: 'grid' },
+      el('div', { class: 'card s12' }, el('h2', { text: 'Agentes ficticios' }),
+        el('p', { class: 'sub', text: 'Cada «agente» es una regla programada: tiene una pareja actual con información abundante, conoce candidatos con información escasa y decide si cambiar. Sus preferencias y su forma de decidir son supuestos de diseño. Nada de lo que sigue es una estimación de cómo se comportan las personas.' }),
+        form),
+      el('div', { class: 'card s12' }, el('h2', { text: 'Barrido de un parámetro (el resto queda constante)' }),
+        el('div', { class: 'cols' },
+          el('div', null, el('label', { class: 'l', for: 'sweepParam', text: 'Parámetro a variar' }), sweepSel),
+          el('div', null, el('label', { class: 'l', for: 'sweepFrom', text: 'Desde' }), el('input', { id: 'sweepFrom', type: 'number', value: 1, step: 'any' })),
+          el('div', null, el('label', { class: 'l', for: 'sweepTo', text: 'Hasta' }), el('input', { id: 'sweepTo', type: 'number', value: 12, step: 'any' })),
+          el('div', null, el('label', { class: 'l', for: 'sweepSteps', text: 'Puntos (2 a 12)' }), el('input', { id: 'sweepSteps', type: 'number', min: 2, max: 12, value: 6 })),
+          el('div', null, el('label', { class: 'l', for: 'metric', text: 'Métrica a graficar' }), metricSel)),
+        el('div', { class: 'cols', style: 'margin-top:12px' },
+          el('button', { class: 'btn primary', id: 'runSweep', type: 'button', text: 'Ejecutar barrido (bayesiano e ingenuo)' }),
+          el('button', { class: 'btn', id: 'runOne', type: 'button', text: 'Ejecutar un solo punto' }),
+          el('button', { class: 'btn', id: 'dlJson', type: 'button', text: 'Descargar JSON (con configuración)' }),
+          el('button', { class: 'btn', id: 'dlCsv', type: 'button', text: 'Descargar CSV' })),
+        el('div', { id: 'simStatus', class: 'notice', 'aria-live': 'polite', text: 'Todavía no se ejecutó nada.' })),
+      el('div', { class: 'card s12', id: 'simOut' })
+    ));
+    sweepSel.addEventListener('change', syncSweepDefaults);
+    syncSweepDefaults();
+    $('runSweep').addEventListener('click', function () { run('sweep'); });
+    $('runOne').addEventListener('click', function () { run('one'); });
+    $('dlJson').addEventListener('click', function () { download('json'); });
+    $('dlCsv').addEventListener('click', function () { download('csv'); });
+    $('metric').addEventListener('change', function () { if (lastResult) draw(); });
+  }
+
+  var SWEEP_DEFAULT = {
+    candidatesPerPeriod: [1, 12], firstImpression: [1, 12], initialInfo: [0, 24], initialQualityShift: [0, 25], essentialThreshold: [20, 75],
+    weightConcentration: [0, 2.5], aspiration: [40, 80], 'mechanisms.focal': [0, 6], 'mechanisms.novelty': [0, 20], 'mechanisms.lossAversion': [1, 3], 'mechanisms.comparison': [0, 1]
+  };
+  function syncSweepDefaults() {
+    var d = SWEEP_DEFAULT[$('sweepParam').value];
+    $('sweepFrom').value = d[0];
+    $('sweepTo').value = d[1];
+    if ($('sweepParam').value === 'aspiration') paramInputs.searchTrigger.value = 'below_aspiration';
+  }
+
+  function collectConfig() {
+    var cfg = {};
+    var bad = [];
+    PARAMS.forEach(function (p) {
+      var input = paramInputs[p[0]];
+      var v = p[6] ? input.value : Number(input.value);
+      if (!p[6] && (input.value.trim() === '' || !Number.isFinite(v) || v < p[3] || v > p[4])) { bad.push(p[1]); input.classList.add('invalid'); } else input.classList.remove('invalid');
+      S.setPath(cfg, p[0], v);
+    });
+    return { cfg: cfg, bad: bad };
+  }
+
+  function run(mode) {
+    var status = $('simStatus');
+    var c = collectConfig();
+    if (c.bad.length) { status.className = 'notice bad'; status.textContent = 'Valores fuera de rango: ' + c.bad.join('; ') + '.'; return; }
+    var def = { base: c.cfg };
+    var values = null;
+    if (mode === 'sweep') {
+      var from = Number($('sweepFrom').value), to = Number($('sweepTo').value), steps = Math.round(Number($('sweepSteps').value));
+      if (![from, to, steps].every(Number.isFinite) || steps < 2 || steps > 12) { status.className = 'notice bad'; status.textContent = 'Revisá desde / hasta / puntos (entre 2 y 12).'; return; }
+      values = [];
+      for (var i = 0; i < steps; i++) {
+        var v = from + ((to - from) * i) / (steps - 1);
+        var path = $('sweepParam').value;
+        if (['candidatesPerPeriod', 'firstImpression', 'initialInfo'].indexOf(path) >= 0) v = Math.round(v);
+        else v = Math.round(v * 1000) / 1000;
+        if (values.indexOf(v) < 0) values.push(v);
+      }
+      def.sweep = { path: $('sweepParam').value, values: values };
+    }
+    status.className = 'notice';
+    status.textContent = 'Calculando…';
+    setTimeout(function () {
+      try {
+        var series = [];
+        var agents = mode === 'sweep' ? ['bayes', 'naive'] : [c.cfg.agent];
+        agents.forEach(function (agent) {
+          var base = JSON.parse(JSON.stringify(c.cfg));
+          base.agent = agent;
+          if (mode === 'sweep') {
+            series.push({ label: agent, points: S.runSweep(base, def.sweep.path, values) });
+          } else {
+            series.push({ label: agent, points: [{ value: null, summary: S.runExperiment(base).summary }] });
+          }
+        });
+        lastResult = { version: S.VERSION, mode: mode, definition: def, series: series, notice: 'Agentes ficticios con reglas programadas: no son observaciones de personas reales.' };
+        status.className = 'notice';
+        status.textContent = 'Listo. Versión ' + S.VERSION + ', semilla ' + c.cfg.seed + ', ' + c.cfg.runs + ' corridas por punto. Repetir con los mismos valores da exactamente lo mismo.';
+        draw();
+      } catch (e) {
+        status.className = 'notice bad';
+        status.textContent = 'Error: ' + e.message;
+      }
+    }, 20);
+  }
+
+  var COLORS = { bayes: '#3659a8', naive: '#c27a16' };
+  var NAMES = { bayes: 'Bayesiano (corrige)', naive: 'Ingenuo (toma lo observado)' };
+
+  function draw() {
+    var out = $('simOut');
+    out.textContent = '';
+    var metric = $('metric').value;
+    var r = lastResult;
+    out.appendChild(el('h2', { text: METRIC_LABEL[metric] }));
+    if (r.mode === 'sweep') {
+      var canvas = el('canvas', { 'aria-label': 'Gráfico: ' + METRIC_LABEL[metric] + ' según ' + r.definition.sweep.path });
+      out.appendChild(canvas);
+      out.appendChild(el('div', { class: 'legend' }, ['bayes', 'naive'].map(function (k) { return el('span', null, el('i', { style: 'background:' + COLORS[k] }), NAMES[k]); })));
+      out.appendChild(el('p', { class: 'sub', text: 'Barras: intervalo de 95 % de la media entre corridas independientes. Eje X: ' + r.definition.sweep.path + '.' }));
+      plot(canvas, r, metric);
+    }
+    var head = ['Agente'].concat(r.mode === 'sweep' ? [r.definition.sweep.path] : [], ['Media', 'IC 95 %', 'Desvío']);
+    var tbody = el('tbody');
+    r.series.forEach(function (s) {
+      s.points.forEach(function (p) {
+        var m = p.summary[metric];
+        var isP = metric === 'regretShare';
+        var f = function (x) { return isP ? pct(x) : fmt(x, 2); };
+        var cells = [el('td', { text: NAMES[s.label] })];
+        if (r.mode === 'sweep') cells.push(el('td', { class: 'num', text: String(p.value) }));
+        cells.push(el('td', { class: 'num', text: f(m.mean) }), el('td', { class: 'num', text: '[' + f(m.ci95[0]) + ', ' + f(m.ci95[1]) + ']' }), el('td', { class: 'num', text: f(m.sd) }));
+        tbody.appendChild(el('tr', null, cells));
+      });
+    });
+    out.appendChild(el('div', { class: 'scroll' }, el('table', null, el('thead', null, el('tr', null, head.map(function (h, i) { return el('th', { class: i > 0 ? 'num' : '', text: h }); }))), tbody)));
+    if (r.mode === 'one') {
+      var s0 = r.series[0].points[0].summary;
+      var rows = el('tbody');
+      Object.keys(METRIC_LABEL).forEach(function (k) {
+        var isP = k === 'regretShare';
+        rows.appendChild(el('tr', null, el('td', { text: METRIC_LABEL[k] }), el('td', { class: 'num', text: isP ? pct(s0[k].mean) : fmt(s0[k].mean, 2) }), el('td', { class: 'num', text: '± ' + (isP ? pct(1.96 * s0[k].se) : fmt(1.96 * s0[k].se, 2)) })));
+      });
+      out.appendChild(el('h3', { text: 'Todas las métricas (media ± IC 95 %)' }));
+      out.appendChild(el('div', { class: 'scroll' }, el('table', null, rows)));
+    }
+    out.appendChild(el('div', { class: 'notice', text: 'Cómo leerlo: «empeoran» significa que el ajuste verdadero —que el agente no puede observar— queda más bajo tras el cambio. Es una cantidad que solo existe dentro de la simulación. Un resultado que contradice la hipótesis inicial es un resultado válido: se documenta igual.' }));
+  }
+
+  function plot(canvas, r, metric) {
+    var dpr = window.devicePixelRatio || 1;
+    var cssW = canvas.clientWidth || 700, cssH = canvas.clientHeight || 320;
+    canvas.width = cssW * dpr; canvas.height = cssH * dpr;
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    var cs = getComputedStyle(document.documentElement);
+    var ink = cs.getPropertyValue('--ink').trim() || '#17243a', line = cs.getPropertyValue('--line').trim() || '#dfe5ee', muted = cs.getPropertyValue('--muted').trim() || '#5d6b82';
+    var pad = { l: 56, r: 14, t: 12, b: 36 };
+    var xs = r.series[0].points.map(function (p) { return p.value; });
+    var ymin = Infinity, ymax = -Infinity;
+    r.series.forEach(function (s) { s.points.forEach(function (p) { var m = p.summary[metric]; if (m.mean === null) return; ymin = Math.min(ymin, m.ci95[0]); ymax = Math.max(ymax, m.ci95[1]); }); });
+    if (!Number.isFinite(ymin)) { ctx.fillStyle = muted; ctx.fillText('Sin datos para esta métrica (por ejemplo, no hubo cambios).', 20, 30); return; }
+    if (metric === 'regretShare') { ymin = Math.min(ymin, 0); ymax = Math.max(ymax, 0.05); }
+    if (ymax === ymin) { ymax += 1; ymin -= 1; }
+    var padY = (ymax - ymin) * 0.08; ymin -= padY; ymax += padY;
+    var xmin = Math.min.apply(null, xs), xmax = Math.max.apply(null, xs);
+    if (xmax === xmin) xmax += 1;
+    var X = function (x) { return pad.l + ((x - xmin) / (xmax - xmin)) * (cssW - pad.l - pad.r); };
+    var Y = function (y) { return pad.t + (1 - (y - ymin) / (ymax - ymin)) * (cssH - pad.t - pad.b); };
+    ctx.font = '12px system-ui'; ctx.fillStyle = muted; ctx.strokeStyle = line; ctx.lineWidth = 1;
+    for (var i = 0; i <= 4; i++) {
+      var yv = ymin + ((ymax - ymin) * i) / 4, y = Y(yv);
+      ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(cssW - pad.r, y); ctx.stroke();
+      ctx.textAlign = 'right'; ctx.fillText(metric === 'regretShare' ? (100 * yv).toFixed(0) + '%' : yv.toFixed(1), pad.l - 6, y + 4);
+    }
+    ctx.textAlign = 'center';
+    xs.forEach(function (x) { ctx.fillText(String(x), X(x), cssH - 14); });
+    ctx.save(); ctx.strokeStyle = ink; ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, cssH - pad.b); ctx.lineTo(cssW - pad.r, cssH - pad.b); ctx.stroke(); ctx.restore();
+    if (ymin < 0 && ymax > 0) { ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = muted; ctx.beginPath(); ctx.moveTo(pad.l, Y(0)); ctx.lineTo(cssW - pad.r, Y(0)); ctx.stroke(); ctx.restore(); }
+    r.series.forEach(function (s) {
+      ctx.strokeStyle = COLORS[s.label]; ctx.fillStyle = COLORS[s.label]; ctx.lineWidth = 2;
+      ctx.beginPath(); var started = false;
+      s.points.forEach(function (p) { var m = p.summary[metric]; if (m.mean === null) return; var x = X(p.value), y = Y(m.mean); if (!started) { ctx.moveTo(x, y); started = true; } else ctx.lineTo(x, y); });
+      ctx.stroke();
+      s.points.forEach(function (p) {
+        var m = p.summary[metric]; if (m.mean === null) return;
+        var x = X(p.value);
+        ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x, Y(m.ci95[0])); ctx.lineTo(x, Y(m.ci95[1])); ctx.stroke();
+        ctx.beginPath(); ctx.arc(x, Y(m.mean), 3.5, 0, 6.2832); ctx.fill();
+      });
+    });
+  }
+
+  function download(kind) {
+    if (!lastResult) { $('simStatus').className = 'notice warn'; $('simStatus').textContent = 'Primero ejecutá una simulación.'; return; }
+    var text, name, type;
+    if (kind === 'json') {
+      text = JSON.stringify(lastResult, null, 2); name = 'resultado-simulacion.json'; type = 'application/json';
+    } else {
+      var rows = [['version', 'semilla', 'agente', 'parametro', 'valor', 'metrica', 'n', 'media', 'sd', 'se', 'ic95_inf', 'ic95_sup']];
+      var cfg = lastResult.definition.base;
+      lastResult.series.forEach(function (s) {
+        s.points.forEach(function (p) {
+          S.METRICS.forEach(function (m) {
+            var x = p.summary[m];
+            rows.push([lastResult.version, cfg.seed, s.label, lastResult.definition.sweep ? lastResult.definition.sweep.path : '', p.value === null ? '' : p.value, m, x.n, x.mean, x.sd, x.se, x.ci95[0], x.ci95[1]]);
+          });
+        });
+      });
+      text = rows.map(function (r) { return r.map(function (v) { return v === null ? '' : String(v); }).join(','); }).join('\n') + '\n'; name = 'resultado-simulacion.csv'; type = 'text/csv;charset=utf-8';
+    }
+    var blob = new Blob([text], { type: type });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  }
+
+  // =====================================================================
+  // 3. MODELO y 4. LÍMITES (texto)
+  // =====================================================================
+
+  function buildModel() {
+    var root = $('model');
+    var eq = function (t) { return el('pre', { text: t }); };
+    root.appendChild(el('div', { class: 'grid' }, el('div', { class: 'card s12' },
+      el('h2', { text: 'Ecuaciones (versión 0.2)' }),
+      el('p', { class: 'sub', text: 'Resumen. La derivación, los supuestos y qué parámetros son decisiones de diseño están en docs/modelo-matematico.md. Ninguna de estas fórmulas es una ley psicológica.' }),
+      el('h3', { text: '1. Utilidad de una persona' }),
+      eq('U = Σ wᵢ · mᵢ        con  Σ wᵢ = 1,  wᵢ ≥ 0\nmᵢ = valor percibido del factor i (0–100)'),
+      el('p', { text: 'Es un promedio ponderado: compensatorio. Por eso los requisitos esenciales no entran aquí sino como filtro (punto 3).' }),
+      el('h3', { text: '2. Información e incertidumbre (normal–normal)' }),
+      eq('x ~ N(μ, σ₀²)           valor verdadero, desconocido\nyₖ = x + εₖ, εₖ ~ N(0, σ²)    n observaciones, media ȳ\nposterior: media = (μ/σ₀² + n·ȳ/σ²) / (1/σ₀² + n/σ²)\n           desvío = (1/σ₀² + n/σ²)^(−1/2)'),
+      el('p', { text: 'Con n = 0 se conserva la previa: desconocer no equivale a «50». El agente «ingenuo» usa ȳ sin corregir; el bayesiano usa la media posterior.' }),
+      el('h3', { text: '3. Requisitos esenciales (no compensatorios)' }),
+      eq('B es admisible si  P(xᵢ ≥ θ | datos) ≥ p_min  para todo factor esencial i'),
+      el('h3', { text: '4. Decisión de cambio' }),
+      eq('wᵢ′ ∝ wᵢ · (1 + γ · max(0, aspiración − mᵢ,A)/100)      foco en lo que falta (γ = 0: sin efecto)\nG = Σ wᵢ′ · max(mᵢ,B − mᵢ,A, 0)     L = Σ wᵢ′ · max(mᵢ,A − mᵢ,B, 0)\nneto = G − λ·L + novedad            se cambia si B es admisible y neto > coste de cambiar'),
+      el('p', { text: 'Con γ = 0, λ = 1 y sin novedad, neto = U_B − U_A. El mismo vector de pesos se aplica a ambas personas.' }),
+      el('h3', { text: '5. Maldición del ganador (resultado analítico verificado en las pruebas)' }),
+      eq('Si se elige el mejor de N candidatos por valor observado:\nE[observado − verdadero | elegido] = σ_e² / √(σ_v² + σ_e²) · E[máx de N normales estándar]'),
+      el('p', { text: 'El sesgo crece con el ruido σ_e (poca información) y con N, y desaparece si se corrige por la incertidumbre. Es estadística de selección, no un hecho psicológico: que las personas la cometan es una pregunta empírica.' }),
+      el('h3', { text: '6. Expectativas y coste de búsqueda' }),
+      eq('valor de reserva w*:  E[(W − w*)⁺] = c      (Stigler 1961; McCall 1970)'),
+      el('h3', { text: 'Parámetros' }),
+      el('ul', { class: 'tight' },
+        el('li', { text: 'Decisiones de diseño (no estimadas): población previa N(50, 15²), ruido de observación 15, γ, ν, λ, η, pesos y umbrales por defecto, conversión dinero → puntos.' }),
+        el('li', { text: 'Podrían estimarse con datos: importancias wᵢ (preferencias declaradas y reveladas), ruido de observación (fiabilidad de las impresiones iniciales), λ y ν (experimentos), costes de búsqueda.' }))
+    )));
+  }
+
+  function buildLimits() {
+    $('limits').appendChild(el('div', { class: 'grid' }, el('div', { class: 'card s12' },
+      el('h2', { text: 'Lo que este modelo NO demuestra' }),
+      el('ul', null,
+        el('li', { text: 'No evalúa objetivamente el valor de una persona ni de una relación.' }),
+        el('li', { text: 'No determina la pareja ideal ni dice a nadie qué hacer.' }),
+        el('li', { text: 'No predice el éxito o el fracaso de ninguna relación real.' }),
+        el('li', { text: 'No demuestra que las personas cometan los errores que simulan los agentes «ingenuos»: ese comportamiento es un supuesto programado.' }),
+        el('li', { text: 'No estima porcentajes de abandono, de arrepentimiento ni de éxito en poblaciones reales. Las cifras que produce son propiedades de reglas inventadas.' }),
+        el('li', { text: 'No distingue culturas, géneros, orientaciones, edades ni contextos; todos los agentes son idénticos salvo por el azar.' }),
+        el('li', { text: 'No incluye la reciprocidad: la otra persona no decide ni cambia. Una relación son dos personas.' }),
+        el('li', { text: 'Los factores son independientes y normales; en la realidad hay correlaciones y valores acotados.' }),
+        el('li', { text: 'El «ajuste verdadero» es una cantidad que solo existe dentro de la simulación; en la vida real nadie lo observa.' })),
+      el('h3', { text: 'Cómo se usa de forma responsable' }),
+      el('p', { text: 'Como herramienta para razonar: ver qué supuestos hacen falta para que comparar con una alternativa poco conocida lleve a una mala decisión, y cuáles hacen que no ocurra. Los resultados que contradicen la hipótesis original (por ejemplo, que un agente que corrige por la incertidumbre casi nunca se arrepiente en promedio) se documentan en el repositorio con el mismo peso que los que la apoyan.' }),
+      el('p', { text: 'Más: docs/limitaciones.md, docs/hipotesis.md y docs/antecedentes.md en el repositorio.' }))));
+  }
+
+  buildCalc();
+  buildSim();
+  buildModel();
+  buildLimits();
+  $('footer').textContent = 'Modelo v' + S.VERSION + ' · exploratorio · código MIT, documentación CC BY 4.0 · se ejecuta localmente en tu navegador; no envía ni almacena datos.';
+})();
+</script>
+</body>
+</html>

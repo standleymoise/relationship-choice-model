@@ -1,0 +1,11 @@
+{
+  "name": "h4-expectativas",
+  "hypothesis": "H4",
+  "description": "Variable independiente: nivel de aspiración. El agente solo busca cuando su satisfacción percibida cae por debajo de ese nivel. Costes: 1 unidad monetaria por unidad de información; conversión a puntos (moneyToUtility = 0,1) y coste de cambio 1 punto son supuestos de diseño arbitrarios.",
+  "base": { "seed": 105, "runs": 500, "periods": 40, "searchTrigger": "below_aspiration", "costs": { "dateCost": 1, "switchCost": 1, "moneyToUtility": 0.1 } },
+  "sweep": { "path": "aspiration", "values": [40, 50, 55, 60, 65, 70, 80] },
+  "series": [
+    { "label": "bayes", "override": { "agent": "bayes" } },
+    { "label": "naive", "override": { "agent": "naive" } }
+  ]
+}

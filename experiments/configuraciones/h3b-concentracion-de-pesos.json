@@ -1,0 +1,11 @@
+{
+  "name": "h3b-concentracion-de-pesos",
+  "hypothesis": "H3",
+  "description": "Variable independiente: desigualdad entre las importancias de los factores (0 = todas iguales).",
+  "base": { "seed": 104, "runs": 500, "periods": 40 },
+  "sweep": { "path": "weightConcentration", "values": [0, 0.5, 1, 1.5, 2.5] },
+  "series": [
+    { "label": "bayes", "override": { "agent": "bayes" } },
+    { "label": "naive", "override": { "agent": "naive" } }
+  ]
+}

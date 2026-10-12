@@ -1,0 +1,22 @@
+name: Referencia
+description: Proponer una fuente científica
+labels: ["referencias"]
+body:
+  - type: input
+    id: cita
+    attributes:
+      label: Autores, año y título
+    validations:
+      required: true
+  - type: input
+    id: doi
+    attributes:
+      label: DOI o URL verificable
+      description: Si no tenés DOI, indicalo; quedará como pendiente de verificación
+  - type: textarea
+    id: relevancia
+    attributes:
+      label: Qué aporta
+      description: Qué aspecto del modelo apoya, contradice o matiza
+    validations:
+      required: true
