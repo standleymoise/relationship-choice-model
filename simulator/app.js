@@ -558,5 +558,5 @@
   buildSim();
   buildModel();
   buildLimits();
-  $('footer').textContent = 'Modelo v' + S.VERSION + ' · exploratorio · código MIT, documentación CC BY 4.0 · se ejecuta localmente en tu navegador; no envía ni almacena datos.';
+  $('footer').textContent = 'Modelo standleymoise v' + S.VERSION + ' · exploratorio · código MIT, documentación CC BY 4.0 · se ejecuta localmente en tu navegador; no envía ni almacena datos.';
 })();

@@ -1,6 +1,8 @@
-# Relationship Choice Model
+# Modelo standleymoise
 
-**Modelo y simulador abierto sobre decisiones de elección de pareja bajo información incompleta.**
+**Modelo y simulador abierto sobre decisiones de elección de pareja bajo información incompleta** (repositorio `relationship-choice-model`).
+
+> **Sobre el nombre.** «Modelo standleymoise» es el nombre y la atribución de este modelo en particular (sus ecuaciones, supuestos y código). Poner un nombre **no** afirma que sea una teoría nueva ni validada: la novedad se evalúa con honestidad en [`docs/antecedentes.md`](docs/antecedentes.md) y en la [revisión sistemática](docs/revision-sistematica/resultados.md).
 [![CI](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml/badge.svg)](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml)
 *Exploratorio · versión 0.2.0 · no validado con datos de personas.*
 
@@ -98,7 +100,7 @@ Derivación, variables, ejemplos numéricos y qué parámetros son decisiones de
 
 ## Estado de desarrollo
 
-Versión **0.2.0**: modelo, simulador, 50 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. La revisión bibliográfica es acotada, no sistemática ([`docs/antecedentes.md`](docs/antecedentes.md)); las 48 referencias con DOI están verificadas contra Crossref y 5 quedan como *pendientes de verificación*. Próximos pasos posibles: revisión sistemática, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
+Versión **0.2.0**: modelo, simulador, 50 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. Los antecedentes se apoyan en una **revisión sistemática** documentada (3 324 registros únicos cribados, 265 incluidos; [protocolo](docs/revision-sistematica/protocolo.md) y [resultados](docs/revision-sistematica/resultados.md)) que **no cumple todos los estándares de una revisión formal** y declara sus limitaciones; la novedad se evalúa en [`docs/antecedentes.md`](docs/antecedentes.md). Las 69 referencias con DOI están verificadas contra Crossref y 6 quedan como *pendientes de verificación*. Próximos pasos posibles: revisión sistemática, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
 
 **Reproducibilidad:** misma configuración y semilla dan resultados idénticos. Los resultados guardados se generaron en Windows con Node 24 y la integración continua los recalculó y comparó en **Linux y Windows con Node 20, 22 y 24 (6 de 6 trabajos en verde en la versión 0.2.0)**. Se guardan redondeados a 6 decimales; no se afirma identidad bit a bit en cualquier motor de JavaScript.
 
@@ -110,7 +112,7 @@ simulator/      Interfaz (HTML, CSS, JS) y versión autónoma de un solo archivo
 experiments/    Configuraciones, scripts y resultados (JSON y CSV)
 tests/          Pruebas automatizadas (node:test)
 scripts/        Verificación, compilación del HTML autónomo, tablas, verificación de referencias
-docs/           Modelo, antecedentes, hipótesis, metodología, limitaciones, resultados, validación
+docs/           Modelo, antecedentes, revisión sistemática, hipótesis, metodología, limitaciones, resultados, validación
 legacy/         Simulador original (v0.1), conservado sin modificar
 ```
 
@@ -128,4 +130,4 @@ Ver [`CITATION.cff`](CITATION.cff) (GitHub muestra «Cite this repository»). Si
 
 - Código: **MIT** ([`LICENSE`](LICENSE)).
 - Documentación y resultados: **CC BY 4.0** ([`LICENSE-DOCS.md`](LICENSE-DOCS.md)).
-- Autoría: standleymoise. El desarrollo, la búsqueda bibliográfica y la redacción se hicieron con asistencia de Claude (Anthropic); las decisiones y la responsabilidad del contenido son de la persona autora.
+- Autoría y nombre: **Modelo standleymoise** (standleymoise). El desarrollo, la búsqueda bibliográfica y la redacción se hicieron con asistencia de Claude (Anthropic); las decisiones y la responsabilidad del contenido son de la persona autora.

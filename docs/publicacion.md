@@ -29,22 +29,48 @@ Sin `gh`: crear un repositorio vacío en github.com, y luego `git remote add ori
 
 Después de publicar, en *Settings → General* conviene definir el *topic* (`simulation`, `decision-making`, `javascript`) y en *Settings → Code and automation → Actions* comprobar que se ejecuta el flujo de CI.
 
-## 3. Publicar el simulador con GitHub Pages (opcional)
+## 3. Simulador en línea con GitHub Pages (ya activado)
 
-1. *Settings → Pages → Build and deployment → Source: «Deploy from a branch»*.
-2. Rama `main`, carpeta `/ (root)`.
-3. La página quedará en `https://<usuario>.github.io/relationship-choice-model/simulator/simulador-autonomo.html` (puede tardar unos minutos).
+**Estado:** activado el 12-oct-2026. Dirección pública: **https://standleymoise.github.io/relationship-choice-model/** (redirige a `simulator/simulador-autonomo.html`).
 
-**Limitaciones:** el sitio es público y estático (no hay servidor ni base de datos; es lo que se quiere). Un repositorio gratuito debe ser público para usar Pages. Los cambios pueden tardar en reflejarse y el navegador puede cachear versiones anteriores. El archivo autónomo evita problemas de rutas relativas; si se usa `simulator/index.html`, el sitio debe servir también `src/`.
+Cómo se activó (por si hay que repetirlo en otro repositorio):
 
-## 4. Asignar un DOI con Zenodo (más adelante)
+1. Desde la web: *Settings → Pages → Build and deployment → Source: «Deploy from a branch»*, rama `main`, carpeta `/ (root)`, y *Save*. O con la CLI:
+   ```bash
+   gh api -X POST repos/<usuario>/<repositorio>/pages -f "source[branch]=main" -f "source[path]=/"
+   ```
+2. Esperar uno o dos minutos. El estado se ve con `gh api repos/<usuario>/<repositorio>/pages -q .status` (`built` = publicado).
+3. Cada `git push` a `main` republica solo.
 
-1. Iniciar sesión en zenodo.org con la cuenta de GitHub y, en *GitHub*, activar el repositorio.
-2. Crear una *Release* en GitHub (por ejemplo `v0.2.0`). Zenodo archiva esa versión y le asigna un DOI propio, además de un DOI «de concepto» que agrupa todas las versiones.
-3. Añadir el DOI a `CITATION.cff` (campo `doi`) y al README, y publicar una versión nueva.
-4. Un archivo `.zenodo.json` permite controlar los metadatos del depósito.
+Archivos que lo hacen funcionar: `index.html` en la raíz (redirección al simulador) y `.nojekyll` (evita que GitHub procese el sitio como Jekyll).
 
-Un DOI da identidad citable, **no valida el contenido**: Zenodo no hace revisión científica. La licencia elegida condiciona qué se puede reutilizar.
+**Limitaciones:** el sitio es público y estático (no hay servidor ni base de datos; es lo que se busca: nada se guarda ni se envía). Un repositorio gratuito debe ser público para usar Pages. Los cambios tardan en reflejarse y el navegador puede cachear la versión anterior (recargar con Ctrl+F5). El archivo autónomo evita problemas de rutas; `simulator/index.html` también funciona en Pages porque el sitio sirve `src/`.
+
+## 4. Asignar un DOI con Zenodo (paso a paso)
+
+Zenodo es un repositorio abierto del CERN. Se conecta con GitHub y, **cada vez que se publica una *Release***, archiva esa versión y le asigna un **DOI propio y permanente**. Hay un paso que solo puede hacer la persona dueña de la cuenta (el inicio de sesión con GitHub).
+
+**Una sola vez (lo hace la persona autora):**
+
+1. Entrar a https://zenodo.org y elegir *Log in → Log in with GitHub*. Autorizar el acceso.
+2. Ir a https://zenodo.org/account/settings/github/ (menú de la cuenta → *GitHub*).
+3. En la lista de repositorios, **activar el interruptor de `relationship-choice-model`** (si no aparece, pulsar *Sync now*).
+
+**Cada versión (se puede hacer desde la terminal):**
+
+4. Crear la *Release* en GitHub **después** del paso 3 (Zenodo solo archiva las releases creadas con el repositorio ya activado):
+   ```bash
+   gh release create v0.2.1 --title "v0.2.1" --notes-file CHANGELOG.md
+   ```
+   (o *Releases → Draft a new release* en la web).
+5. En 1–2 minutos aparece el depósito en https://zenodo.org/me/uploads con su DOI. Cada versión recibe un DOI y existe además un **DOI «de concepto»** que apunta siempre a la última versión.
+6. Copiar el **DOI de concepto** y añadirlo a `CITATION.cff` (campo `doi:`) y al README (insignia o enlace); publicar una versión nueva con ese cambio.
+
+Los metadatos del depósito salen de [`.zenodo.json`](../.zenodo.json) (título, autoría, licencia, palabras clave). Si ese archivo falta, Zenodo usa `CITATION.cff`.
+
+**Qué NO hace un DOI:** da una identidad citable y permanente, pero **no valida el contenido**; Zenodo no revisa la ciencia. La licencia (MIT para el código, CC BY 4.0 para documentación) condiciona qué se puede reutilizar. Una release ya archivada **no se puede borrar ni cambiar** (solo se puede publicar una versión nueva), así que conviene revisar antes de publicar.
+
+**Por qué no está hecho aún:** el paso 1–3 exige iniciar sesión en la cuenta de Zenodo de la persona autora; ese acceso no se delega.
 
 ## 5. Antes de cada publicación
 

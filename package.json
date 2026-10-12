@@ -1,7 +1,7 @@
 {
   "name": "relationship-choice-model",
   "version": "0.2.0",
-  "description": "Modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta (exploratorio, no validado empíricamente).",
+  "description": "Modelo standleymoise: modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta (exploratorio, no validado empíricamente).",
   "type": "commonjs",
   "private": false,
   "license": "MIT",

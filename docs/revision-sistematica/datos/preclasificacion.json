@@ -1,0 +1,11 @@
+{
+ "registrosUnicos": 3324,
+ "excluidosAutomaticos": {
+  "E3_tipoNoSustantivo": 0,
+  "E5_ventanaOIdioma": 1
+ },
+ "nivelA": 368,
+ "nivelB": 500,
+ "nivelC": 2455,
+ "muestraControlC": 60
+}

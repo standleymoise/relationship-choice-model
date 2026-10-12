@@ -1,6 +1,8 @@
 # Antecedentes científicos y novedad
 
-> **Alcance de esta revisión.** Se hicieron búsquedas dirigidas en un buscador académico (que en su plan gratuito devuelve solo 3 resultados por consulta) y cada referencia con DOI se comprobó contra Crossref (`node scripts/verificar-referencias.js`: título, año, primer autor, volumen y página inicial). **No es una revisión sistemática.** No se leyeron todos los artículos completos: las descripciones de hallazgos se basan en sus resúmenes y en conocimiento general, y están redactadas con cautela. Antes de afirmar novedad en una publicación formal hace falta una revisión sistemática con protocolo previo. La lista completa, con DOI y estado, está en [`referencias.md`](referencias.md). Las referencias que no se pudieron verificar figuran como *pendientes* y no sustentan nada aquí.
+> **Alcance.** Este documento se apoya en dos fuentes: (1) una primera búsqueda dirigida con verificación de cada DOI contra Crossref (`node scripts/verificar-referencias.js`: título, año, primer autor, volumen y página inicial), y (2) una **revisión sistemática** con protocolo, búsqueda reproducible en Semantic Scholar y Europe PMC, cribado documentado de 3 324 registros únicos y 265 incluidos: [`revision-sistematica/protocolo.md`](revision-sistematica/protocolo.md) y [`revision-sistematica/resultados.md`](revision-sistematica/resultados.md). **Esa revisión no cumple todos los estándares de una revisión formal** (una persona revisora asistida por IA, dos bases abiertas sin PsycINFO/Scopus/Web of Science, cribado por título y resumen, sin texto completo); sus limitaciones y desviaciones están declaradas allí. Las descripciones de hallazgos de este documento se basan en resúmenes y en conocimiento general, y están redactadas con cautela. La lista de referencias con DOI y estado está en [`referencias.md`](referencias.md); las **pendientes de verificación** no sustentan nada aquí.
+
+> **Qué cambió con la revisión sistemática (resumen).** Se confirmó que (a) los modelos de búsqueda y cambio de pareja con agentes o con teoría económica **son abundantes**; (b) la información ruidosa con aprendizaje aparece en pocos trabajos (Becker et al., 1977; Wahhaj, 2018; Conroy-Beam, 2024); (c) **ninguno de los 265 incluidos** combina búsqueda/cambio, información ruidosa, sesgo de selección o contraste «corrige / no corrige» y aislamiento de mecanismos psicológicos; el más cercano es Conroy-Beam (2024). Eso no prueba que no exista un trabajo así; ver §4 y el veredicto de [`resultados.md` §5](revision-sistematica/resultados.md).
 
 ## 1. Lo esencial en pocas líneas
 
@@ -80,8 +82,8 @@ Grimm et al. (2010) proponen el protocolo ODD para describir modelos basados en 
 4. **Qué habría que demostrar para una contribución teórica:** que algún mecanismo no capturado por los modelos existentes (por ejemplo, focalismo + novedad en pares conocido/nuevo) predice mejor datos reales que las alternativas. Eso requiere datos (ver el plan de validación).
 5. **Recomendación de encuadre:** presentar el proyecto como **modelo exploratorio y herramienta didáctica**, no como una teoría nueva.
 
-## 5. Brechas conocidas de esta revisión
+## 5. Brechas conocidas
 
-- No se revisó la literatura sobre infidelidad, «mate poaching» ni relaciones de rebote.
-- No se revisó literatura transcultural ni sobre parejas del mismo género; el modelo no distingue.
-- No se hizo búsqueda en bases con operadores booleanos (Scopus, Web of Science, PsycINFO) ni se revisó literatura gris.
+- La revisión sistemática no consultó PsycINFO, Scopus ni Web of Science, y no leyó texto completo; ver sus limitaciones.
+- Literatura transcultural y sobre parejas del mismo género: el modelo no distingue y la búsqueda estuvo centrada en inglés.
+- Siguen pendientes de verificación las referencias marcadas como tales en [`referencias.md`](referencias.md).

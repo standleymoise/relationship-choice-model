@@ -1,0 +1,296 @@
+{
+  "fuentes": "Semantic Scholar (búsqueda booleana en título y resumen), Europe PMC (TITLE_ABS), consultas guardadas en datos/cache/",
+  "criteriosDeRecuperacion": "por consulta y fuente, hasta 300 registros ordenados por número de citas (descendente)",
+  "registrosBrutos": 3978,
+  "registrosUnicosTrasDeduplicar": 3324,
+  "consultas": [
+    {
+      "consulta": "epmc__PxT01_sobrecarga",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"choice overload\" OR TITLE_ABS:\"too many options\" OR TITLE_ABS:\"number of options\" OR TITLE_ABS:\"abundance of options\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 9,
+      "recuperados": 9
+    },
+    {
+      "consulta": "epmc__PxT02_parada",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"optimal stopping\" OR TITLE_ABS:\"secretary problem\" OR TITLE_ABS:\"sequential search\" OR TITLE_ABS:\"stopping rule\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 7,
+      "recuperados": 7
+    },
+    {
+      "consulta": "epmc__PxT03_satisfacer",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:satisficing OR TITLE_ABS:maximizing OR TITLE_ABS:\"aspiration level\" OR TITLE_ABS:maximizer)",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 24,
+      "recuperados": 24
+    },
+    {
+      "consulta": "epmc__PxT04_agentes",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"agent-based\" OR TITLE_ABS:\"computational model\" OR TITLE_ABS:\"reinforcement learning\" OR TITLE_ABS:\"multi-armed bandit\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 43,
+      "recuperados": 43
+    },
+    {
+      "consulta": "epmc__PxT05_simulacion",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:simulation OR TITLE_ABS:\"Monte Carlo\" OR TITLE_ABS:\"mathematical model\" OR TITLE_ABS:\"formal model\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 122,
+      "recuperados": 122
+    },
+    {
+      "consulta": "epmc__PxT06_informacion",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"incomplete information\" OR TITLE_ABS:\"imperfect information\" OR TITLE_ABS:\"first impressions\" OR TITLE_ABS:\"noisy\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 38,
+      "recuperados": 38
+    },
+    {
+      "consulta": "epmc__PxT07_sesgo",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"winner's curse\" OR TITLE_ABS:\"optimizer's curse\" OR TITLE_ABS:\"selection bias\" OR TITLE_ABS:\"regression to the mean\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 5,
+      "recuperados": 5
+    },
+    {
+      "consulta": "epmc__PxT08_incertidumbre",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:Bayesian OR TITLE_ABS:\"uncertainty reduction\" OR TITLE_ABS:\"relational uncertainty\" OR TITLE_ABS:\"learning about\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 67,
+      "recuperados": 67
+    },
+    {
+      "consulta": "epmc__PxT09_alternativas",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"quality of alternatives\" OR TITLE_ABS:\"attractive alternatives\" OR TITLE_ABS:\"alternative partners\" OR TITLE_ABS:\"alternatives to\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 91,
+      "recuperados": 91
+    },
+    {
+      "consulta": "epmc__PxT10_cambio",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"partner switching\" OR TITLE_ABS:\"relationship dissolution\" OR TITLE_ABS:breakup OR TITLE_ABS:\"partner replacement\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 113,
+      "recuperados": 113
+    },
+    {
+      "consulta": "epmc__PxT11_adaptacion",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"hedonic adaptation\" OR TITLE_ABS:honeymoon OR TITLE_ABS:novelty OR TITLE_ABS:\"satisfaction decline\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 27,
+      "recuperados": 27
+    },
+    {
+      "consulta": "epmc__PxT12_foco",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:focalism OR TITLE_ABS:\"affective forecasting\" OR TITLE_ABS:\"social comparison\" OR TITLE_ABS:\"grass is greener\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 20,
+      "recuperados": 20
+    },
+    {
+      "consulta": "epmc__PxT13_arrepentimiento",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:regret OR TITLE_ABS:\"decision satisfaction\" OR TITLE_ABS:\"choice satisfaction\" OR TITLE_ABS:\"post-decision\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 8,
+      "recuperados": 8
+    },
+    {
+      "consulta": "epmc__PxT14_declarado",
+      "fuente": "epmc",
+      "cadena": "(TITLE_ABS:\"mate choice\" OR TITLE_ABS:\"mate search\" OR TITLE_ABS:\"mate selection\" OR TITLE_ABS:\"partner choice\" OR TITLE_ABS:\"partner selection\" OR TITLE_ABS:\"partner search\" OR TITLE_ABS:\"romantic partner\" OR TITLE_ABS:\"romantic partners\" OR TITLE_ABS:\"romantic relationship\" OR TITLE_ABS:\"online dating\" OR TITLE_ABS:\"speed dating\" OR TITLE_ABS:\"dating app\" OR TITLE_ABS:\"marriage market\" OR TITLE_ABS:\"mating market\") AND (TITLE_ABS:\"stated preferences\" OR TITLE_ABS:\"revealed preferences\" OR TITLE_ABS:\"ideal partner preferences\" OR TITLE_ABS:\"actual choices\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 15,
+      "recuperados": 15
+    },
+    {
+      "consulta": "s2__PxT01_sobrecarga",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"choice overload\" | \"too many options\" | \"number of options\" | \"abundance of options\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 18,
+      "recuperados": 18
+    },
+    {
+      "consulta": "s2__PxT02_parada",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"optimal stopping\" | \"secretary problem\" | \"sequential search\" | \"stopping rule\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 33,
+      "recuperados": 33
+    },
+    {
+      "consulta": "s2__PxT03_satisfacer",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (satisficing | maximizing | \"aspiration level\" | maximizer)",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 629,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__PxT04_agentes",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"agent-based\" | \"computational model\" | \"reinforcement learning\" | \"multi-armed bandit\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 233,
+      "recuperados": 233
+    },
+    {
+      "consulta": "s2__PxT05_simulacion",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (simulation | \"Monte Carlo\" | \"mathematical model\" | \"formal model\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 1017,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__PxT06_informacion",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"incomplete information\" | \"imperfect information\" | \"first impressions\" | \"noisy\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 168,
+      "recuperados": 168
+    },
+    {
+      "consulta": "s2__PxT07_sesgo",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"winner's curse\" | \"optimizer's curse\" | \"selection bias\" | \"regression to the mean\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 29,
+      "recuperados": 29
+    },
+    {
+      "consulta": "s2__PxT08_incertidumbre",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (Bayesian | \"uncertainty reduction\" | \"relational uncertainty\" | \"learning about\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 338,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__PxT09_alternativas",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"quality of alternatives\" | \"attractive alternatives\" | \"alternative partners\" | \"alternatives to\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 1785,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__PxT10_cambio",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"partner switching\" | \"relationship dissolution\" | breakup | \"partner replacement\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 602,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__PxT11_adaptacion",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"hedonic adaptation\" | honeymoon | novelty | \"satisfaction decline\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 166,
+      "recuperados": 166
+    },
+    {
+      "consulta": "s2__PxT12_foco",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (focalism | \"affective forecasting\" | \"social comparison\" | \"grass is greener\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 419,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__PxT13_arrepentimiento",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (regret | \"decision satisfaction\" | \"choice satisfaction\" | \"post-decision\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 84,
+      "recuperados": 84
+    },
+    {
+      "consulta": "s2__PxT14_declarado",
+      "fuente": "s2",
+      "cadena": "(\"mate choice\" | \"mate search\" | \"mate selection\" | \"partner choice\" | \"partner selection\" | \"partner search\" | \"romantic partner\" | \"romantic partners\" | \"romantic relationship\" | \"online dating\" | \"speed dating\" | \"dating app\" | \"marriage market\" | \"mating market\") + (\"stated preferences\" | \"revealed preferences\" | \"ideal partner preferences\" | \"actual choices\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 95,
+      "recuperados": 95
+    },
+    {
+      "consulta": "s2__S1_inversion",
+      "fuente": "s2",
+      "cadena": "(\"investment model\" | \"Investment Model Scale\") + (\"quality of alternatives\" | alternatives)",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 552,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__S3_calidad_match",
+      "fuente": "s2",
+      "cadena": "(\"match quality\" | \"match-specific\") + (marriage | divorce | cohabitation) + (learning | Bayesian | uncertainty)",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 8,
+      "recuperados": 8
+    },
+    {
+      "consulta": "s2__S4_inestabilidad",
+      "fuente": "s2",
+      "cadena": "(\"marital instability\" | divorce) + (\"outside options\" | alternatives | search)",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 4385,
+      "recuperados": 300
+    },
+    {
+      "consulta": "s2__S5_busqueda_pareja",
+      "fuente": "s2",
+      "cadena": "(\"mate search\" | \"partner search\" | \"search for a partner\") + (cost | costs | \"search cost\")",
+      "fecha": "2026-10-12",
+      "completa": true,
+      "totalEnLaFuente": 155,
+      "recuperados": 155
+    }
+  ]
+}

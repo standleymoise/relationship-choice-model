@@ -56,7 +56,7 @@ const TOPICS = {
     const yearOk = years.some((y) => Math.abs(y - ref.year) <= 1);
     const strip = (t) => t.normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/[’‘]/g, "'").toLowerCase();
     const first = (w.author && w.author[0] && w.author[0].family) || '';
-    const authorOk = first === '' || strip(ref.authors).startsWith(strip(first));
+    const authorOk = first === '' || strip(ref.authors).startsWith(strip(first)) || (ref.crossrefAuthor && strip(ref.crossrefAuthor) === strip(first));
     const m = /,\s*(\d+)(\(|,|\s|$)/.exec(ref.venue);
     const volOk = !m || !w.volume || String(w.volume) === m[1];
     const pm = /(d+)[–-](d+)/.exec(ref.venue);

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Si usás este software o sus resultados, por favor citalo con estos datos. Es un modelo exploratorio, no validado empíricamente."
-title: "Relationship Choice Model: modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta"
+title: "Modelo standleymoise (relationship-choice-model): modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta"
 abstract: >-
   Modelo matemático explícito, simulador interactivo en JavaScript y experimentos reproducibles con agentes
   ficticios para explorar cuándo comparar una relación conocida con alternativas poco conocidas lleva a cambios

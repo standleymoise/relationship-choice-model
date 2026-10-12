@@ -1,0 +1,19 @@
+{
+  "title": "Modelo standleymoise: modelo y simulador abierto de decisiones de elección de pareja bajo información incompleta",
+  "upload_type": "software",
+  "description": "<p>Modelo matemático explícito, simulador interactivo en JavaScript y experimentos reproducibles con agentes ficticios para explorar cuándo comparar una relación conocida con alternativas poco conocidas lleva a cambios que empeoran el ajuste real, y cuándo no.</p><p><strong>Exploratorio:</strong> no está validado con datos de personas, no evalúa personas y no predice el éxito de relaciones reales. Los agentes son construcciones programadas.</p>",
+  "creators": [
+    { "name": "standleymoise" }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "decision making",
+    "mate choice",
+    "choice overload",
+    "agent-based model",
+    "simulation",
+    "winner's curse"
+  ],
+  "language": "spa",
+  "access_right": "open"
+}

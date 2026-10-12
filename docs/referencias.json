@@ -480,6 +480,218 @@
       "doi": "10.1080/17439760.2013.777765",
       "topic": "adaptacion",
       "status": "verificada-crossref"
+    },
+    {
+      "id": "becker1977",
+      "authors": "Becker, G. S., Landes, E. M., & Michael, R. T.",
+      "year": 1977,
+      "title": "An economic analysis of marital instability",
+      "venue": "Journal of Political Economy",
+      "doi": "10.1086/260631",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "todd2005",
+      "authors": "Todd, P. M., & Billari, F. C.",
+      "year": 2005,
+      "title": "Aggregate age-at-marriage patterns from individual mate-search heuristics",
+      "venue": "Demography",
+      "doi": "10.1353/dem.2005.0027",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "todd2013",
+      "authors": "Todd, P. M., & Hills, T. T.",
+      "year": 2013,
+      "title": "Modeling reproductive decisions with simple heuristics",
+      "venue": "Demographic Research",
+      "doi": "10.4054/demres.2013.29.24",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "todd1997",
+      "authors": "Todd, P. M.",
+      "year": 1997,
+      "title": "Searching for the next best mate",
+      "venue": "En Conte, R., Hegselmann, R., & Terna, P. (Eds.), Simulating Social Phenomena (Springer)",
+      "doi": "10.1007/978-3-662-03366-1_34",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "wahhaj2018",
+      "authors": "Wahhaj, Z.",
+      "year": 2018,
+      "title": "An economic model of early marriage",
+      "venue": "Journal of Economic Behavior & Organization",
+      "doi": "10.1016/j.jebo.2018.06.001",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "bear2019",
+      "authors": "Bear, A., & Rand, D. G.",
+      "year": 2019,
+      "title": "Can strategic ignorance explain the evolution of love?",
+      "venue": "Topics in Cognitive Science",
+      "doi": "10.1111/tops.12342",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "bhaskar2016",
+      "authors": "Bhaskar, V., & Hopkins, E.",
+      "year": 2016,
+      "title": "Marriage as a rat race: Noisy premarital investments with assortative matching",
+      "venue": "Journal of Political Economy",
+      "doi": "10.1086/686748",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "adachi2003",
+      "authors": "Adachi, H.",
+      "year": 2003,
+      "title": "A search model of two-sided matching under nontransferable utility",
+      "venue": "Journal of Economic Theory",
+      "doi": "10.1016/s0022-0531(03)00085-1",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "bonilla2022",
+      "authors": "Bonilla, R., & Malo, M.",
+      "year": 2022,
+      "title": "Marriage wage premium with contract type heterogeneity",
+      "venue": "Labour Economics",
+      "doi": "10.1016/j.labeco.2022.102198",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "akin2016",
+      "authors": "Akın, Ş., & Platt, B. C.",
+      "year": 2016,
+      "title": "Accounting for age in marital search decisions",
+      "venue": "European Economic Review",
+      "doi": "10.1016/j.euroecorev.2016.02.008",
+      "topic": "modelos",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "wu2009",
+      "authors": "Wu, P.-L., & Chiou, W.-B.",
+      "year": 2009,
+      "title": "More options lead to more searching and worse choices in finding partners for romantic relationships online: An experimental study",
+      "venue": "CyberPsychology & Behavior",
+      "doi": "10.1089/cpb.2008.0182",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "yang2010",
+      "authors": "Yang, M.-L., & Chiou, W.-B.",
+      "year": 2010,
+      "title": "Looking online for the best romantic partner reduces decision quality: The moderating role of choice-making strategies",
+      "venue": "Cyberpsychology, Behavior, and Social Networking",
+      "doi": "10.1089/cyber.2009.0208",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "lenton2008b",
+      "authors": "Lenton, A. P., & Stewart, A.",
+      "year": 2008,
+      "title": "Changing her ways: The number of options and mate-standard strength impact mate choice strategy and satisfaction",
+      "venue": "Judgment and Decision Making",
+      "doi": "10.1017/s1930297500000772",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "hu2024",
+      "authors": "Hu, J., & Markowitz, D. M.",
+      "year": 2024,
+      "title": "Increasing choice boosts relational pursuit in online dating: Testing three competing mechanisms of interpersonal evaluation",
+      "venue": "PsyArXiv (preprint)",
+      "doi": "10.31234/osf.io/6zhju",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "rosenfeld2017",
+      "authors": "Rosenfeld, M. J.",
+      "year": 2017,
+      "title": "Marriage, choice, and couplehood in the age of the Internet",
+      "venue": "Sociological Science",
+      "doi": "10.15195/v4.a20",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref",
+      "crossrefAuthor": "Rosenfield",
+      "note": "Crossref registra el primer apellido con una errata («Rosenfield»); el autor es Michael J. Rosenfeld."
+    },
+    {
+      "id": "apostolou2024",
+      "authors": "Apostolou, M., & Constantinidou, L.",
+      "year": 2024,
+      "title": "Mate choice plurality, choice overload, and singlehood: Are more options always better?",
+      "venue": "Behavioral Sciences",
+      "doi": "10.3390/bs14080703",
+      "topic": "sobrecarga-citas",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "mattson2012",
+      "authors": "Mattson, R. E., & Franco-Watkins, A.",
+      "year": 2012,
+      "title": "How do I regret thee? Let me count my alternatives: Regret and decision making in intimate relationships",
+      "venue": "Psychology",
+      "doi": "10.4236/psych.2012.39100",
+      "topic": "compromiso",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "wang2022",
+      "authors": "Wang, H., & Ma, J.",
+      "year": 2022,
+      "title": "Value-directed information search in partner choice",
+      "venue": "Judgment and Decision Making",
+      "doi": "10.1017/s1930297500009426",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "williams2020",
+      "authors": "Williams, M., & Sulikowski, D.",
+      "year": 2020,
+      "title": "Implicit and explicit compromises in long-term partner choice",
+      "venue": "Personality and Individual Differences",
+      "doi": "10.1016/j.paid.2020.110226",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "zhao2024",
+      "authors": "Zhao, A. A. Z., & Sidari, M. J.",
+      "year": 2024,
+      "title": "Speed-dating and simulation data explain the discrepancy between stated and revealed mate preferences",
+      "venue": "European Journal of Personality",
+      "doi": "10.1177/08902070241286254",
+      "topic": "preferencias",
+      "status": "verificada-crossref"
+    },
+    {
+      "id": "mikkelson2013",
+      "authors": "Mikkelson, A. C., & Pauley, P. M.",
+      "year": 2013,
+      "title": "Maximizing relationship possibilities: Relational maximization in romantic relationships",
+      "venue": "The Journal of Social Psychology",
+      "doi": "10.1080/00224545.2013.767776",
+      "topic": "satisfaccion",
+      "status": "verificada-crossref"
     }
   ],
   "pendientes": [
@@ -537,6 +749,17 @@
       "topic": "satisfaccion",
       "status": "pendiente-de-verificacion",
       "note": "Apareció en un buscador académico; la revista no asigna DOI. Verificar en la página de la revista."
+    },
+    {
+      "id": "hills2008",
+      "authors": "Hills, T., & Todd, P. M.",
+      "year": 2008,
+      "title": "Population heterogeneity and individual differences in an assortative agent-based marriage and divorce model (MADAM) using search with relaxing expectations",
+      "venue": "Journal of Artificial Societies and Social Simulation",
+      "doi": null,
+      "topic": "modelos",
+      "status": "pendiente-de-verificacion",
+      "note": "Aparece en Semantic Scholar sin DOI; se menciona por título y año, sin leer el artículo."
     }
   ]
 }

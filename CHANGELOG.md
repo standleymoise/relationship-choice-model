@@ -2,6 +2,14 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico (el modelo es 0.x: puede cambiar).
 
+## [Sin publicar]
+
+### Añadido
+- Revisión sistemática de antecedentes (`docs/revision-sistematica/`): protocolo, búsqueda reproducible en Semantic Scholar y Europe PMC, cribado documentado (3 324 registros únicos, 265 incluidos), clasificación de modelos formales y veredicto sobre la novedad. Declara sus limitaciones y desviaciones.
+- 21 referencias nuevas verificadas contra Crossref (69 en total).
+- GitHub Pages activado; `.zenodo.json` y guía paso a paso para el DOI de Zenodo en `docs/publicacion.md`.
+- El modelo se llama «Modelo standleymoise» (atribución; no implica novedad ni validación).
+
 ## [0.2.0] — 2026-10-11
 
 Primera versión pública. Reescritura del simulador previo (`legacy/simulador_v0.1_original.html`, conservado sin modificar).
