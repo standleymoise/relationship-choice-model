@@ -3,7 +3,7 @@
 **Modelo y simulador abierto sobre decisiones de elección de pareja bajo información incompleta** (repositorio `relationship-choice-model`).
 
 > **Sobre el nombre.** «Modelo standleymoise» es el nombre y la atribución de este modelo en particular (sus ecuaciones, supuestos y código). Poner un nombre **no** afirma que sea una teoría nueva ni validada: la novedad se evalúa con honestidad en [`docs/antecedentes.md`](docs/antecedentes.md) y en la [revisión sistemática](docs/revision-sistematica/resultados.md).
-[![CI](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml/badge.svg)](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23310487.svg)](https://doi.org/10.5281/zenodo.23310487) [![CI](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml/badge.svg)](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml)
 *Exploratorio · versión 0.3.0 · no validado con datos de personas.*
 
 Un proyecto técnico para explorar, con ecuaciones explícitas, agentes ficticios y código verificable, cuándo comparar una relación conocida con una alternativa poco conocida puede llevar a cambios que luego se lamentan, y cuándo no. Todo corre en JavaScript, HTML y CSS, sin dependencias y sin servidor.
@@ -129,7 +129,7 @@ Abrí un *issue* con una de las plantillas (error, crítica al modelo, referenci
 
 ## Cómo citar
 
-Ver [`CITATION.cff`](CITATION.cff) (GitHub muestra «Cite this repository»). Si se asigna un DOI mediante Zenodo, se añadirá allí ([`docs/publicacion.md`](docs/publicacion.md)).
+Ver [`CITATION.cff`](CITATION.cff) (GitHub muestra «Cite this repository»). **DOI de concepto (todas las versiones, recomendado para citar el proyecto): [10.5281/zenodo.23310487](https://doi.org/10.5281/zenodo.23310487).** DOI de la versión v0.3.0: [10.5281/zenodo.23310488](https://doi.org/10.5281/zenodo.23310488). El DOI da una identidad citable y permanente; no valida el contenido ([`docs/publicacion.md`](docs/publicacion.md)).
 
 ## Licencia y autoría
 

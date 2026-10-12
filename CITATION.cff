@@ -11,6 +11,11 @@ version: 0.3.0
 date-released: "2026-10-12"
 authors:
   - name: "standleymoise"
+doi: 10.5281/zenodo.23310487
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23310488
+    description: "DOI de la versión v0.3.0 (el campo doi es el DOI de concepto: agrupa todas las versiones)"
 repository-code: "https://github.com/standleymoise/relationship-choice-model"
 license: MIT
 keywords:

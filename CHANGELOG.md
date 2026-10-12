@@ -2,6 +2,11 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico (el modelo es 0.x: puede cambiar).
 
+## [Sin publicar]
+
+### Añadido
+- DOI de Zenodo: concepto `10.5281/zenodo.23310487`; versión v0.3.0 `10.5281/zenodo.23310488`. Añadido a `CITATION.cff` y al README.
+
 ## [0.3.0] — 2026-10-12
 
 ### Añadido

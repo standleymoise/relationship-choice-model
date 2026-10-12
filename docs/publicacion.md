@@ -70,7 +70,7 @@ Los metadatos del depósito salen de [`.zenodo.json`](../.zenodo.json) (título,
 
 **Qué NO hace un DOI:** da una identidad citable y permanente, pero **no valida el contenido**; Zenodo no revisa la ciencia. La licencia (MIT para el código, CC BY 4.0 para documentación) condiciona qué se puede reutilizar. Una release ya archivada **no se puede borrar ni cambiar** (solo se puede publicar una versión nueva), así que conviene revisar antes de publicar.
 
-**Por qué no está hecho aún:** el paso 1–3 exige iniciar sesión en la cuenta de Zenodo de la persona autora; ese acceso no se delega.
+**Estado:** hecho. La v0.3.0 está archivada en Zenodo: DOI de concepto `10.5281/zenodo.23310487` (todas las versiones) y DOI de versión `10.5281/zenodo.23310488`. En la entrega del webhook de GitHub apareció un error 500 que no impidió el archivo; ante un fallo así conviene comprobar en `zenodo.org/account/settings/github/` antes de crear otra release.
 
 ## 5. Antes de cada publicación
 
