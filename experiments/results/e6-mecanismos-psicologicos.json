@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "e6-mecanismos-psicologicos",
   "hypothesis": "exploratorio",
   "description": "Desglose por mecanismo. Pregunta: ¿qué supuesto genera cambios que empeoran el ajuste verdadero? Cada serie activa un conjunto de mecanismos sobre el mismo mundo aleatorio (misma semilla). Valores de los mecanismos: focal γ = 3, novedad ν = 10 puntos con decaimiento de 5 períodos, aversión a la pérdida λ = 2,25 (referencia de Tversky y Kahneman, 1992, usada aquí como punto de partida de diseño, no como estimación para parejas).",

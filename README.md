@@ -4,7 +4,7 @@
 
 > **Sobre el nombre.** «Modelo standleymoise» es el nombre y la atribución de este modelo en particular (sus ecuaciones, supuestos y código). Poner un nombre **no** afirma que sea una teoría nueva ni validada: la novedad se evalúa con honestidad en [`docs/antecedentes.md`](docs/antecedentes.md) y en la [revisión sistemática](docs/revision-sistematica/resultados.md).
 [![CI](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml/badge.svg)](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml)
-*Exploratorio · versión 0.2.0 · no validado con datos de personas.*
+*Exploratorio · versión 0.3.0 · no validado con datos de personas.*
 
 Un proyecto técnico para explorar, con ecuaciones explícitas, agentes ficticios y código verificable, cuándo comparar una relación conocida con una alternativa poco conocida puede llevar a cambios que luego se lamentan, y cuándo no. Todo corre en JavaScript, HTML y CSS, sin dependencias y sin servidor.
 
@@ -104,9 +104,9 @@ Derivación, variables, ejemplos numéricos y qué parámetros son decisiones de
 
 ## Estado de desarrollo
 
-Versión **0.2.0**: modelo, simulador, 65 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. Los antecedentes se apoyan en una **revisión sistemática** documentada (3 324 registros únicos cribados, 265 incluidos; [protocolo](docs/revision-sistematica/protocolo.md) y [resultados](docs/revision-sistematica/resultados.md)) que **no cumple todos los estándares de una revisión formal** y declara sus limitaciones; la novedad se evalúa en [`docs/antecedentes.md`](docs/antecedentes.md). Las 69 referencias con DOI están verificadas contra Crossref y 6 quedan como *pendientes de verificación*. Próximos pasos posibles: un segundo revisor y consultas en PsycINFO, Scopus y Web of Science, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
+Versión **0.3.0**: modelo, simulador, 65 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. Los antecedentes se apoyan en una **revisión sistemática** documentada (3 324 registros únicos cribados, 265 incluidos; [protocolo](docs/revision-sistematica/protocolo.md) y [resultados](docs/revision-sistematica/resultados.md)) que **no cumple todos los estándares de una revisión formal** y declara sus limitaciones; la novedad se evalúa en [`docs/antecedentes.md`](docs/antecedentes.md). Las 69 referencias con DOI están verificadas contra Crossref y 6 quedan como *pendientes de verificación*. Próximos pasos posibles: un segundo revisor y consultas en PsycINFO, Scopus y Web of Science, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
 
-**Reproducibilidad:** misma configuración y semilla dan resultados idénticos. Los resultados guardados se generaron en Windows con Node 24 y la integración continua los recalculó y comparó en **Linux y Windows con Node 20, 22 y 24 (6 de 6 trabajos en verde en la versión 0.2.0)**. Se guardan redondeados a 6 decimales; no se afirma identidad bit a bit en cualquier motor de JavaScript.
+**Reproducibilidad:** misma configuración y semilla dan resultados idénticos. Los resultados guardados se generaron en Windows con Node 24 y la integración continua los recalculó y comparó en **Linux y Windows con Node 20, 22 y 24 (6 de 6 trabajos en verde en la versión 0.3.0)**. Se guardan redondeados a 6 decimales; no se afirma identidad bit a bit en cualquier motor de JavaScript.
 
 ## Contenido del repositorio
 

@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "h3a-requisitos-esenciales",
   "hypothesis": "H3",
   "description": "Variable independiente: umbral mínimo de los 2 factores esenciales (no compensatorio). Un candidato por debajo del umbral con probabilidad >= 0,5 queda excluido aunque el resto sea excelente.",

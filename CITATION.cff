@@ -7,8 +7,8 @@ abstract: >-
   que empeoran el ajuste real, y cuándo no. Es exploratorio: no está validado con datos de personas, no evalúa
   personas y no predice el éxito de relaciones reales.
 type: software
-version: 0.2.0
-date-released: "2026-10-11"
+version: 0.3.0
+date-released: "2026-10-12"
 authors:
   - name: "standleymoise"
 repository-code: "https://github.com/standleymoise/relationship-choice-model"

@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "h2-informacion-incompleta",
   "hypothesis": "H2",
   "description": "Variable independiente: unidades de información obtenidas al conocer a cada candidato (firstImpression). La pareja actual parte con 8 unidades de información.",

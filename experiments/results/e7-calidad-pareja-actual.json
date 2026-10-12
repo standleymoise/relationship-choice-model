@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "e7-calidad-pareja-actual",
   "hypothesis": "exploratorio",
   "description": "Variable independiente: cuánto mejor que la persona típica es la pareja actual (puntos sumados a todos sus factores verdaderos). 0 = una persona típica; +15 ≈ una pareja claramente por encima del promedio en todo. Es el caso más cercano a la intuición 80–20: la pareja actual ya es buena. Se comparan los dos tipos de agente.",

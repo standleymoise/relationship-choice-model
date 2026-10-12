@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "h1-numero-de-opciones",
   "hypothesis": "H1",
   "description": "Variable independiente: candidatos conocidos por período. Todo lo demás constante. Se compara un agente ingenuo (toma lo observado como verdadero) con uno bayesiano (corrige por la incertidumbre).",

@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "h5-comparacion-continua",
   "hypothesis": "H5",
   "description": "Variable independiente: peso de la comparación con la mejor alternativa conocida (η) sobre la satisfacción percibida con la pareja actual. Series: 1, 3 y 8 alternativas por período con la comparación hecha sobre la impresión inicial SIN corregir (supuesto: la impresión vívida afecta al ánimo aunque la decisión use la media corregida), y 3 alternativas con la comparación hecha sobre la media corregida. OJO: bajo estos supuestos el descenso de satisfacción percibida es consecuencia del propio mecanismo programado; el experimento mide su magnitud y su sensibilidad a la definición, no lo contrasta con la realidad. La definición con media corregida se probó primero y produjo un efecto casi nulo; la variante sin corregir se añadió después de ver ese resultado (decisión posterior al dato, ver docs/limitaciones.md).",

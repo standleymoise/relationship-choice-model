@@ -1,5 +1,5 @@
 {
-  "modelVersion": "0.2.0",
+  "modelVersion": "0.3.0",
   "name": "h4-expectativas",
   "hypothesis": "H4",
   "description": "Variable independiente: nivel de aspiración. El agente solo busca cuando su satisfacción percibida cae por debajo de ese nivel. Costes: 1 unidad monetaria por unidad de información; conversión a puntos (moneyToUtility = 0,1) y coste de cambio 1 punto son supuestos de diseño arbitrarios.",
