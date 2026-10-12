@@ -554,8 +554,100 @@
       el('p', { text: 'Más: docs/limitaciones.md, docs/hipotesis.md y docs/antecedentes.md en el repositorio.' }))));
   }
 
+  // =====================================================================
+  // 4. ÍNDICE DE RELACIÓN DE PAREJA (IRP)
+  // =====================================================================
+
+  var IRP = RCM.irp;
+  var irpSelects = {};
+
+  function buildIrp() {
+    var root = $('irp');
+    function list(kind, title, hint) {
+      var card = el('div', { class: 'card s6' }, el('h2', { text: title }), el('p', { class: 'sub', text: hint }));
+      var table = el('table', { class: 'ftable' });
+      var body = el('tbody');
+      IRP.ITEMS.filter(function (it) { return it.kind === kind; }).forEach(function (it) {
+        var sel = el('select', { 'aria-label': it.label });
+        sel.appendChild(el('option', { value: '', text: 'No sé' }));
+        IRP.LEVELS.forEach(function (l) { sel.appendChild(el('option', { value: l, text: l })); });
+        sel.addEventListener('change', renderIrp);
+        irpSelects[it.id] = sel;
+        body.appendChild(el('tr', null, el('td', { text: it.label }), el('td', null, sel)));
+      });
+      table.appendChild(body);
+      card.appendChild(el('div', { class: 'scroll' }, table));
+      return card;
+    }
+    root.appendChild(el('div', { class: 'grid' },
+      el('div', { class: 'card s12' },
+        el('h2', { text: 'Índice de Relación de Pareja (IRP)' }),
+        el('p', { class: 'sub', text: 'Basado en la hoja de cálculo «Índice de Relación de Pareja» de standleymoise (2021): 26 buenos puntos y 25 malos puntos, cada uno de «Nada de eso» a «Mucho». Esta versión corrige varios problemas del Excel (ver docs/irp.md): escala real de 0 a 100, «No sé» sin forzar un valor, y alertas de seguridad.' }),
+        el('div', { class: 'notice warn', text: 'Es una autovaloración exploratoria, no una prueba validada. No mide el valor de una persona, no predice el futuro de la relación y no te dice qué decisión tomar. Respondé sobre lo que observás, no sobre lo que querrías que fuera.' }),
+        el('div', { class: 'cols', style: 'margin-top:10px' },
+          el('button', { class: 'btn', id: 'irpClear', type: 'button', text: 'Todo en «No sé»' }),
+          el('button', { class: 'btn', id: 'irpExample', type: 'button', text: 'Cargar ejemplo inventado' }),
+          el('button', { class: 'btn primary', id: 'irpUse', type: 'button', text: 'Usar mis respuestas como valores de A en la calculadora' }))),
+      el('div', { class: 'card s12', id: 'irpOut', 'aria-live': 'polite' }),
+      list('good', 'Buenos puntos', 'Cuánto de cada cosa hay en la relación.'),
+      list('bad', 'Malos puntos', 'Cuánto de cada cosa hay en la relación (acá «Nada de eso» es lo mejor).')));
+    $('irpClear').addEventListener('click', function () { Object.keys(irpSelects).forEach(function (k) { irpSelects[k].value = ''; }); renderIrp(); });
+    $('irpExample').addEventListener('click', function () {
+      // Ejemplo inventado e ilustrativo, sin alertas de seguridad.
+      IRP.ITEMS.forEach(function (it, i) {
+        irpSelects[it.id].value = it.kind === 'good' ? (i % 5 === 0 ? 'Normal' : 'Mucho') : (i % 4 === 0 ? 'Poco' : 'Nada de eso');
+      });
+      renderIrp();
+    });
+    $('irpUse').addEventListener('click', function () {
+      var vals = IRP.factorValues(irpAnswers(), FACTORS.map(function (f) { return f.id; }));
+      vals.forEach(function (v, i) {
+        calcInputs.A[i].value = Math.round(v.value);
+        calcInputs.Aknown[i].checked = v.known;
+      });
+      selectTab('calc');
+      render();
+    });
+    renderIrp();
+  }
+
+  function irpAnswers() {
+    var a = {};
+    Object.keys(irpSelects).forEach(function (k) { if (irpSelects[k].value) a[k] = irpSelects[k].value; });
+    return a;
+  }
+
+  function renderIrp() {
+    var out = $('irpOut');
+    out.textContent = '';
+    var answers = irpAnswers();
+    var r = IRP.scoreImproved(answers);
+    out.appendChild(el('h2', { text: 'Resultado' }));
+    out.appendChild(el('div', { class: 'metrics' },
+      metric(r.irp === null || r.readingBlockedBySafety ? '—' : fmt(r.irp, 1), r.readingBlockedBySafety ? 'IRP mejorado: sin cifra global por la alerta de seguridad' : 'IRP mejorado (0–100)'),
+      metric(r.positives === null ? '—' : fmt(r.positives, 1), 'Presencia de lo positivo'),
+      metric(r.absenceOfProblems === null ? '—' : fmt(r.absenceOfProblems, 1), 'Ausencia de lo problemático'),
+      metric(r.answered + ' / ' + r.total, 'Ítems respondidos (cobertura ' + Math.round(100 * r.coverage) + ' %)')));
+    if (r.irp === null) {
+      out.appendChild(el('div', { class: 'notice', text: 'Todavía no hay suficientes respuestas: hace falta contestar al menos la mitad de cada lista. «No sé» no cuenta ni como cero ni como neutro: se deja fuera.' }));
+    }
+    r.alerts.forEach(function (al) {
+      if (al.tipo === 'seguridad') {
+        out.appendChild(el('div', { class: 'notice bad', text: 'Alerta: indicaste «' + al.label + '». La violencia, las amenazas y el control no se «compensan» con otros aspectos positivos, así que un promedio no es una lectura válida en este caso. Si sentís miedo o estás en peligro, buscá ayuda de los servicios de emergencia o de organizaciones de apoyo a víctimas de violencia de tu país.' }));
+      } else {
+        out.appendChild(el('div', { class: 'notice warn', text: 'Atención: indicaste «' + al.label + '» con frecuencia alta. Es un aspecto que merece conversarse con calma; el índice no lo trata de forma especial.' }));
+      }
+    });
+    if (r.reading) out.appendChild(el('div', { class: 'notice', text: r.reading + ' Esto describe tus respuestas de hoy: no es un diagnóstico, no mide el valor de nadie y no te dice qué hacer.' }));
+    var o = IRP.scoreOriginal(answers);
+    out.appendChild(el('div', { class: 'notice', text: o === null
+      ? 'IRP original (fórmula del Excel, solo para comparar): no disponible; el Excel exige responder los 48 ítems que suma (deja 3 listados sin sumar).'
+      : 'IRP original (fórmula del Excel, solo para comparar): ' + fmt(o.irp, 1) + '. Va de 20 a 100 (no de 0 a 100), suma solo 48 de los 51 ítems y promedia sin alertas: ver docs/irp.md.' }));
+  }
+
   buildCalc();
   buildSim();
+  buildIrp();
   buildModel();
   buildLimits();
   $('footer').textContent = 'Modelo standleymoise v' + S.VERSION + ' · exploratorio · código MIT, documentación CC BY 4.0 · se ejecuta localmente en tu navegador; no envía ni almacena datos.';

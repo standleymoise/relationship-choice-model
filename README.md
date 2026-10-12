@@ -44,6 +44,10 @@ El «80–20» de la idea original es una **metáfora**, no una proporción demo
 
 **No hace:** puntuar a personas reales, aconsejar, predecir relaciones, guardar datos ni conectarse a ningún servidor.
 
+## Índice de Relación de Pareja (IRP)
+
+La pestaña «Índice de relación (IRP)» del simulador implementa y **corrige** la hoja de cálculo «Índice de Relación de Pareja» de standleymoise (2021): escala real de 0 a 100, «No sé» sin forzar un valor, pesos editables y **alertas de seguridad** (la violencia, las amenazas y el control no se compensan con otros puntos buenos). Sus respuestas pueden pasar como valores de A a la calculadora. Hay además un Excel corregido, [`IRP-mejorado.xlsx`](IRP-mejorado.xlsx), cuyas fórmulas se contrastaron con el código. Auditoría completa, qué se cambió y por qué: [`docs/irp.md`](docs/irp.md). Es una autovaloración exploratoria, **no una prueba validada**.
+
 ## Instrucciones de ejecución
 
 **Simulador:** abrí [`simulator/simulador-autonomo.html`](simulator/simulador-autonomo.html) con doble clic. Es un único archivo, funciona sin conexión ni servidor. (`simulator/index.html` hace lo mismo cargando `src/`; requiere servirse por HTTP.)
@@ -51,7 +55,7 @@ El «80–20» de la idea original es una **metáfora**, no una proporción demo
 **Pruebas y experimentos** (Node.js 20 o superior, sin instalar nada):
 
 ```bash
-npm test                          # 50 pruebas automatizadas
+npm test                          # 65 pruebas automatizadas
 npm run check                     # sintaxis, JSON, secretos evidentes, HTML autónomo al día
 npm run experiments               # regenera experiments/results/
 npm run experiments -- --check    # comprueba que los resultados guardados se reproducen
@@ -100,7 +104,7 @@ Derivación, variables, ejemplos numéricos y qué parámetros son decisiones de
 
 ## Estado de desarrollo
 
-Versión **0.2.0**: modelo, simulador, 50 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. Los antecedentes se apoyan en una **revisión sistemática** documentada (3 324 registros únicos cribados, 265 incluidos; [protocolo](docs/revision-sistematica/protocolo.md) y [resultados](docs/revision-sistematica/resultados.md)) que **no cumple todos los estándares de una revisión formal** y declara sus limitaciones; la novedad se evalúa en [`docs/antecedentes.md`](docs/antecedentes.md). Las 69 referencias con DOI están verificadas contra Crossref y 6 quedan como *pendientes de verificación*. Próximos pasos posibles: revisión sistemática, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
+Versión **0.2.0**: modelo, simulador, 65 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. Los antecedentes se apoyan en una **revisión sistemática** documentada (3 324 registros únicos cribados, 265 incluidos; [protocolo](docs/revision-sistematica/protocolo.md) y [resultados](docs/revision-sistematica/resultados.md)) que **no cumple todos los estándares de una revisión formal** y declara sus limitaciones; la novedad se evalúa en [`docs/antecedentes.md`](docs/antecedentes.md). Las 69 referencias con DOI están verificadas contra Crossref y 6 quedan como *pendientes de verificación*. Próximos pasos posibles: un segundo revisor y consultas en PsycINFO, Scopus y Web of Science, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
 
 **Reproducibilidad:** misma configuración y semilla dan resultados idénticos. Los resultados guardados se generaron en Windows con Node 24 y la integración continua los recalculó y comparó en **Linux y Windows con Node 20, 22 y 24 (6 de 6 trabajos en verde en la versión 0.2.0)**. Se guardan redondeados a 6 decimales; no se afirma identidad bit a bit en cualquier motor de JavaScript.
 
@@ -114,6 +118,7 @@ tests/          Pruebas automatizadas (node:test)
 scripts/        Verificación, compilación del HTML autónomo, tablas, verificación de referencias
 docs/           Modelo, antecedentes, revisión sistemática, hipótesis, metodología, limitaciones, resultados, validación
 legacy/         Simulador original (v0.1), conservado sin modificar
+herramientas/   Generación y contraste del Excel mejorado (usa exceljs y LibreOffice; no es parte del simulador)
 ```
 
 La auditoría del simulador original (errores críticos, mejoras necesarias y opcionales) está en [`docs/auditoria-simulador-previo.md`](docs/auditoria-simulador-previo.md).

@@ -20,12 +20,14 @@
     <button role="tab" id="tab-calc" aria-selected="true" aria-controls="calc" data-tab="calc">1. Calculadora de dos personas</button>
     <button role="tab" id="tab-sim" aria-selected="false" aria-controls="sim" data-tab="sim">2. Simulación con agentes ficticios</button>
     <button role="tab" id="tab-model" aria-selected="false" aria-controls="model" data-tab="model">3. Modelo</button>
-    <button role="tab" id="tab-limits" aria-selected="false" aria-controls="limits" data-tab="limits">4. Lo que NO demuestra</button>
+    <button role="tab" id="tab-irp" aria-selected="false" aria-controls="irp" data-tab="irp">4. Índice de relación (IRP)</button>
+    <button role="tab" id="tab-limits" aria-selected="false" aria-controls="limits" data-tab="limits">5. Lo que NO demuestra</button>
   </nav>
 
   <section id="calc" class="tabpane active" role="tabpanel" aria-labelledby="tab-calc"></section>
   <section id="sim" class="tabpane" role="tabpanel" aria-labelledby="tab-sim"></section>
   <section id="model" class="tabpane" role="tabpanel" aria-labelledby="tab-model"></section>
+  <section id="irp" class="tabpane" role="tabpanel" aria-labelledby="tab-irp"></section>
   <section id="limits" class="tabpane" role="tabpanel" aria-labelledby="tab-limits"></section>
 
   <div class="footer" id="footer"></div>
@@ -33,6 +35,7 @@
 <script src="../src/rng.js"></script>
 <script src="../src/model.js"></script>
 <script src="../src/simulation.js"></script>
+<script src="../src/irp.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

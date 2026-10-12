@@ -8,6 +8,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Revisión sistemática de antecedentes (`docs/revision-sistematica/`): protocolo, búsqueda reproducible en Semantic Scholar y Europe PMC, cribado documentado (3 324 registros únicos, 265 incluidos), clasificación de modelos formales y veredicto sobre la novedad. Declara sus limitaciones y desviaciones.
 - 21 referencias nuevas verificadas contra Crossref (69 en total).
 - GitHub Pages activado; `.zenodo.json` y guía paso a paso para el DOI de Zenodo en `docs/publicacion.md`.
+- **Índice de Relación de Pareja (IRP):** auditoría de la hoja de cálculo original (`docs/irp.md`), implementación corregida en `src/irp.js` (15 pruebas, incluida la reproducción exacta del Excel original), pestaña nueva en el simulador conectada a la calculadora y `IRP-mejorado.xlsx` con fórmulas contrastadas con LibreOffice (22 casos).
 - El modelo se llama «Modelo standleymoise» (atribución; no implica novedad ni validación).
 
 ## [0.2.0] — 2026-10-11
