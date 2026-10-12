@@ -1,6 +1,7 @@
 # Relationship Choice Model
 
 **Modelo y simulador abierto sobre decisiones de elección de pareja bajo información incompleta.**
+[![CI](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml/badge.svg)](https://github.com/standleymoise/relationship-choice-model/actions/workflows/ci.yml)
 *Exploratorio · versión 0.2.0 · no validado con datos de personas.*
 
 Un proyecto técnico para explorar, con ecuaciones explícitas, agentes ficticios y código verificable, cuándo comparar una relación conocida con una alternativa poco conocida puede llevar a cambios que luego se lamentan, y cuándo no. Todo corre en JavaScript, HTML y CSS, sin dependencias y sin servidor.
@@ -99,7 +100,7 @@ Derivación, variables, ejemplos numéricos y qué parámetros son decisiones de
 
 Versión **0.2.0**: modelo, simulador, 50 pruebas, 8 experimentos y documentación completos como **primera versión exploratoria**. Sin revisión por pares. La revisión bibliográfica es acotada, no sistemática ([`docs/antecedentes.md`](docs/antecedentes.md)); las 48 referencias con DOI están verificadas contra Crossref y 5 quedan como *pendientes de verificación*. Próximos pasos posibles: revisión sistemática, preregistro y un estudio piloto ([`docs/plan-validacion-empirica.md`](docs/plan-validacion-empirica.md)).
 
-**Reproducibilidad:** misma configuración y semilla dan resultados idénticos en la máquina del autor (Windows, Node 24); la integración continua repite la comprobación en Linux y Windows con Node 20, 22 y 24 (ver la insignia/estado del flujo en la pestaña *Actions*). Los resultados se guardan redondeados a 6 decimales; no se afirma identidad bit a bit entre motores distintos.
+**Reproducibilidad:** misma configuración y semilla dan resultados idénticos. Los resultados guardados se generaron en Windows con Node 24 y la integración continua los recalculó y comparó en **Linux y Windows con Node 20, 22 y 24 (6 de 6 trabajos en verde en la versión 0.2.0)**. Se guardan redondeados a 6 decimales; no se afirma identidad bit a bit en cualquier motor de JavaScript.
 
 ## Contenido del repositorio
 

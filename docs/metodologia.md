@@ -25,7 +25,7 @@ Ver [`modelo-matematico.md` §9](modelo-matematico.md). Orden: la pareja actual 
 - Generador: `mulberry32` con semilla derivada por hash (FNV-1a + mezcla de MurmurHash3) de una lista de partes, p. ej. `[semilla, corrida, 'persona', id]` (`src/rng.js`). Normales por Box–Muller. No es criptográfico.
 - **Cada corrida y cada persona tienen su propio flujo.** Consecuencias comprobadas con pruebas: (a) misma configuración y semilla → resultados idénticos; (b) el orden de ejecución de corridas o experimentos no cambia nada; (c) dos agentes distintos con la misma semilla enfrentan **exactamente el mismo mundo** (comparación pareada).
 - Los archivos de `experiments/results/` no llevan marcas de tiempo: repetir `npm run experiments` con el mismo código debe dar archivos idénticos. `npm run experiments -- --check` y la prueba `tests/experiments.test.js` lo verifican.
-- **Qué NO se afirma:** idéntico bit a bit en cualquier motor de JavaScript. Los resultados se redondean a 6 decimales antes de guardarse; si una función matemática del motor diera diferencias de última cifra, podrían alterarse decisiones discretas en casos límite. La integración continua ejecuta la comparación en Linux y Windows con varias versiones de Node: ese es el contraste real.
+- **Qué NO se afirma:** idéntico bit a bit en cualquier motor de JavaScript. Los resultados se redondean a 6 decimales antes de guardarse; si una función matemática del motor diera diferencias de última cifra, podrían alterarse decisiones discretas en casos límite. La integración continua ejecuta la comparación en Linux y Windows con Node 20, 22 y 24: ese es el contraste real, y en la versión 0.2.0 los 6 trabajos pasaron.
 
 ## 6. Métricas y estadística
 

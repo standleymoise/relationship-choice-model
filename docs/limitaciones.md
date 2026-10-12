@@ -29,7 +29,7 @@
 - **Revisión bibliográfica acotada**, no sistemática ([`antecedentes.md`](antecedentes.md)). Quedan referencias pendientes de verificación ([`referencias.md`](referencias.md)).
 - Los intervalos de confianza reflejan solo la variabilidad del muestreo de la simulación; no incluyen incertidumbre sobre el propio modelo.
 - Sin revisión por pares. El código y los documentos están abiertos precisamente para que se critiquen.
-- **Reproducibilidad.** Se comprobó en Windows con Node 24 (autor). La integración continua del repositorio repite la comprobación en Linux; mientras no esté verde, la reproducibilidad entre plataformas no está demostrada.
+- **Reproducibilidad.** Los resultados guardados se generaron en Windows con Node 24. La integración continua del repositorio (ejecución de GitHub Actions del 12-oct-2026 sobre el commit de la versión 0.2.0) los recalculó y comparó con lo guardado en **Linux y Windows con Node 20, 22 y 24, con los 6 trabajos en verde**. Eso respalda la reproducibilidad entre estas plataformas para esta versión; no equivale a una garantía para cualquier motor de JavaScript ni para versiones futuras.
 
 ## Posibles daños del uso y cómo se mitigan
 
