@@ -31,6 +31,9 @@ El «80–20» de la idea original es una **metáfora**, no una proporción demo
 
 **Qué se encontró hasta ahora (en la simulación, con sus supuestos)**, resumido en [`docs/resultados-exploratorios.md`](docs/resultados-exploratorios.md):
 
+> Borrador del artículo (sin revisión por pares): [`docs/articulo/articulo.md`](docs/articulo/articulo.md).
+
+
 - La **sobreestimación del elegido** es un resultado estadístico (maldición del ganador): crece con el número de alternativas y con la falta de información, y desaparece si se corrige por la incertidumbre. La simulación reproduce la fórmula analítica.
 - La intuición inicial **solo se sostiene en un rango acotado**: cuando la pareja actual es claramente mejor que la típica *y* quien decide toma sus impresiones como verdad.
 - Varios resultados **contradicen** la hipótesis: más opciones no empeoran el bienestar verdadero simulado; un agente que corrige por la incertidumbre no se arrepiente en promedio; la aversión a la pérdida puede proteger.

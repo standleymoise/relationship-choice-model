@@ -5,6 +5,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 ## [Sin publicar]
 
 ### Añadido
+- Borrador del artículo en `docs/articulo/articulo.md` (IMRaD, solo referencias verificadas en Crossref; sin revisión por pares).
 - Autoría con nombre completo (Standley Moise) en `CITATION.cff`, `.zenodo.json`, `LICENSE` y `package.json`. El registro ya archivado en Zenodo (v0.3.0) conserva el nombre anterior hasta la próxima release.
 - DOI de Zenodo: concepto `10.5281/zenodo.23310487`; versión v0.3.0 `10.5281/zenodo.23310488`. Añadido a `CITATION.cff` y al README.
 
